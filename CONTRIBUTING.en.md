@@ -4,6 +4,8 @@ Thanks for considering a contribution. **This is a curated learning roadmap, not
 
 This repo is **designed for community-driven improvement** — one person can't keep pace with the AI agent ecosystem alone. The maintainer's quarterly review isn't enough; more eyes are needed.
 
+The catalog is split into **two tracks**: **Track A** (CLI Power User, `tracks/cli/A1-A3`) and **Track B** (Agent Builder, `stages/03-07`). When contributing, please indicate which track you're modifying — the two have different audiences.
+
 ## 🚪 First-time contribution: 5 easy starting points
 
 Not sure where to start? Pick one you can finish in 30 minutes:

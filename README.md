@@ -11,7 +11,7 @@
 <p><em>結構化 7 階段學習路徑，從「LLM 是什麼、token 怎麼算」一路到 multi-agent 編排、本地部署，<br/>每階段都有必跑 demo、必修閱讀、精選 project</em></p>
 
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat)](LICENSE)
-[![Status](https://img.shields.io/badge/status-Phase%206%20%C2%B7%20145%2B%20projects%20%C2%B7%205%20branches-success?style=flat)](CONTRIBUTORS.md)
+[![Status](https://img.shields.io/badge/status-Phase%207%20%C2%B7%202%20tracks%20%C2%B7%20170%2B%20entries%20%C2%B7%205%20branches-success?style=flat)](CONTRIBUTORS.md)
 ![GitHub stars](https://img.shields.io/github/stars/WenyuChiou/awesome-agentic-ai-zh?style=flat&logo=github)
 ![GitHub forks](https://img.shields.io/github/forks/WenyuChiou/awesome-agentic-ai-zh?style=flat&logo=github)
 [![Lang](https://img.shields.io/badge/語言-繁體中文-red?style=flat)](README.md)
@@ -37,7 +37,7 @@
   - [線上閱讀](#線上閱讀)
   - [本地下載](#本地下載)
   - [✨ 你會收穫什麼？](#-你會收穫什麼)
-- [🗺️ 7 階段學習地圖](#️-7-階段學習地圖)
+- [🗺️ 學習地圖（兩條軌道）](#️-學習地圖兩條軌道)
 - [💡 如何學習](#-如何學習)
 - [📚 相關資源](#-相關資源)
 - [🤝 如何貢獻](#-如何貢獻)
@@ -63,7 +63,7 @@ cd awesome-agentic-ai-zh
 ### ✨ 你會收穫什麼？
 
 - 📖 **完全免費** — MIT 授權，所有內容開放共學
-- 🗺️ **結構化路徑** — 7 階段、明確「我目前在哪、下一步學什麼」
+- 🗺️ **兩條學習軌道** — Track A（CLI Power User）給「想 USE 現成 CLI agent」的人；Track B（Agent Builder）給「想 BUILD 自己 agent」的人。共用 Stage 0-2 基礎
 - 🛠️ **必跑 Hello-X demos** — 每階段都有 1-5 個必跑 mini project，光看不練不算學會
 - 🎯 **精選 145+ 個 projects** — 每個都附星等推薦、適合誰、教什麼、怎麼跑（含本地 LLM 執行：Ollama、llama.cpp、LocalAI、MLX）
 - 🌏 **中文 / 英文雙語** — 繁中為主、英文版完整對照
@@ -73,9 +73,16 @@ cd awesome-agentic-ai-zh
 
 ---
 
-## 🗺️ 7 階段學習地圖
+## 🗺️ 學習地圖（兩條軌道）
 
 ![AI Agent 學習地圖](resources/diagrams/learning-map.png)
+
+走完 **Stage 0-2（共用基礎）** 之後，依你的目的選一條軌道：
+
+- **Track A — CLI Power User**：你想**用**現成的 CLI agent（Claude Code、Codex、OpenCode、Gemini CLI 等）把工作做到極致，不打算自己從零寫 agent。3 個 sub-stage（A1-A3）。
+- **Track B — Agent Builder**：你想**從零打造**自己的 agent——學 framework、寫 ReAct、設計 multi-agent。Stage 3-7 主路線。
+
+兩條軌道**不互斥**——多數人是先走 A 上手 CLI 再回頭看 B 學內部，或反過來。Stage 5（Claude Code 生態）兩條軌都會用到。
 
 > 文字版（screen reader 友善 / mdBook 用）：
 
@@ -83,18 +90,28 @@ cd awesome-agentic-ai-zh
 flowchart LR
     S0["Stage 0<br/>基礎準備"] --> S1["Stage 1<br/>LLM 入門"]
     S1 --> S2["Stage 2<br/>Prompt 設計"]
-    S2 --> S3["Stage 3 ⭐<br/>Tool Use<br/>Hello Agent"]
+    S2 --> FORK{"選一條軌道"}
+    FORK -->|想 USE CLI agent| A1["Track A: A1<br/>CLI 入門"]
+    A1 --> A2["A2<br/>Workflow Patterns"]
+    A2 --> A3["A3<br/>Integration & Production"]
+    FORK -->|想 BUILD agent| S3["Track B: Stage 3 ⭐<br/>Tool Use & Hello Agent"]
     S3 --> S4["Stage 4<br/>Agent 框架"]
     S4 --> S5["Stage 5 ⭐⭐<br/>Claude Code 生態"]
     S5 --> S6["Stage 6<br/>Memory · RAG"]
     S6 --> S7["Stage 7<br/>進階 Multi-Agent"]
-    S7 --> R["🔬 研究人員"]
-    S7 --> D["💻 開發者"]
-    S7 --> T["🎓 教師"]
-    S7 --> K["📊 知識工作者"]
-    S7 --> E["👥 日常使用者"]
+    A3 --> BR(("選 1 條 specialized<br/>branch 繼續"))
+    S7 --> BR
+    BR --> R["🔬 研究人員"]
+    BR --> D["💻 開發者"]
+    BR --> T["🎓 教師"]
+    BR --> K["📊 知識工作者"]
+    BR --> E["👥 日常使用者"]
 
     style S0 fill:#f3f4f6,stroke:#6b7280
+    style FORK fill:#fff7ed,stroke:#c2410c
+    style A1 fill:#cffafe,stroke:#0e7490
+    style A2 fill:#cffafe,stroke:#0e7490
+    style A3 fill:#cffafe,stroke:#0e7490
     style S3 fill:#fef3c7,stroke:#b45309
     style S5 fill:#fde68a,stroke:#92400e
     style R fill:#dbeafe,stroke:#1e40af
@@ -104,20 +121,37 @@ flowchart LR
     style E fill:#fef9c3,stroke:#854d0e
 ```
 
+### 共用基礎（Stage 0-2）
+
 | Stage | 主題 | 關鍵內容 | 時程 |
 |---|---|---|---|
 | **0** | [基礎準備](stages/00-foundations.md) | Python · CLI · git · API · JSON | 1-2 週 |
-| **1** | [LLM 入門](stages/01-llm-basics.md) | token · API · 各家 LLM 比較 | 1 週 |
+| **1** | [LLM 入門](stages/01-llm-basics.md) | token · API · 各家 LLM 比較 · 本地 LLM | 1 週 |
 | **2** | [Prompt 設計](stages/02-prompt-engineering.md) | 系統 prompt · few-shot · CoT | 1-2 週 |
+
+### Track A — CLI Power User（想用 CLI 把事情做完）
+
+| Stage | 主題 | 關鍵內容 | 時程 |
+|---|---|---|---|
+| **A1** | [CLI Agent 入門 + 選擇](tracks/cli/A1-cli-intro.md) | 6 主流 CLI 比較 · 安裝 · 第一次跑 | 1 週 |
+| **A2** | [CLI Workflow Patterns](tracks/cli/A2-cli-workflow.md) | CLAUDE.md · slash command · 多步驟拆解 | 1-2 週 |
+| **A3** | [Integration & Production](tracks/cli/A3-cli-production.md) | MCP 接 CLI · CI 自動化 · cost / observability | 1-2 週 |
+
+> **Track A 總時程**：3-5 週（含 Stage 0-2 約 6-8 週）。核心參考：[`resources/cli-agents-guide.md`](resources/cli-agents-guide.md)。
+
+### Track B — Agent Builder（從零打造 agent）
+
+| Stage | 主題 | 關鍵內容 | 時程 |
+|---|---|---|---|
 | **3** ⭐ | [Tool Use & Hello Agent](stages/03-tool-use-and-hello-agent.md) | function calling · ReAct · 5 個 Hello-X | 2-3 週 |
 | **4** | [Agent 框架](stages/04-agent-frameworks.md) | LangGraph · AutoGen · CrewAI · Smolagents | 2-3 週 |
-| **5** ⭐⭐ | [Claude Code 生態](stages/05-claude-code-ecosystem.md) | MCP · Skills · Plugins · Marketplace | 3-4 週 |
+| **5** ⭐⭐ | [Claude Code 生態](stages/05-claude-code-ecosystem.md) | MCP · Skills · Plugins · Marketplace（兩條軌都會用到） | 3-4 週 |
 | **6** | [Memory · RAG · 進階](stages/06-memory-rag.md) | vector DB · long-term memory · contextual retrieval | 2 週 |
 | **7** | [進階 Multi-Agent](stages/07-multi-agent-production.md) | multi-agent orchestration · eval · observability · SDK 進階 | 2-4 週 |
 
-> **總時程**：主幹最少 **14-19 週**、現實 **5-6 個月**（每週 5-8 hr 兼職）
+> **Track B 總時程**：主幹最少 **14-19 週**、現實 **5-6 個月**（每週 5-8 hr 兼職）
 
-> 💡 **想看跨 stage 完整範例？** [7 步打造你的第一個 AI Agent](walkthroughs/build-first-agent-in-7-steps.md) — 同一個 Paper Summary Bot 從 Stage 1 一路寫到 Stage 7，~350 行真實程式碼
+> 💡 **想看跨 stage 完整範例？** [7 步打造你的第一個 AI Agent](walkthroughs/build-first-agent-in-7-steps.md) — 同一個 Paper Summary Bot 從 Stage 1 一路寫到 Stage 7，~350 行真實程式碼（**Track B 用**）
 
 走完主幹後從 5 條 specialized branch 選一條繼續。**不確定走哪條？**
 

@@ -14,14 +14,29 @@
 >
 > 想擔任某個 stage 的 maintainer？開個 issue 自薦，註明你願意每季 review 一次。
 
+### 共用基礎（Stage 0-2）
+
 | Stage | Maintainer | 加入日期 |
 |---|---|---|
 | Stage 0 — 基礎準備 | （社群 PR 機會） | — |
 | Stage 1 — LLM 入門 | （社群 PR 機會） | — |
 | Stage 2 — Prompt 設計 | （社群 PR 機會） | — |
+
+### Track A — CLI Power User
+
+| Stage | Maintainer | 加入日期 |
+|---|---|---|
+| A1 — CLI Agent 入門 + 選擇 | （社群 PR 機會） | — |
+| A2 — CLI Workflow Patterns | （社群 PR 機會） | — |
+| A3 — Integration & Production | （社群 PR 機會） | — |
+
+### Track B — Agent Builder
+
+| Stage | Maintainer | 加入日期 |
+|---|---|---|
 | Stage 3 — Tool Use & Hello Agent ⭐ | （社群 PR 機會） | — |
 | Stage 4 — Agent 框架 | （社群 PR 機會） | — |
-| Stage 5 — Claude Code 生態 ⭐⭐ | （社群 PR 機會） | — |
+| Stage 5 — Claude Code 生態 ⭐⭐（兩條軌共用） | （社群 PR 機會） | — |
 | Stage 6 — Memory · RAG · 進階 | （社群 PR 機會） | — |
 | Stage 7 — 進階 Multi-Agent | （社群 PR 機會） | — |
 

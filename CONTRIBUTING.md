@@ -6,6 +6,8 @@
 
 這個 repo **本來就是設計給社群一起改良的**——一個人 curate 永遠跟不上 AI agent 生態的變化速度。Maintainer 一個季度跑 1 次 review 不夠，需要更多眼睛看。
 
+這份 catalog 分**兩條軌道**：**Track A**（CLI Power User，`tracks/cli/A1-A3`）跟 **Track B**（Agent Builder，`stages/03-07`）。貢獻時請註明你動的是哪條軌道——兩條的 audience 不一樣。
+
 ## 🚪 第一次貢獻：好上手的 5 個切入點
 
 不確定從哪開始？挑一個你 30 分鐘內能做完的：

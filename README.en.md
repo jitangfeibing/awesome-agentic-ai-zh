@@ -1,7 +1,7 @@
 # awesome-agentic-ai-zh
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Status](https://img.shields.io/badge/status-Phase%206%20%C2%B7%20145%2B%20projects%20%C2%B7%205%20branches-success)](CONTRIBUTORS.md)
+[![Status](https://img.shields.io/badge/status-Phase%207%20%C2%B7%202%20tracks%20%C2%B7%20170%2B%20entries%20%C2%B7%205%20branches-success)](CONTRIBUTORS.md)
 [![Lang](https://img.shields.io/badge/lang-English-blue)](README.en.md) [![繁中](https://img.shields.io/badge/語言-繁體中文-red)](README.md)
 
 > **English companion. The zh-TW [README.md](README.md) is canonical** — content is curated in zh-TW first; this page mirrors it for English readers.
@@ -24,7 +24,7 @@ After the main path, you go from "**LLM user**" to "**agent system builder**" �
 
 - [🎯 Why this exists](#-why-this-exists)
 - [📚 Quick Start](#-quick-start)
-- [🗺️ The 7-Stage Learning Map](#️-the-7-stage-learning-map)
+- [🗺️ Learning Map (Two Tracks)](#️-learning-map-two-tracks)
 - [💡 How to Learn](#-how-to-learn)
 - [📚 Related Resources](#-related-resources)
 - [🤝 Contributing](#-contributing)
@@ -50,7 +50,7 @@ cd awesome-agentic-ai-zh
 ### ✨ What you get
 
 - 📖 **Fully free** — MIT-licensed, all content open
-- 🗺️ **Structured path** — 7 stages, clear "where am I, what's next"
+- 🗺️ **Two learning tracks** — Track A (CLI Power User) for "use existing CLIs"; Track B (Agent Builder) for "build your own". Shared Stages 0-2 foundation.
 - 🛠️ **Must-run Hello-X demos** — 1-5 mini projects per stage; reading-only doesn't count
 - 🎯 **145+ curated projects** — each with star rating, audience, what it teaches, how to run (incl. local LLM runners: Ollama, llama.cpp, LocalAI, MLX)
 - 🌏 **Bilingual** — zh-TW canonical, English mirror
@@ -60,9 +60,16 @@ cd awesome-agentic-ai-zh
 
 ---
 
-## 🗺️ The 7-Stage Learning Map
+## 🗺️ Learning Map (Two Tracks)
 
 ![AI Agent Learning Map](resources/diagrams/learning-map.png)
+
+After **Stages 0-2 (shared foundations)**, pick a track based on your goal:
+
+- **Track A — CLI Power User**: you want to **USE** existing CLI agents (Claude Code, Codex, OpenCode, Gemini CLI, etc.) to get work done — not build agents from scratch. 3 sub-stages (A1-A3).
+- **Track B — Agent Builder**: you want to **BUILD** your own agents — learn frameworks, write ReAct, design multi-agent systems. Stages 3-7 main path.
+
+The two tracks are **not mutually exclusive** — most people start with A to get hands-on, then come back to B for internals (or vice versa). Stage 5 (Claude Code Ecosystem) is used by both tracks.
 
 > Text version (screen-reader friendly / for mdBook):
 
@@ -70,18 +77,28 @@ cd awesome-agentic-ai-zh
 flowchart LR
     S0["Stage 0<br/>Foundations"] --> S1["Stage 1<br/>LLM Basics"]
     S1 --> S2["Stage 2<br/>Prompt"]
-    S2 --> S3["Stage 3 ⭐<br/>Tool Use<br/>Hello Agent"]
+    S2 --> FORK{"Pick a track"}
+    FORK -->|Want to USE CLI agents| A1["Track A: A1<br/>CLI Intro"]
+    A1 --> A2["A2<br/>Workflow Patterns"]
+    A2 --> A3["A3<br/>Integration & Production"]
+    FORK -->|Want to BUILD agents| S3["Track B: Stage 3 ⭐<br/>Tool Use & Hello Agent"]
     S3 --> S4["Stage 4<br/>Frameworks"]
     S4 --> S5["Stage 5 ⭐⭐<br/>Claude Code"]
     S5 --> S6["Stage 6<br/>Memory · RAG"]
     S6 --> S7["Stage 7<br/>Multi-Agent · Advanced"]
-    S7 --> R["🔬 Researcher"]
-    S7 --> D["💻 Developer"]
-    S7 --> T["🎓 Teacher"]
-    S7 --> K["📊 Knowledge Worker"]
-    S7 --> E["👥 Everyday User"]
+    A3 --> BR(("Pick 1 specialized<br/>branch"))
+    S7 --> BR
+    BR --> R["🔬 Researcher"]
+    BR --> D["💻 Developer"]
+    BR --> T["🎓 Teacher"]
+    BR --> K["📊 Knowledge Worker"]
+    BR --> E["👥 Everyday User"]
 
     style S0 fill:#f3f4f6,stroke:#6b7280
+    style FORK fill:#fff7ed,stroke:#c2410c
+    style A1 fill:#cffafe,stroke:#0e7490
+    style A2 fill:#cffafe,stroke:#0e7490
+    style A3 fill:#cffafe,stroke:#0e7490
     style S3 fill:#fef3c7,stroke:#b45309
     style S5 fill:#fde68a,stroke:#92400e
     style R fill:#dbeafe,stroke:#1e40af
@@ -91,20 +108,37 @@ flowchart LR
     style E fill:#fef9c3,stroke:#854d0e
 ```
 
+### Shared Foundations (Stages 0-2)
+
 | Stage | Topic | Key Content | Time |
 |---|---|---|---|
 | **0** | [Foundations](stages/00-foundations.en.md) | Python · CLI · git · API · JSON | 1-2 wks |
-| **1** | [LLM Basics](stages/01-llm-basics.en.md) | tokens · API · model comparison | 1 wk |
+| **1** | [LLM Basics](stages/01-llm-basics.en.md) | tokens · API · model comparison · local LLM | 1 wk |
 | **2** | [Prompt Engineering](stages/02-prompt-engineering.en.md) | system prompts · few-shot · CoT | 1-2 wks |
+
+### Track A — CLI Power User (use CLIs to get work done)
+
+| Stage | Topic | Key Content | Time |
+|---|---|---|---|
+| **A1** | [CLI Agent Intro & Selection](tracks/cli/A1-cli-intro.en.md) | 6-CLI comparison · install · first run | 1 wk |
+| **A2** | [CLI Workflow Patterns](tracks/cli/A2-cli-workflow.en.md) | CLAUDE.md · slash commands · multi-step decomposition | 1-2 wks |
+| **A3** | [Integration & Production](tracks/cli/A3-cli-production.en.md) | MCP-into-CLI · CI automation · cost / observability | 1-2 wks |
+
+> **Track A total time**: 3-5 weeks (with Stages 0-2: 6-8 weeks). Core reference: [`resources/cli-agents-guide.en.md`](resources/cli-agents-guide.en.md).
+
+### Track B — Agent Builder (build agents from scratch)
+
+| Stage | Topic | Key Content | Time |
+|---|---|---|---|
 | **3** ⭐ | [Tool Use & Hello Agent](stages/03-tool-use-and-hello-agent.en.md) | function calling · ReAct · 5 Hello-X | 2-3 wks |
 | **4** | [Agent Frameworks](stages/04-agent-frameworks.en.md) | LangGraph · AutoGen · CrewAI · Smolagents | 2-3 wks |
-| **5** ⭐⭐ | [Claude Code Ecosystem](stages/05-claude-code-ecosystem.en.md) | MCP · Skills · Plugins · Marketplace | 3-4 wks |
+| **5** ⭐⭐ | [Claude Code Ecosystem](stages/05-claude-code-ecosystem.en.md) | MCP · Skills · Plugins · Marketplace (used by both tracks) | 3-4 wks |
 | **6** | [Memory · RAG · Advanced](stages/06-memory-rag.en.md) | vector DB · long-term memory · contextual retrieval | 2 wks |
 | **7** | [Multi-Agent · Advanced](stages/07-multi-agent-production.en.md) | multi-agent orchestration · eval · observability · advanced SDK | 2-4 wks |
 
-> **Total time**: minimum **14-19 weeks**, realistic **5-6 months** (5-8 hr/week part-time)
+> **Track B total time**: minimum **14-19 weeks**, realistic **5-6 months** (5-8 hr/week part-time)
 
-> 💡 **Want a concrete cross-stage example?** [Build Your First AI Agent in 7 Steps](walkthroughs/build-first-agent-in-7-steps.en.md) — same Paper Summary Bot traced from Stage 1 through Stage 7, ~350 lines of executable code
+> 💡 **Want a concrete cross-stage example?** [Build Your First AI Agent in 7 Steps](walkthroughs/build-first-agent-in-7-steps.en.md) — same Paper Summary Bot traced from Stage 1 through Stage 7, ~350 lines of executable code (**Track B**)
 
 After the main path, pick one of 5 specialized branches. **Not sure which?**
 
