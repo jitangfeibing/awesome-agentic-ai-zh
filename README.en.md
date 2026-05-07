@@ -1,9 +1,14 @@
-# awesome-agentic-ai-zh
-
 <div align="right">
   <a href="./README.md">繁體中文</a> | <a href="./README.zh-CN.md">简体中文</a> | <strong>English</strong>
 </div>
 
+<div align="center">
+
+![AI Agent Learning Map](resources/diagrams/learning-map.en.png)
+
+# awesome-agentic-ai-zh
+
+</div>
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![繁中](https://img.shields.io/badge/語言-繁體中文-red)](README.md)
@@ -69,8 +74,6 @@ cd awesome-agentic-ai-zh
 ---
 
 ## 🗺️ Learning Map (Two Tracks)
-
-![AI Agent Learning Map](resources/diagrams/learning-map.en.png)
 
 After **Stages 0-2 (shared foundations)**, pick a track based on your goal:
 

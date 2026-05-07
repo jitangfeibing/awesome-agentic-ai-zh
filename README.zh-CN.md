@@ -4,6 +4,8 @@
 
 <div align="center">
 
+![AI Agent 学习地图](resources/diagrams/learning-map.zh-CN.png)
+
 # awesome-agentic-ai-zh
 
 ### 🤖 AI Agent 学习地图 — 从基础 LLM 概念到自己构建多 agent 系统
@@ -58,8 +60,6 @@ cd awesome-agentic-ai-zh
 ---
 
 ## 🗺️ 学习地图（两条学习路径）
-
-![AI Agent 学习地图](resources/diagrams/learning-map.zh-CN.png)
 
 走完 **Stage 0-2（共用基础）** 之后，依你的目的选一条学习路径：
 

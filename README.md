@@ -4,6 +4,8 @@
 
 <div align="center">
 
+![AI Agent 學習地圖](resources/diagrams/learning-map.png)
+
 # awesome-agentic-ai-zh
 
 ### 🤖 AI Agent 學習地圖 — 從基本 LLM 概念到自己打造多 agent 系統
@@ -75,8 +77,6 @@ cd awesome-agentic-ai-zh
 ---
 
 ## 🗺️ 學習地圖（兩條學習路徑）
-
-![AI Agent 學習地圖](resources/diagrams/learning-map.png)
 
 走完 **Stage 0-2（共用基礎）** 之後，依你的目的選一條學習路徑：
 
