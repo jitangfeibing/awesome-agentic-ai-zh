@@ -7,12 +7,12 @@
 #
 # 依賴：
 #   - mdBook (cargo install mdbook)
-#   - mdbook-mermaid (cargo install mdbook-mermaid; 第一次跑：mdbook-mermaid install)
 #
 # Windows 安裝：
 #   - 裝 Rust: https://rustup.rs
-#   - cargo install mdbook mdbook-mermaid
-#   - mdbook-mermaid install   (在 repo root 跑，會生成 mermaid.min.js + mermaid-init.js)
+#   - cargo install mdbook
+#
+# Note: mdbook-mermaid preprocessor 已移除（repo 內已無 ```mermaid``` 區塊）。
 
 set -euo pipefail
 
@@ -76,18 +76,8 @@ echo "Generated $SRC_DIR/SUMMARY.md"
 
 # 確認 mdbook 有裝
 if ! command -v mdbook &> /dev/null; then
-  echo "❌ mdbook 沒裝。請先：cargo install mdbook mdbook-mermaid" >&2
+  echo "❌ mdbook 沒裝。請先：cargo install mdbook" >&2
   exit 1
-fi
-
-# 第一次要先 mdbook-mermaid install (在 repo root 跑)
-if [[ ! -f "mermaid.min.js" ]]; then
-  echo "⚠️  mermaid.min.js 不存在 — 跑 mdbook-mermaid install..."
-  if command -v mdbook-mermaid &> /dev/null; then
-    mdbook-mermaid install .
-  else
-    echo "  (mdbook-mermaid 沒裝，Mermaid 圖會以 code block 顯示)"
-  fi
 fi
 
 echo ""

@@ -12,8 +12,6 @@ preferred-dark-theme = "navy"
 git-repository-url = "https://github.com/WenyuChiou/awesome-agentic-ai-zh"
 edit-url-template = "https://github.com/WenyuChiou/awesome-agentic-ai-zh/edit/main/{path}"
 site-url = "/awesome-agentic-ai-zh/"
-# Mermaid JS 注入（mdbook-mermaid 在第一次 install 時生成這兩個檔案）
-additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
 [output.html.search]
 enable = true
@@ -28,10 +26,14 @@ expand = true
 enable = true
 level = 1
 
-# Mermaid 支援（mdbook-mermaid preprocessor）
-# 安裝：cargo install mdbook-mermaid  然後 mdbook-mermaid install
-[preprocessor.mermaid]
-command = "mdbook-mermaid"
+# Note: mdbook-mermaid preprocessor was removed. The repo no longer
+# uses ```mermaid``` code blocks (replaced with PNG images + ASCII
+# diagrams) and the v0.17.0 preprocessor was failing with "Unable to
+# parse the input" on stale runs. To re-enable: install mdbook-mermaid,
+# run `mdbook-mermaid install .`, and add back:
+#   additional-js = ["mermaid.min.js", "mermaid-init.js"]
+#   [preprocessor.mermaid]
+#   command = "mdbook-mermaid"
 
 [build]
 build-dir = "book/dist"
