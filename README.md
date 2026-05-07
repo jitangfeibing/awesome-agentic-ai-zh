@@ -84,43 +84,6 @@ cd awesome-agentic-ai-zh
 
 兩條軌道**不互斥**——多數人是先走 A 上手 CLI 再回頭看 B 學內部，或反過來。Stage 5（Claude Code 生態）兩條軌都會用到。
 
-> 文字版（screen reader 友善 / mdBook 用）：
-
-```mermaid
-flowchart LR
-    S0["Stage 0<br/>基礎準備"] --> S1["Stage 1<br/>LLM 入門"]
-    S1 --> S2["Stage 2<br/>Prompt 設計"]
-    S2 --> FORK{"選一條軌道"}
-    FORK -->|想 USE CLI agent| A1["Track A: A1<br/>CLI 入門"]
-    A1 --> A2["A2<br/>Workflow Patterns"]
-    A2 --> A3["A3<br/>Integration & Production"]
-    FORK -->|想 BUILD agent| S3["Track B: Stage 3 ⭐<br/>Tool Use & Hello Agent"]
-    S3 --> S4["Stage 4<br/>Agent 框架"]
-    S4 --> S5["Stage 5 ⭐⭐<br/>Claude Code 生態"]
-    S5 --> S6["Stage 6<br/>Memory · RAG"]
-    S6 --> S7["Stage 7<br/>進階 Multi-Agent"]
-    A3 --> BR(("選 1 條 specialized<br/>branch 繼續"))
-    S7 --> BR
-    BR --> R["🔬 研究人員"]
-    BR --> D["💻 開發者"]
-    BR --> T["🎓 教師"]
-    BR --> K["📊 知識工作者"]
-    BR --> E["👥 日常使用者"]
-
-    style S0 fill:#f3f4f6,stroke:#6b7280
-    style FORK fill:#fff7ed,stroke:#c2410c
-    style A1 fill:#cffafe,stroke:#0e7490
-    style A2 fill:#cffafe,stroke:#0e7490
-    style A3 fill:#cffafe,stroke:#0e7490
-    style S3 fill:#fef3c7,stroke:#b45309
-    style S5 fill:#fde68a,stroke:#92400e
-    style R fill:#dbeafe,stroke:#1e40af
-    style D fill:#dcfce7,stroke:#166534
-    style T fill:#fce7f3,stroke:#9d174d
-    style K fill:#f3e8ff,stroke:#6b21a8
-    style E fill:#fef9c3,stroke:#854d0e
-```
-
 ### 共用基礎（Stage 0-2）
 
 | Stage | 主題 | 關鍵內容 | 時程 |
@@ -156,24 +119,6 @@ flowchart LR
 走完主幹後從 5 條 specialized branch 選一條繼續。**不確定走哪條？**
 
 ![Branch 決策樹](resources/diagrams/branch-decision-tree.png)
-
-> 文字版（screen reader 友善 / mdBook 用）：
-
-```mermaid
-flowchart TD
-    Q1{你的主要工作 / 使用情境是？}
-    Q1 -->|寫 paper / 文獻 / 跑實驗| R["🔬 研究人員<br/>for-researcher"]
-    Q1 -->|寫 code / 維護 system| D["💻 開發者<br/>for-developer"]
-    Q1 -->|備課 / 教學 / 評量| T["🎓 教師<br/>for-teacher"]
-    Q1 -->|寫 report / 開會 / 分析| K["📊 知識工作者<br/>for-knowledge-worker"]
-    Q1 -->|不寫 code，日常生活用| E["👥 日常使用者<br/>for-everyday-users"]
-
-    style R fill:#dbeafe,stroke:#1e40af
-    style D fill:#dcfce7,stroke:#166534
-    style T fill:#fce7f3,stroke:#9d174d
-    style K fill:#f3e8ff,stroke:#6b21a8
-    style E fill:#fef9c3,stroke:#854d0e
-```
 
 > 💡 **日常使用者 branch 不用走完主幹也能直接看**——是給「想用 AI 但不一定寫 code」的人。
 

@@ -71,43 +71,6 @@ After **Stages 0-2 (shared foundations)**, pick a track based on your goal:
 
 The two tracks are **not mutually exclusive** — most people start with A to get hands-on, then come back to B for internals (or vice versa). Stage 5 (Claude Code Ecosystem) is used by both tracks.
 
-> Text version (screen-reader friendly / for mdBook):
-
-```mermaid
-flowchart LR
-    S0["Stage 0<br/>Foundations"] --> S1["Stage 1<br/>LLM Basics"]
-    S1 --> S2["Stage 2<br/>Prompt"]
-    S2 --> FORK{"Pick a track"}
-    FORK -->|Want to USE CLI agents| A1["Track A: A1<br/>CLI Intro"]
-    A1 --> A2["A2<br/>Workflow Patterns"]
-    A2 --> A3["A3<br/>Integration & Production"]
-    FORK -->|Want to BUILD agents| S3["Track B: Stage 3 ⭐<br/>Tool Use & Hello Agent"]
-    S3 --> S4["Stage 4<br/>Frameworks"]
-    S4 --> S5["Stage 5 ⭐⭐<br/>Claude Code"]
-    S5 --> S6["Stage 6<br/>Memory · RAG"]
-    S6 --> S7["Stage 7<br/>Multi-Agent · Advanced"]
-    A3 --> BR(("Pick 1 specialized<br/>branch"))
-    S7 --> BR
-    BR --> R["🔬 Researcher"]
-    BR --> D["💻 Developer"]
-    BR --> T["🎓 Teacher"]
-    BR --> K["📊 Knowledge Worker"]
-    BR --> E["👥 Everyday User"]
-
-    style S0 fill:#f3f4f6,stroke:#6b7280
-    style FORK fill:#fff7ed,stroke:#c2410c
-    style A1 fill:#cffafe,stroke:#0e7490
-    style A2 fill:#cffafe,stroke:#0e7490
-    style A3 fill:#cffafe,stroke:#0e7490
-    style S3 fill:#fef3c7,stroke:#b45309
-    style S5 fill:#fde68a,stroke:#92400e
-    style R fill:#dbeafe,stroke:#1e40af
-    style D fill:#dcfce7,stroke:#166534
-    style T fill:#fce7f3,stroke:#9d174d
-    style K fill:#f3e8ff,stroke:#6b21a8
-    style E fill:#fef9c3,stroke:#854d0e
-```
-
 ### Shared Foundations (Stages 0-2)
 
 | Stage | Topic | Key Content | Time |
@@ -143,24 +106,6 @@ flowchart LR
 After the main path, pick one of 5 specialized branches. **Not sure which?**
 
 ![Branch decision tree](resources/diagrams/branch-decision-tree.png)
-
-> Text version (screen-reader friendly / for mdBook):
-
-```mermaid
-flowchart TD
-    Q1{What's your main work / use case?}
-    Q1 -->|Papers / lit / experiments| R["🔬 Researcher<br/>for-researcher"]
-    Q1 -->|Code / system maintenance| D["💻 Developer<br/>for-developer"]
-    Q1 -->|Teaching / curriculum| T["🎓 Teacher<br/>for-teacher"]
-    Q1 -->|Reports / meetings / analysis| K["📊 Knowledge Worker<br/>for-knowledge-worker"]
-    Q1 -->|No code; everyday life use| E["👥 Everyday User<br/>for-everyday-users"]
-
-    style R fill:#dbeafe,stroke:#1e40af
-    style D fill:#dcfce7,stroke:#166534
-    style T fill:#fce7f3,stroke:#9d174d
-    style K fill:#f3e8ff,stroke:#6b21a8
-    style E fill:#fef9c3,stroke:#854d0e
-```
 
 > 💡 **The Everyday User branch can be read directly without walking the main path** — it's for people who want to use AI without writing code.
 
