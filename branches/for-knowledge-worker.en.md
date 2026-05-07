@@ -12,6 +12,8 @@
 
 ## Curated Projects
 
+> 💡 **Want to wire your AI agent to Notion / Gmail / Outlook / Slack / Excel / Lark?** 41 commonly-used MCP server / Skill integrations in [`resources/mcp-skills-catalog.en.md`](../resources/mcp-skills-catalog.en.md) (grouped by use case). The section below stays focused on workflow / integration-platform-level tools.
+
 ### Workflow Tools
 
 #### [n8n](https://github.com/n8n-io/n8n) ⭐⭐⭐⭐

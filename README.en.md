@@ -148,15 +148,40 @@ Ready? [Start at Stage 0](stages/00-foundations.en.md).
 
 ## 📚 Related Resources
 
-This repo doesn't try to replace flat awesome lists. Use them when you already know what to look for:
+### Three core terms: MCP / Skills / Plugins
 
-- [**hesreallyhim/awesome-claude-code**](https://github.com/hesreallyhim/awesome-claude-code) — broad Claude Code resources catalog (currently restructuring)
-- [**wong2/awesome-mcp-servers**](https://github.com/wong2/awesome-mcp-servers) — flat MCP server catalog
-- [**punkpeye/awesome-mcp-servers**](https://github.com/punkpeye/awesome-mcp-servers) — alternative MCP list
+The README and stages reference these three Claude Code ecosystem terms a lot. Quick definitions:
+
+- **MCP (Model Context Protocol)** — Anthropic's open protocol that lets any LLM host (Claude Code, other IDEs, your own agent) talk to any external tool server (filesystem, DB, API, your service) through one interface. Think "USB for LLMs". See [Stage 5.2](stages/05-claude-code-ecosystem.en.md#52--mcp-model-context-protocol-foundation).
+- **Skills** — Claude Code's "behavior bundles". A Skill is a `SKILL.md` describing "in what context, do what, can call which MCP tools". Claude Code auto-discovers them. See [Stage 5.3](stages/05-claude-code-ecosystem.en.md#53--skills-claude-code-behavior-layer).
+- **Plugins / Marketplaces** — package Skills, slash commands, hooks, and MCP configs into a distribution unit installable by your team or community. A marketplace is a catalog of plugins. See [Stage 5.4](stages/05-claude-code-ecosystem.en.md#54--plugins--marketplaces).
+
+Hello-X exercises live in [Stage 5](stages/05-claude-code-ecosystem.en.md), with Track A's [A3](tracks/cli/A3-cli-production.en.md) covering production integration.
+
+### Daily-tool integrations: MCP servers + Skills
+
+**Looking for an MCP / Skill that connects Claude Code to a tool you already use** (Notion, Obsidian, Excel, Postgres, Playwright, Figma, Cloudflare, etc.)?
+
+→ **Full catalog of 41 verified integrations**: [`resources/mcp-skills-catalog.en.md`](resources/mcp-skills-catalog.en.md) — grouped into 12 categories with stars / license / audience.
+
+### Topic-based awesome lists
+
+This repo **doesn't replace** flat awesome lists. When you already know which tool you want, these are more direct:
+
+**MCP-related**
+
+- [**modelcontextprotocol/servers**](https://github.com/modelcontextprotocol/servers) — official reference servers (filesystem, github, sqlite, git, fetch, memory, …)
+- [**wong2/awesome-mcp-servers**](https://github.com/wong2/awesome-mcp-servers) — community MCP server catalog, by category (150+)
+- [**punkpeye/awesome-mcp-servers**](https://github.com/punkpeye/awesome-mcp-servers) — another MCP server catalog
+
+**Claude Code / Skills / Plugins-related**
+
+- [**hesreallyhim/awesome-claude-code**](https://github.com/hesreallyhim/awesome-claude-code) — Claude Code resources (currently restructuring)
 - [**travisvn/awesome-claude-skills**](https://github.com/travisvn/awesome-claude-skills) — Claude Skills catalog
-- [**modelcontextprotocol/servers**](https://github.com/modelcontextprotocol/servers) — official MCP reference servers
+- [**anthropics/claude-plugins-official**](https://github.com/anthropics/claude-plugins-official) — Anthropic's official plugin marketplace template; start here when packaging your own plugin
 
-For Chinese-speaking community:
+**Chinese-speaking community**
+
 - [**datawhalechina/hello-agents**](https://github.com/datawhalechina/hello-agents) — Datawhale systematic agent tutorial (zh-CN)
 - [**WangRongsheng/awesome-LLM-resources**](https://github.com/WangRongsheng/awesome-LLM-resources) — comprehensive zh-CN LLM resources (8k+ stars)
 - [**AiHubCN/Awesome-Chinese-LLM**](https://github.com/AiHubCN/Awesome-Chinese-LLM) — open-source Chinese LLM catalog

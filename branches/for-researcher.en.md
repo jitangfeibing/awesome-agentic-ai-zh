@@ -12,6 +12,8 @@
 
 ## Curated Projects
 
+> 💡 **Want to wire Claude Code into NotebookLM, Obsidian, Notion, Excel, PDF, Excalidraw, and other research tools?** 41 integrations in [`resources/mcp-skills-catalog.en.md`](../resources/mcp-skills-catalog.en.md) (grouped by use case). The section below keeps research-specific tools and marketplaces.
+
 ### Research Workflow Marketplaces
 
 #### [flonat/claude-research](https://github.com/flonat/claude-research) ⭐⭐⭐

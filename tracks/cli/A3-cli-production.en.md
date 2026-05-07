@@ -57,6 +57,8 @@ Package your `.claude/commands/` and `CLAUDE.md` into a plugin, publish to inter
 
 ### MCP server collection (CLI-friendly)
 
+> 💡 **Looking for MCPs that connect to daily tools** (Notion / Obsidian / Excel / Postgres / Playwright / Slack / Linear / Figma…): see [`resources/mcp-skills-catalog.en.md`](../../resources/mcp-skills-catalog.en.md) — 41 entries grouped by category, each with stars / license / audience. The list below is for "writing your own MCP server / finding reference implementations".
+
 #### [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) ⭐⭐⭐⭐⭐
 ★ 85k+ — Official reference servers. filesystem, github, sqlite, git, time, fetch, memory, sequential-thinking.
 > See [Stage 5.2](../../stages/05-claude-code-ecosystem.en.md#52--mcp-model-context-protocol-foundation).

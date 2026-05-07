@@ -93,6 +93,10 @@ flowchart TB
 
 ### 精選 Projects
 
+> 💡 **找日常工具的 MCP（Notion / Obsidian / Excel / Postgres / Playwright / Figma 等）？**
+> 看 [`resources/mcp-skills-catalog.md`](../resources/mcp-skills-catalog.md)——按 12 個分類整理 41 個常用 MCP server / Skill，每個都附 stars / license / 適合誰。下面這節保留的是「**寫自己 MCP server 時的 reference**」性質的官方 server / SDK。
+
+
 #### [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) ⭐ 官方
 
 | 欄位 | 內容 |
@@ -214,6 +218,9 @@ pip install mcp
 - **Hello SKILL eval** — 加 `evals/evals.json`，放 3-5 個自我測試
 
 ### 精選 Projects
+
+> 💡 **找日常用 Skill（NotebookLM、Excalidraw、Office docs 等）？**
+> 看 [`resources/mcp-skills-catalog.md`](../resources/mcp-skills-catalog.md)——按使用情境分類，含 Anthropic 官方 + 社群 Skill。下面這節保留的是「**寫自己 Skill 時的 reference**」性質的 spec / showcase。
 
 #### [anthropics/skills](https://github.com/anthropics/skills) ⭐ 官方 spec
 
@@ -340,6 +347,8 @@ pip install mcp
 - **Hello marketplace publish** — push 到 GitHub，用 `claude plugin marketplace add` 安裝
 
 ### 精選 Projects
+
+> 💡 **想看別人的 plugin 怎麼包**：[`resources/mcp-skills-catalog.md`](../resources/mcp-skills-catalog.md) 的開發協作 / 設計 / 監控分類底下不少都附 plugin 包裝（例如 `timescale/pg-aiguide` 同時是 MCP 跟 plugin）。下面這節保留的是「**marketplace 結構範本**」性質的 reference。
 
 #### [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) ⭐ 官方
 

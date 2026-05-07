@@ -91,6 +91,9 @@ After this stage you will be able to extend Claude Code, write your own MCP serv
 
 ### Curated Projects
 
+> 💡 **Looking for MCP servers for daily tools (Notion / Obsidian / Excel / Postgres / Playwright / Figma…)?**
+> See [`resources/mcp-skills-catalog.en.md`](../resources/mcp-skills-catalog.en.md) — 41 commonly-used MCP servers / Skills grouped into 12 categories with stars / license / audience. The section below stays focused on "**reference for writing your own MCP server**" (official servers + SDKs).
+
 #### [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) ⭐ Official
 
 | Field | Value |
@@ -211,6 +214,9 @@ pip install mcp
 - **Hello SKILL eval** — add `evals/evals.json` with 3-5 self-tests
 
 ### Curated Projects
+
+> 💡 **Looking for daily-use Skills (NotebookLM, Excalidraw, Office docs, etc.)?**
+> See [`resources/mcp-skills-catalog.en.md`](../resources/mcp-skills-catalog.en.md) — grouped by use case, includes both Anthropic-official and community Skills. The section below stays focused on "**reference material for writing your own Skill**" (specs and showcase).
 
 #### [anthropics/skills](https://github.com/anthropics/skills) ⭐ Official spec
 
@@ -333,6 +339,8 @@ pip install mcp
 - **Hello marketplace publish** — push to GitHub, install via `claude plugin marketplace add`
 
 ### Curated Projects
+
+> 💡 **Want to see how others package plugins?** Several entries in [`resources/mcp-skills-catalog.en.md`](../resources/mcp-skills-catalog.en.md) (dev collab / design / monitoring sections) ship as plugins too (e.g., `timescale/pg-aiguide` is both an MCP server and a plugin). The section below stays focused on "**marketplace structure templates**" as reference.
 
 #### [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) ⭐ Official
 
