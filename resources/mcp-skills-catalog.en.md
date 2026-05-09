@@ -2,7 +2,7 @@
 
 > [繁體中文](./mcp-skills-catalog.md) | [简体中文](./mcp-skills-catalog.zh-CN.md) | **English**
 
-> Connect Claude Code (or any other CLI agent) to the apps you already use, without window-hopping. This page is a curated index of 57 MCP servers / Claude Skills / integrations grouped by use case (incl. research-workflow + multi-LLM-delegation dedicated sections).
+> Connect Claude Code (or any other CLI agent) to the apps you already use, without window-hopping. This page is a curated index of 62 MCP servers / Claude Skills / integrations grouped by use case (incl. research-workflow + multi-LLM-delegation dedicated sections).
 
 ---
 
@@ -31,7 +31,7 @@
 8. [Design (Figma / Excalidraw)](#8-design-figma--excalidraw) (3)
 9. [Monitoring / Observability](#9-monitoring--observability) (3)
 10. [Media / Streaming (YouTube / Spotify)](#10-media--streaming-youtube--spotify) (3)
-11. [Chinese-language Ecosystem](#11-chinese-language-ecosystem) (1)
+11. [Chinese-language Ecosystem](#11-chinese-language-ecosystem) (7)
 12. [Other Common (Cloudflare / Stripe…)](#12-other-common-cloudflare--stripe) (2)
 13. [Research Workflow Skills](#13-research-workflow-skills-academic--paper--lit) (4)
 14. [Multi-LLM Delegation Skills](#14-multi-llm-delegation-skills) (3)
@@ -655,6 +655,66 @@
 **What it does**: NetEase Youdao's "24/7 all-scenario AI agent" — workflow automation, cross-app coordination, file processing. Chinese-native.
 **Audience**: Chinese-language users wanting an alternative to Claude Code / OpenAI Operator-class all-in-one agents; scenarios needing tight integration with mainland Chinese services (NetEase, DingTalk, etc.).
 **Notes**: product-style agent (not a Skill / MCP); substitutes for Claude Code / Codex rather than complementing them.
+
+### [QwenLM/Qwen-Agent](https://github.com/QwenLM/Qwen-Agent) ⭐⭐⭐⭐⭐
+
+| Field | Value |
+|---|---|
+| Stars | ★ 16k+ |
+| License | Apache-2.0 |
+| Rating | ⭐⭐⭐⭐⭐ |
+
+**What it does**: Alibaba's official Qwen agent framework — RAG, tool use, code interpreter, multi-agent, MCP-compatible. Defaults to Qwen models but swappable to other LLMs.
+**Audience**: developers using Qwen / Tongyi as primary LLM; teams that want a Chinese-native agent framework (examples + docs are bilingual but Chinese-first).
+**Notes**: MCP compatibility is the highlight — plugs into Claude Code-style hosts directly; active maintenance (last commit 2026-03).
+
+### [coze-dev/coze-studio](https://github.com/coze-dev/coze-studio) ⭐⭐⭐⭐⭐
+
+| Field | Value |
+|---|---|
+| Stars | ★ 20k+ |
+| License | Apache-2.0 |
+| Rating | ⭐⭐⭐⭐⭐ |
+
+**What it does**: open-source release of ByteDance Coze — no-code agent builder (workflow / plugin / knowledge / memory), self-hosted or cloud.
+**Audience**: teams building agents without writing code; engineers wanting a reference implementation of an enterprise agent platform (RAG, workflow, memory, plugin system).
+**Notes**: built on Coze's in-house Eino framework; connects to OpenAI / Claude / Qwen / domestic Chinese LLMs. Powers both the international (coze.com) and mainland (coze.cn) products.
+
+### [coze-dev/coze-loop](https://github.com/coze-dev/coze-loop) ⭐⭐⭐⭐
+
+| Field | Value |
+|---|---|
+| Stars | ★ 5k+ |
+| License | Apache-2.0 |
+| Rating | ⭐⭐⭐⭐ |
+
+**What it does**: Coze's agent observability + evaluation platform — trace, debug, eval, prompt management. The back half of the agent dev lifecycle.
+**Audience**: teams whose agents are running in production and need monitoring; developers wanting to see how "agent eval / observability" can be designed.
+**Notes**: peer to LangSmith / Arize Phoenix; OSS release is self-hostable.
+
+### [liaokongVFX/LangChain-Chinese-Getting-Started-Guide](https://github.com/liaokongVFX/LangChain-Chinese-Getting-Started-Guide) ⭐⭐⭐⭐
+
+| Field | Value |
+|---|---|
+| Stars | ★ 8.9k+ |
+| License | unspecified |
+| Rating | ⭐⭐⭐⭐ |
+
+**What it does**: Chinese-language LangChain getting-started guide — covers basics, prompts, memory, agents, chains, and applied examples. The earliest and most complete LangChain Chinese learning resource.
+**Audience**: Chinese-language users who want LangChain but find the English docs heavy; readers who want to understand LangChain's design before committing to the framework.
+**Notes**: no formal license (content is openly readable); LangChain itself moves fast — some APIs in the guide may diverge from the latest version.
+
+### [chatchat-space/Langchain-Chatchat](https://github.com/chatchat-space/Langchain-Chatchat) ⭐⭐⭐⭐
+
+| Field | Value |
+|---|---|
+| Stars | ★ 37k+ |
+| License | Apache-2.0 |
+| Rating | ⭐⭐⭐⭐ |
+
+**What it does**: LangChain-based open-source knowledge-base QA system — local deployment, supports multiple vector stores, end-to-end RAG example.
+**Audience**: Chinese teams who want RAG without building it from scratch; scenarios requiring local-only deployment (no cloud LLM).
+**Notes**: ★ 37k makes it the most popular RAG implementation in the Chinese ecosystem; maintenance has slowed (last commit 2025-11). For new projects, fork and evaluate as a reference, not a turnkey base.
 
 > Looking for WeChat / DingTalk integrations? Today the mainstream is chatbot frameworks (e.g., zhayujie/CowAgent), not pure MCP servers. Will add when proper MCPs emerge.
 

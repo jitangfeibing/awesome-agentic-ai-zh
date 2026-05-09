@@ -2,7 +2,7 @@
 
 > **繁體中文** | [简体中文](./mcp-skills-catalog.zh-CN.md) | [English](./mcp-skills-catalog.en.md)
 
-> 把 Claude Code（或其他 CLI agent）接到你已經在用的工具，不用反覆切換視窗。本頁是 57 個分類整理過的 MCP server / Claude Skill / 整合範例（含研究工作流 + multi-LLM delegation 兩個專屬區）。
+> 把 Claude Code（或其他 CLI agent）接到你已經在用的工具，不用反覆切換視窗。本頁是 62 個分類整理過的 MCP server / Claude Skill / 整合範例（含研究工作流 + multi-LLM delegation 兩個專屬區）。
 
 ---
 
@@ -31,7 +31,7 @@
 8. [設計（Figma / Excalidraw）](#8-設計figma--excalidraw)（3）
 9. [監控 / Observability](#9-監控--observability)（3）
 10. [媒體 / 串流（YouTube / Spotify）](#10-媒體--串流youtube--spotify)（3）
-11. [中文圈專用](#11-中文圈專用)（1）
+11. [中文圈專用](#11-中文圈專用)（7）
 12. [其他常用（Cloudflare / Stripe…）](#12-其他常用cloudflare--stripe)（2）
 13. [研究工作流 Skills（學術 / paper / 文獻）](#13-研究工作流-skills學術--paper--文獻)（4）
 14. [Multi-LLM Delegation Skills](#14-multi-llm-delegation-skills)（3）
@@ -655,6 +655,66 @@
 **教什麼**：網易有道出品的「24/7 全場景 AI agent」——支援工作流自動化、跨應用協作、檔案處理。中文 native。
 **適合誰**：中文圈使用者要找一個替代 Claude Code / OpenAI Operator 等級的 all-in-one agent；對中國大陸服務（網易、釘釘等）整合需求高的場景。
 **備註**：產品式 agent（不是 Skill / MCP）；跟 Claude Code / Codex 互為替代，不是搭配。
+
+### [QwenLM/Qwen-Agent](https://github.com/QwenLM/Qwen-Agent) ⭐⭐⭐⭐⭐
+
+| 欄位 | 內容 |
+|---|---|
+| Stars | ★ 16k+ |
+| License | Apache-2.0 |
+| 推薦度 | ⭐⭐⭐⭐⭐ |
+
+**教什麼**：阿里巴巴官方 Qwen agent framework——RAG、tool use、code interpreter、multi-agent、MCP 相容，預設搭配 Qwen 系列模型但可換其他 LLM。
+**適合誰**：用 Qwen / 通義千問 為主 LLM 的開發者；想要中文 native 的 agent framework（範例、文件都中文齊全）。
+**備註**：MCP 相容是亮點——可以直接接到 Claude Code 等 host；維護節奏正常（last commit 2026-03）。
+
+### [coze-dev/coze-studio](https://github.com/coze-dev/coze-studio) ⭐⭐⭐⭐⭐
+
+| 欄位 | 內容 |
+|---|---|
+| Stars | ★ 20k+ |
+| License | Apache-2.0 |
+| 推薦度 | ⭐⭐⭐⭐⭐ |
+
+**教什麼**：字節跳動 Coze 的開源版——no-code agent builder（workflow / plugin / knowledge / memory），可自部署或上雲。
+**適合誰**：不想寫 code 但要做 agent 的團隊；想看 enterprise agent platform 內部設計（RAG、工作流、Memory、Plugin 系統的 reference 實作）。
+**備註**：底層 framework 是 Coze 自家的 Eino；可接 OpenAI / Claude / Qwen / 國產 LLM。國際版（coze.com）跟中國版（coze.cn）共用此 codebase。
+
+### [coze-dev/coze-loop](https://github.com/coze-dev/coze-loop) ⭐⭐⭐⭐
+
+| 欄位 | 內容 |
+|---|---|
+| Stars | ★ 5k+ |
+| License | Apache-2.0 |
+| 推薦度 | ⭐⭐⭐⭐ |
+
+**教什麼**：Coze 出的 agent observability + evaluation 平台——trace、debug、eval、prompt management，agent dev lifecycle 的下半場。
+**適合誰**：agent 已經跑起來、要 production 監控的團隊；想看「agent eval / observability」可以怎麼做的人。
+**備註**：跟 LangSmith / Arize Phoenix 同類；開源版可自部署。
+
+### [liaokongVFX/LangChain-Chinese-Getting-Started-Guide](https://github.com/liaokongVFX/LangChain-Chinese-Getting-Started-Guide) ⭐⭐⭐⭐
+
+| 欄位 | 內容 |
+|---|---|
+| Stars | ★ 8.9k+ |
+| License | 未標註 |
+| 推薦度 | ⭐⭐⭐⭐ |
+
+**教什麼**：LangChain 中文入門指南——從 LangChain 基礎、Prompt、Memory、Agent、Chains 到實作應用，最早期且最完整的中文 LangChain 學習資源。
+**適合誰**：想用 LangChain 但英文文件吃不下去的中文使用者；想理解 LangChain 設計脈絡再決定要不要走這條路的人。
+**備註**：沒有正式 license（內容開放閱讀）；LangChain 框架本身演進很快，書中部分 API 可能跟最新版有出入。
+
+### [chatchat-space/Langchain-Chatchat](https://github.com/chatchat-space/Langchain-Chatchat) ⭐⭐⭐⭐
+
+| 欄位 | 內容 |
+|---|---|
+| Stars | ★ 37k+ |
+| License | Apache-2.0 |
+| 推薦度 | ⭐⭐⭐⭐ |
+
+**教什麼**：基於 LangChain 的開源知識庫問答系統——本地化部署、支援多種向量資料庫、RAG 端到端範例。
+**適合誰**：想做 RAG 又不想全部自己刻的中文團隊；要本地部署（不能用雲端 LLM）的場景。
+**備註**：★ 37k 是中文圈最熱門的 RAG 實作之一；維護節奏放緩（last commit 2025-11）。新專案建議先 fork 後評估，當參考實作用。
 
 > 想找微信 / 釘釘整合？目前主流是用 chat bot framework（如 zhayujie/CowAgent）而不是純 MCP server。等正規 MCP 出現再加進來。
 

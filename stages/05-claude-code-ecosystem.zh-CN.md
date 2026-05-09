@@ -81,7 +81,7 @@
 ### 精选 Projects
 
 > 💡 **找日常工具的 MCP（Notion / Obsidian / Excel / Postgres / Playwright / Figma 等）？**
-> 看 [`resources/mcp-skills-catalog.zh-CN.md`](../resources/mcp-skills-catalog.zh-CN.md)——按 14 个分类整理 57 个常用 MCP server / Skill，每个都附 stars / license / 适合谁。下面这节保留的是「**写自己 MCP server 时的 reference**」性质的官方 server / SDK。
+> 看 [`resources/mcp-skills-catalog.zh-CN.md`](../resources/mcp-skills-catalog.zh-CN.md)——按 14 个分类整理 62 个常用 MCP server / Skill，每个都附 stars / license / 适合谁。下面这节保留的是「**写自己 MCP server 时的 reference**」性质的官方 server / SDK。
 
 
 #### [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) ⭐ 官方
