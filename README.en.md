@@ -4,7 +4,7 @@
 
 <div align="center">
 
-![AI Agent Learning Map](resources/diagrams/learning-map.en.png)
+![AI Agent Learning Roadmap](resources/diagrams/banner.en.png)
 
 # awesome-agentic-ai-zh
 

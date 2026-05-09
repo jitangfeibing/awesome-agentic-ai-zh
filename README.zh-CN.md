@@ -104,7 +104,7 @@ cd awesome-agentic-ai-zh
 
 走完主干（14-19 周）后，依你的身份挑一条延伸路线继续走。**不确定挑哪条？**
 
-![Branch 决策树](resources/diagrams/branch-decision-tree.png)
+![Branch 决策树](resources/diagrams/branch-decision-tree.zh-CN.png)
 
 > 💡 **“日常用户”这条路线不必走完主干就能直接读**——是给“想用 AI、但不一定要写 code”的人。
 
