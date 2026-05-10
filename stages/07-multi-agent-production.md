@@ -1,6 +1,6 @@
 # Stage 7 — Multi-Agent · Production
 
-> **繁體中文** | [English](./07-multi-agent-production.en.md)
+> **繁體中文** | [简体中文](./07-multi-agent-production.zh-Hans.md) | [English](./07-multi-agent-production.en.md)
 
 ⏱ **時間估算**：2-4 週（約 15-30 小時）
 
@@ -250,7 +250,7 @@ npx promptfoo eval
 
 | 欄位 | 內容 |
 |---|---|
-| 語言 | 中文（zh-CN） |
+| 語言 | 中文（zh-Hans） |
 | Stars | ★ 30k+ |
 | License | Apache-2.0 |
 | 推薦度 | ⭐⭐⭐⭐ |

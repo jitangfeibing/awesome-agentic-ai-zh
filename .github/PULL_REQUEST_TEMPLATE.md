@@ -24,7 +24,7 @@
 - [ ] 我可以一句話說明它**教這個 stage 的什麼**
 
 ## 如果是翻譯 / 文字修正：style-guide check
-- [ ] 沒有 zh-CN 用詞（教程 / 視頻 / 軟件 / 用戶 / 網絡 / 接口 / 默認 / 函数 / 算法）
+- [ ] 沒有 zh-Hans 用詞（教程 / 視頻 / 軟件 / 用戶 / 網絡 / 接口 / 默認 / 函数 / 算法）
 - [ ] 沒有 overclaim（the best / production-grade / 首選 / 全世界最好）
 - [ ] License 標註符合 [慣例](../resources/style-guide.md#5-license-標註慣例)
 - [ ] zh + en companion 兩邊都有更新（如果只動到一邊請說明為什麼）

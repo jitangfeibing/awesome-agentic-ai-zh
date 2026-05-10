@@ -64,7 +64,7 @@
 
 ## 三語覆蓋
 
-| 檔案 | zh-TW（canonical） | zh-CN | English |
+| 檔案 | zh-TW（canonical） | zh-Hans | English |
 |---|---|---|---|
 | glossary | ✅ | ✅ | ✅ |
 | cli-agents-guide | ✅ | ✅ | ✅ |

@@ -1,6 +1,6 @@
 # Stage 1 — LLM 基礎
 
-> **繁體中文** | [English](./01-llm-basics.en.md)
+> **繁體中文** | [简体中文](./01-llm-basics.zh-Hans.md) | [English](./01-llm-basics.en.md)
 
 ⏱ **時間估算**：1 週（約 5-8 小時）
 
@@ -165,7 +165,7 @@ jupyter notebook guide.ipynb
 
 | 欄位 | 內容 |
 |---|---|
-| 語言 | 中文（zh-CN） |
+| 語言 | 中文（zh-Hans） |
 | Stars | ★ 29k+ |
 | License | Custom |
 | 推薦度 | ⭐⭐⭐⭐⭐ |
@@ -180,7 +180,7 @@ jupyter notebook guide.ipynb
 
 | 欄位 | 內容 |
 |---|---|
-| 語言 | 中文（zh-CN） |
+| 語言 | 中文（zh-Hans） |
 | Stars | ★ 12k+ |
 | License | NOASSERTION |
 | 推薦度 | ⭐⭐⭐⭐ |
@@ -210,7 +210,7 @@ jupyter notebook guide.ipynb
 
 | 欄位 | 內容 |
 |---|---|
-| 語言 | 中文（zh-CN） |
+| 語言 | 中文（zh-Hans） |
 | Stars | ★ 23k+ |
 | 最後更新 | ⚠️ 已停滯（2025 年 6 月；停約 1 年） |
 | License | Custom (CC BY-NC-SA) |
@@ -220,7 +220,7 @@ jupyter notebook guide.ipynb
 
 **適合誰**：想要一條完整 LLM 學習路線的中文新手。
 
-**備註**：內容是 zh-CN（Datawhale 用簡中），但技術內容看得懂沒問題。免費中文入門資源中相當好的選擇。
+**備註**：內容是 zh-Hans（Datawhale 用簡中），但技術內容看得懂沒問題。免費中文入門資源中相當好的選擇。
 
 ---
 

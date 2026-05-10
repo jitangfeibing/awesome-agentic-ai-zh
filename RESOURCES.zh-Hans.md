@@ -2,11 +2,11 @@
 
 > [繁體中文](./RESOURCES.md) | **简体中文** | [English](./RESOURCES.en.md)
 
-> [← 返回主路线 README](README.zh-CN.md)
+> [← 返回主路线 README](README.zh-Hans.md)
 
 这份文件集中放：用語说明、常用 MCP / Skill 集成 highlight、同主题 awesome list、中文社群资源。从主 README 抽出避免主页过长。
 
-> 💡 **不懂某个词**（LLM、agent、RAG、token、向量数据库⋯）→ [`resources/glossary.zh-CN.md`](resources/glossary.zh-CN.md)（用語小词典，30 多个词每个 30-80 字解释）
+> 💡 **不懂某个词**（LLM、agent、RAG、token、向量数据库⋯）→ [`resources/glossary.zh-Hans.md`](resources/glossary.zh-Hans.md)（用語小词典，30 多个词每个 30-80 字解释）
 
 ---
 
@@ -14,11 +14,11 @@
 
 主 README 跟各 stage 会频繁提到这三个 Claude Code 生态的关键***词***，先快速说明：
 
-- **MCP（Model Context Protocol）** — Anthropic 推的开放协定，让任何 LLM host（Claude Code、其他 IDE、自写 agent）都能用同一套接口去呼叫外部 tool server（文件、DB、API、***自家***系统）。把它想成「LLM 的 USB 接口」。详见 [Stage 5.2](stages/05-claude-code-ecosystem.zh-CN.md#52--mcpmodel-context-protocol-基础)。
-- **Skills** — Claude Code 的「行为包」。一个 Skill 就是一份 `SKILL.zh-CN.md`，描述「在什么***场景***要做什么、可以呼叫哪些 MCP tool」。写好之后 Claude Code 会自动 discover。详见 [Stage 5.3](stages/05-claude-code-ecosystem.zh-CN.md#53--skillsclaude-code-的***行为***层)。
-- **Plugins / Marketplaces** — 把 Skills、slash commands、hooks、MCP ***设置***打包成一个发布单位给 team 或社群***安装***。Marketplace 就是 plugin 的 catalog。详见 [Stage 5.4](stages/05-claude-code-ecosystem.zh-CN.md#54--plugins-与-marketplaces)。
+- **MCP（Model Context Protocol）** — Anthropic 推的开放协定，让任何 LLM host（Claude Code、其他 IDE、自写 agent）都能用同一套接口去呼叫外部 tool server（文件、DB、API、***自家***系统）。把它想成「LLM 的 USB 接口」。详见 [Stage 5.2](stages/05-claude-code-ecosystem.zh-Hans.md#52--mcpmodel-context-protocol-基础)。
+- **Skills** — Claude Code 的「行为包」。一个 Skill 就是一份 `SKILL.zh-Hans.md`，描述「在什么***场景***要做什么、可以呼叫哪些 MCP tool」。写好之后 Claude Code 会自动 discover。详见 [Stage 5.3](stages/05-claude-code-ecosystem.zh-Hans.md#53--skillsclaude-code-的***行为***层)。
+- **Plugins / Marketplaces** — 把 Skills、slash commands、hooks、MCP ***设置***打包成一个发布单位给 team 或社群***安装***。Marketplace 就是 plugin 的 catalog。详见 [Stage 5.4](stages/05-claude-code-ecosystem.zh-Hans.md#54--plugins-与-marketplaces)。
 
-对应的 **动手*****练习***都在 [Stage 5](stages/05-claude-code-ecosystem.zh-CN.md)，Track A 的 [A3](tracks/cli/A3-cli-production.zh-CN.md) 也会用到。
+对应的 **动手*****练习***都在 [Stage 5](stages/05-claude-code-ecosystem.zh-Hans.md)，Track A 的 [A3](tracks/cli/A3-cli-production.zh-Hans.md) 也会用到。
 
 ---
 
@@ -60,7 +60,7 @@
 
 - [**leemysw/feishu-docx**](https://github.com/leemysw/feishu-docx) ★ 190+ — 飞书（Lark）docs / sheet / bitable ↔ Markdown，含 Claude Skills ***支持***
 
-> 上面只是 highlight。**完整 62 个集成***的分类***目录**（含***数据***库、浏览器***自动***化、Figma、Excalidraw、Cloudflare、Stripe、***学术******写作*** / Multi-LLM delegation 等）在 [`resources/mcp-skills-catalog.zh-CN.md`](resources/mcp-skills-catalog.zh-CN.md)。
+> 上面只是 highlight。**完整 62 个集成***的分类***目录**（含***数据***库、浏览器***自动***化、Figma、Excalidraw、Cloudflare、Stripe、***学术******写作*** / Multi-LLM delegation 等）在 [`resources/mcp-skills-catalog.zh-Hans.md`](resources/mcp-skills-catalog.zh-Hans.md)。
 
 > 想找更多 MCP server catalog？看 [`wong2/awesome-mcp-servers`](https://github.com/wong2/awesome-mcp-servers) / [`punkpeye/awesome-mcp-servers`](https://github.com/punkpeye/awesome-mcp-servers)（***按***分类***整理***）。**Canva** 的***官方*** MCP ***还***在 early access，社群***版本******不稳定***，等***成熟******后***再补上。
 
@@ -84,7 +84,7 @@
 
 ### 中文***圈***必看
 
-- [**datawhalechina/hello-agents**](https://github.com/datawhalechina/hello-agents) — Datawhale ***系统***性 agent 教***学***（zh-CN）
+- [**datawhalechina/hello-agents**](https://github.com/datawhalechina/hello-agents) — Datawhale ***系统***性 agent 教***学***（zh-Hans）
 - [**WangRongsheng/awesome-LLM-resources**](https://github.com/WangRongsheng/awesome-LLM-resources) — ***完整***的中文 LLM 资源***整理***（8k+ stars）
 - [**AiHubCN/Awesome-Chinese-LLM**](https://github.com/AiHubCN/Awesome-Chinese-LLM) — 中文***开源***大模型***整理***
 
@@ -92,7 +92,7 @@
 
 ## 还有什么？
 
-- 主 README：[README.zh-CN.md](README.zh-CN.md)
-- ***完整*** MCP/Skill ***目录***：[resources/mcp-skills-catalog.zh-CN.md](resources/mcp-skills-catalog.zh-CN.md)
-- CLI agent ***比较***指南：[resources/cli-agents-guide.zh-CN.md](resources/cli-agents-guide.zh-CN.md)
-- Style guide / ***贡献******规范***：[resources/style-guide.zh-CN.md](resources/style-guide.zh-CN.md)、[CONTRIBUTING.zh-CN.md](CONTRIBUTING.zh-CN.md)
+- 主 README：[README.zh-Hans.md](README.zh-Hans.md)
+- ***完整*** MCP/Skill ***目录***：[resources/mcp-skills-catalog.zh-Hans.md](resources/mcp-skills-catalog.zh-Hans.md)
+- CLI agent ***比较***指南：[resources/cli-agents-guide.zh-Hans.md](resources/cli-agents-guide.zh-Hans.md)
+- Style guide / ***贡献******规范***：[resources/style-guide.zh-Hans.md](resources/style-guide.zh-Hans.md)、[CONTRIBUTING.zh-Hans.md](CONTRIBUTING.zh-Hans.md)

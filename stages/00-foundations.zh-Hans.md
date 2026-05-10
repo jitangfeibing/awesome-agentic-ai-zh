@@ -4,7 +4,7 @@
 
 ⏱ **时间估算**：1-2 周（约 5-15 小时，已具备可跳过）
 
-> 💡 **看不懂某个词**？翻 [`resources/glossary.zh-CN.md`](../resources/glossary.zh-CN.md) 查 30 秒再回来。Stage 0 还不会碰太多 jargon，但接下来几 stage 会。
+> 💡 **看不懂某个词**？翻 [`resources/glossary.zh-Hans.md`](../resources/glossary.zh-Hans.md) 查 30 秒再回来。Stage 0 还不会碰太多 jargon，但接下来几 stage 会。
 
 ## 何时可以跳过这个阶段
 
@@ -14,7 +14,7 @@
 - 在自己的操作系统上使用命令行（cd、ls、mkdir、执行 script）
 - 看懂 YAML / JSON 文件
 
-→ **直接跳到 [Stage 1](01-llm-basics.zh-CN.md)**。
+→ **直接跳到 [Stage 1](01-llm-basics.zh-Hans.md)**。
 
 如果做不到，就把这个阶段走完。不要跳——后面每个阶段都会预设你已经会这些。
 
@@ -69,4 +69,4 @@
 
 ---
 
-> ✅ **走完 Stage 0 了？** 接下来 [**Stage 1 — LLM 基础**](01-llm-basics.zh-CN.md) 会用 5-8 小时带你做完第一次 LLM API 调用、认识 token / context window / temperature，以及用 per-token 计价估算实际任务成本。**继续往下走 →**
+> ✅ **走完 Stage 0 了？** 接下来 [**Stage 1 — LLM 基础**](01-llm-basics.zh-Hans.md) 会用 5-8 小时带你做完第一次 LLM API 调用、认识 token / context window / temperature，以及用 per-token 计价估算实际任务成本。**继续往下走 →**

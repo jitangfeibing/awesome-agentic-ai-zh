@@ -10,7 +10,7 @@
 - [x] `.github/` issue + PR template
 - [x] `resources/style-guide.md` zh + en
 - [x] `scripts/check-links.py` + `refresh-stars.py` 可跑
-- [x] CI lint workflow（zh-CN slip + overclaim 自動檢查；每月跑 link-rot + star-drift）
+- [x] CI lint workflow（zh-Hans slip + overclaim 自動檢查；每月跑 link-rot + star-drift）
 
 ## 🟡 Pre-launch（一次性手動 setup）
 

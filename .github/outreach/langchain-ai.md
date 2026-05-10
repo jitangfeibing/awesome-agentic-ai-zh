@@ -22,7 +22,7 @@
 ```
 LangChain learners often ask: "I have the docs, but where do I actually start?"
 
-Built a 7-stage trilingual learning roadmap (zh-TW · zh-CN · en). Stage 4 walks
+Built a 7-stage trilingual learning roadmap (zh-TW · zh-Hans · en). Stage 4 walks
 through LangChain / LangGraph / AutoGen with cost & time estimates per step.
 145+ curated projects · MIT · ★525 week 1.
 
@@ -37,7 +37,7 @@ through LangChain / LangGraph / AutoGen with cost & time estimates per step.
 
 ```diff
 + - [`WenyuChiou/awesome-agentic-ai-zh`](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-+   — Trilingual (zh-TW · zh-CN · en) 7-stage learning roadmap for agentic AI.
++   — Trilingual (zh-TW · zh-Hans · en) 7-stage learning roadmap for agentic AI.
 +   Stage 4 covers LangChain / LangGraph / AutoGen with prerequisites, time
 +   estimates, and hands-on exercises. Catalog includes 62 MCP servers / Skills
 +   grouped by 14 use cases, with a dedicated section for the Chinese-language
@@ -54,7 +54,7 @@ I'm proposing addition of [awesome-agentic-ai-zh](https://github.com/WenyuChiou/
 to the "Tutorials" or "Learning Resources" section of awesome-langchain.
 
 **Why this is a good fit**:
-- Trilingual (zh-TW canonical, zh-CN, English) — fills a gap for non-English
+- Trilingual (zh-TW canonical, zh-Hans, English) — fills a gap for non-English
   learners
 - Stage 4 specifically walks through LangChain / LangGraph / AutoGen with
   prerequisites, time estimates, and hands-on exercises
@@ -83,7 +83,7 @@ maintaining awesome-langchain.
 ```
 Hi LangChain team,
 
-I built awesome-agentic-ai-zh — a trilingual (zh-TW / zh-CN / en) 7-stage
+I built awesome-agentic-ai-zh — a trilingual (zh-TW / zh-Hans / en) 7-stage
 learning roadmap for agentic AI. ★525 in week 1, 3,185 unique visitors,
 heavy zh-language community traction (top referrer is Threads at 42%).
 

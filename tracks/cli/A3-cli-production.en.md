@@ -1,6 +1,6 @@
 # A3 — Integration & Production
 
-> [繁體中文](./A3-cli-production.md) | [简体中文](./A3-cli-production.zh-CN.md) | **English**
+> [繁體中文](./A3-cli-production.md) | [简体中文](./A3-cli-production.zh-Hans.md) | **English**
 
 > [← A2 — CLI Workflow Patterns](A2-cli-workflow.en.md) · **Track A: CLI Power User** — Stop 3 (final)
 

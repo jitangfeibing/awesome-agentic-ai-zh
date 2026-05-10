@@ -27,7 +27,7 @@ None of these require reading the full style-guide first; they merge fast — pe
 
 ### High-value PRs
 - **Adding a project** to a stage with reasoning for why it teaches that stage
-- **Translating** a stage page to 繁中 (Traditional Chinese only — we are NOT zh-CN)
+- **Translating** a stage page to 繁中 (Traditional Chinese only — we are NOT zh-Hans)
 - **Flagging stale / unmaintained projects** (open an issue first)
 - **Improving curation notes** on existing projects (clearer "what it teaches" explanations)
 - **Reorganizing** within a stage if the current ordering doesn't match learning progression
@@ -81,7 +81,7 @@ A project worth listing must have:
 ## Bilingual Style
 
 - **Traditional Chinese (zh-TW) is canonical**; English (`*.en.md`) is the companion.
-- **No zh-CN PRs accepted**. If you submit zh-CN we'll ask you to convert.
+- **No zh-Hans PRs accepted**. If you submit zh-Hans we'll ask you to convert.
 - **Natural translation**, not word-for-word. Technical terms can stay in English where natural ("使用 LangGraph 建 multi-agent 系統").
 - **Full style rules: see [`resources/style-guide.md`](resources/style-guide.md)** (zh) or [`resources/style-guide.en.md`](resources/style-guide.en.md) (en) — banned words, entry schema, license conventions, writing style, recommendation star definitions all live there. Read before PR.
 

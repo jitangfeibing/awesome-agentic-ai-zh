@@ -4,7 +4,7 @@
 
 ⏱ **时间估算**：2 周（约 10 小时）
 
-> 💡 这 stage 用语密度高（**RAG / 向量数据库 / embedding / chunking / hybrid search / reranking⋯**）→ 不熟先翻 [`resources/glossary.zh-CN.md` §3](../resources/glossary.zh-CN.md#3-memory--retrieval--rag)。
+> 💡 这 stage 用语密度高（**RAG / 向量数据库 / embedding / chunking / hybrid search / reranking⋯**）→ 不熟先翻 [`resources/glossary.zh-Hans.md` §3](../resources/glossary.zh-Hans.md#3-memory--retrieval--rag)。
 
 不会记住过去互动的 agent 没什么用。RAG（Retrieval-Augmented Generation）是目前的标准做法。这一章两个都会讲到。
 
@@ -318,4 +318,4 @@ results = collection.query(query_texts=["query"], n_results=1)
 - [ ] 在某个规模下，能在 Chroma、Qdrant、pgvector 之间做出选择
 - [ ] 区分“给 agent memory”跟“用 RAG”这两件事
 
-如果都可以 → 前往 [Stage 7 — Multi-Agent · Production](./07-multi-agent-production.zh-CN.md)。
+如果都可以 → 前往 [Stage 7 — Multi-Agent · Production](./07-multi-agent-production.zh-Hans.md)。

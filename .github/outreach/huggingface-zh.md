@@ -1,14 +1,14 @@
 # Outreach: HuggingFace 中文社群
 
 > **Status**: not contacted · **Channel**: HF community post / Spaces card / discuss page
-> **Primary lang**: en + zh-CN (HF 國際化)
+> **Primary lang**: en + zh-Hans (HF 國際化)
 > **Last updated**: 2026-05-09
 
 **Why this target**: HuggingFace 是英語 ML / agent 生態的中心，但中文社群也越來越大（中國團隊頻繁在 HF 發 model）。HF 沒有「learning roadmap for agentic AI」這個 slot——我們 trilingual + structured 的定位剛好填補。
 
 **Pitch angle**: 我們不是模型 / dataset / Space，我們是「先把 agentic AI 學完再來用 HF」的入口。
 
-**Their counter-value**: HF 流量 + 國際曝光；對英語讀者來說我們的 zh-TW / zh-CN 段落是 bonus。
+**Their counter-value**: HF 流量 + 國際曝光；對英語讀者來說我們的 zh-TW / zh-Hans 段落是 bonus。
 
 ---
 
@@ -16,7 +16,7 @@
 
 ```
 For folks asking "where do I start with agentic AI?" — built a trilingual
-7-stage learning roadmap (zh-TW · zh-CN · en) covering Stage 0 (foundations)
+7-stage learning roadmap (zh-TW · zh-Hans · en) covering Stage 0 (foundations)
 through Stage 7 (multi-agent production). 145+ curated projects with cost,
 audience, and time estimates per stage.
 
@@ -34,7 +34,7 @@ audience, and time estimates per stage.
 Hi HF community,
 
 I've been building [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-— a trilingual (zh-TW canonical · zh-CN · English) 7-stage learning roadmap
+— a trilingual (zh-TW canonical · zh-Hans · English) 7-stage learning roadmap
 for agentic AI:
 
 - **Stage 0**: Foundations (Python, git, CLI, REST APIs)
@@ -69,7 +69,7 @@ and HF model cards).
 ```
 Hi <name>,
 
-I built awesome-agentic-ai-zh, a trilingual (zh-TW / zh-CN / en) 7-stage
+I built awesome-agentic-ai-zh, a trilingual (zh-TW / zh-Hans / en) 7-stage
 learning roadmap for agentic AI — covers foundations through multi-agent
 production with 145+ curated projects, cost/time estimates per stage. ★525
 + 3,185 unique visitors in week 1.
@@ -93,4 +93,4 @@ taken.
   ML/agent work specifically
 - HF Learn: huggingface.co/learn — if our content ever gets featured, the
   HF Learn audience is exactly our target
-- For zh-CN segment: HF has a 中文社群 page; can post there separately
+- For zh-Hans segment: HF has a 中文社群 page; can post there separately

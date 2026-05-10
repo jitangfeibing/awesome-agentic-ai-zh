@@ -26,7 +26,7 @@
 
 ### 高價值 PR
 - **新增 project** 到某個 stage，並說明為什麼這個 project 對應該階段的學習
-- **翻譯** 某個 stage 頁面成繁中（只要繁中——我們不收 zh-CN）
+- **翻譯** 某個 stage 頁面成繁中（只要繁中——我們不收 zh-Hans）
 - **標記停滯 / 失維護的 project**（請先開 issue）
 - **改善現有 project 的策展備註**（讓「教什麼」說明更清楚）
 - **重新整理** 某個 stage 內部順序，如果現在的順序不符合學習進程
@@ -80,7 +80,7 @@
 ## 雙語風格
 
 - **繁中（Traditional Chinese, zh-TW）為正本**，英文版（`*.en.md`）是 companion。
-- **不接受 zh-CN PR**。如果你交 zh-CN 的 PR，我們會請你轉成繁中。
+- **不接受 zh-Hans PR**。如果你交 zh-Hans 的 PR，我們會請你轉成繁中。
 - **自然翻譯**，不要逐字對譯。技術詞如果直接用英文比較自然，就保留英文（「使用 LangGraph 建 multi-agent 系統」）。
 - **完整風格規範請看 [`resources/style-guide.md`](resources/style-guide.md)**——禁用詞、entry schema、license 標註慣例、寫作風格、推薦星等定義都在裡面。PR 之前請先讀。
 

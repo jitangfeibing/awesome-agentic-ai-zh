@@ -4,7 +4,7 @@
 
 ⏱ **时间估算**：2-4 周（约 15-30 小时）
 
-> 💡 用语密度高（multi-agent / handoff / eval / observability / guardrails⋯）→ 翻 [`resources/glossary.zh-CN.md`](../resources/glossary.zh-CN.md#4-multi-agent)。
+> 💡 用语密度高（multi-agent / handoff / eval / observability / guardrails⋯）→ 翻 [`resources/glossary.zh-Hans.md`](../resources/glossary.zh-Hans.md#4-multi-agent)。
 
 最后一个阶段。你正从“我会做 agent”走向“我能在 production 跑起来，多个 agent 协作、有 eval、有 observability、会 deploy”。
 
@@ -250,7 +250,7 @@ npx promptfoo eval
 
 | 栏位 | 内容 |
 |---|---|
-| 语言 | 中文（zh-CN） |
+| 语言 | 中文（zh-Hans） |
 | Stars | ★ 30k+ |
 | License | Apache-2.0 |
 | 推荐度 | ⭐⭐⭐⭐ |
@@ -353,7 +353,7 @@ npx promptfoo eval
 - [ ] 在真实 workload 上量测 prompt caching 前后的成本差异
 - [ ] 把 agent deploy 到云端（任何 provider）
 
-如果都可以 → 你已经跑完主路线。挑一个[特化分支](../README.zh-CN.md#️-7-阶段学习地图)，或回头来贡献这份 repo。
+如果都可以 → 你已经跑完主路线。挑一个[特化分支](../README.zh-Hans.md#️-7-阶段学习地图)，或回头来贡献这份 repo。
 
 ## 💡 接下来
 

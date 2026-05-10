@@ -1,7 +1,7 @@
 # Outreach: liyupi/ai-guide
 
 > **Status**: not contacted · **Channel**: GitHub PR
-> **Primary lang**: zh-CN
+> **Primary lang**: zh-Hans
 > **Last updated**: 2026-05-09
 > **Repo**: https://github.com/liyupi/ai-guide (★13k+)
 
@@ -18,7 +18,7 @@
 > 在 ai-guide 找到一堆好資源，但不知道該從哪一個開始？
 >
 > awesome-agentic-ai-zh 把 agentic AI 切成 Stage 0 → Stage 7，每階段告訴你預估時程
-> + 入門條件 + 該讀什麼。三語齊全（zh-TW / zh-CN / en），145+ curated projects。
+> + 入門條件 + 該讀什麼。三語齊全（zh-TW / zh-Hans / en），145+ curated projects。
 >
 > 配著 ai-guide 一起看：用 ai-guide 找 project、用我們找順序。
 > 👉 https://github.com/WenyuChiou/awesome-agentic-ai-zh
@@ -31,7 +31,7 @@
 
 ```diff
 + - [`WenyuChiou/awesome-agentic-ai-zh`](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-+   — 7 阶段三语学习地图（zh-TW canonical / zh-CN / en）；从 Stage 0 基础到
++   — 7 阶段三语学习地图（zh-TW canonical / zh-Hans / en）；从 Stage 0 基础到
 +     Stage 7 multi-agent production，每阶段附预估时程 + 入门条件 + 145+ curated
 +     projects。MIT，跟 ai-guide 互补：ai-guide 找 project、awesome-agentic-ai-zh
 +     找学习顺序。
@@ -43,7 +43,7 @@
 你好 liyupi 大佬！
 
 我维护的 [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-是一份中文 agentic AI 的 7 阶段三语学习地图（zh-TW canonical / zh-CN / en，145+
+是一份中文 agentic AI 的 7 阶段三语学习地图（zh-TW canonical / zh-Hans / en，145+
 projects，MIT 协议），第一周 ★525、3,185 unique visitors、1,099 clones，主要流量来自 Threads /
 X / 部分微信社群。
 
@@ -77,4 +77,4 @@ section，刚开了 PR（链接）。如果不合适请直接关掉，谢谢！
 
 - liyupi 的 PR 速度看心情——如果一週沒動就 ping 一下、沒回就放著
 - **不要**自吹「比 ai-guide 更好」之類的——我們是 complement、不是 replace
-- 注意：liyupi 偏好簡體 + 中國大陸友善的措辭，PR 描述用 zh-CN
+- 注意：liyupi 偏好簡體 + 中國大陸友善的措辭，PR 描述用 zh-Hans

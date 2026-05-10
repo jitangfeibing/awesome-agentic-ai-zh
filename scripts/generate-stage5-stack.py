@@ -21,7 +21,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 LAYERS = [
-    # name, sub, ability_zh-TW, ability_en, ability_zh-CN, fill, stroke
+    # name, sub, ability_zh-TW, ability_en, ability_zh-Hans, fill, stroke
     (
         "Plugins / Marketplaces",
         "5.4 — packaging",
@@ -94,7 +94,7 @@ def rounded_rect(draw, xy, radius, fill=None, outline=None, width=1):
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--lang", default="zh-TW", choices=["zh-TW", "en", "zh-CN"])
+    parser.add_argument("--lang", default="zh-TW", choices=["zh-TW", "en", "zh-Hans"])
     args = parser.parse_args()
 
     from PIL import Image, ImageDraw, ImageFont
@@ -107,7 +107,7 @@ def main() -> int:
         subtitle = "Each layer adds one capability · 4 sub-sections of Stage 5"
         footer = ('Both tracks use this stack — Track A reads "how to use it", '
                   'Track B reads "how it works"')
-    elif lang == "zh-CN":
+    elif lang == "zh-Hans":
         subtitle = "Each layer adds one capability · Stage 5 的 4 个子章节"
         footer = ("两条学习路径都会用到这个 stack — Track A（CLI Power User）"
                   "读“怎么用”，Track B（Agent Builder）读“怎么运作”")
@@ -117,7 +117,7 @@ def main() -> int:
                   "讀「怎麼用」，Track B（Agent Builder）讀「怎麼運作」")
     repo = "github.com/WenyuChiou/awesome-agentic-ai-zh"
 
-    # Pick fonts based on language. zh-CN uses YaHei (msyh.ttc), zh-TW uses JhengHei (msjh.ttc)
+    # Pick fonts based on language. zh-Hans uses YaHei (msyh.ttc), zh-TW uses JhengHei (msjh.ttc)
     if lang == "en":
         f_title = ImageFont.truetype(FONT_LATIN_BOLD, 60)
         f_sub = ImageFont.truetype(FONT_LATIN_REG, 26)
@@ -160,11 +160,11 @@ def main() -> int:
     ability_x = 1200
     ability_w = 640
 
-    for i, (name, sub, abil_zh_tw, abil_en, abil_zh_cn, fill, stroke) in enumerate(LAYERS):
+    for i, (name, sub, abil_zh_tw, abil_en, abil_zh_hans, fill, stroke) in enumerate(LAYERS):
         if lang == "en":
             abil = abil_en
-        elif lang == "zh-CN":
-            abil = abil_zh_cn
+        elif lang == "zh-Hans":
+            abil = abil_zh_hans
         else:
             abil = abil_zh_tw
         y = stack_top + i * layer_h
@@ -253,7 +253,7 @@ def main() -> int:
     rw = d.textlength(repo, font=f_repo)
     d.text((W - 80 - rw, footer_y + 2), repo, fill=(156, 163, 175), font=f_repo)
 
-    suffix = {"en": ".en", "zh-CN": ".zh-CN", "zh-TW": ""}[lang]
+    suffix = {"en": ".en", "zh-Hans": ".zh-Hans", "zh-TW": ""}[lang]
     out = REPO_ROOT / "resources" / "diagrams" / f"stage5-stack{suffix}.png"
     out.parent.mkdir(parents=True, exist_ok=True)
     img.save(out, format="PNG", optimize=True)

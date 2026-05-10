@@ -13,26 +13,26 @@ on:
 
 jobs:
   banned-words:
-    name: Banned-word audit (zh-CN slips + overclaim phrases)
+    name: Banned-word audit (zh-Hans slips + overclaim phrases)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check zh-CN slips in zh-TW canonical files
+      - name: Check zh-Hans slips in zh-TW canonical files
         run: |
           # 只掃 zh-TW canonical 檔。
           #   - --exclude="*.en.md"     skip 英文 companion
-          #   - --exclude="*.zh-CN.md"  skip 簡中 companion（裡面合法包含這些詞）
+          #   - --exclude="*.zh-Hans.md"  skip 簡中 companion（裡面合法包含這些詞）
           #   resources/style-guide.md 跟 .github/ 是 policy doc，必然包含禁用詞做為
           #   「不要這樣寫」的範例，所以這個 step 也不掃 resources/。
           BANNED=("教程" "視頻" "軟件" "代碼" "用戶" "網絡" "默認" "函数" "演算法" "算法" "程序")
           FOUND=0
           for word in "${BANNED[@]}"; do
-            if grep -rn --include="*.md" --exclude="*.en.md" --exclude="*.zh-CN.md" \
+            if grep -rn --include="*.md" --exclude="*.en.md" --exclude="*.zh-Hans.md" \
                   -F "$word" stages branches walkthroughs README.md CONTRIBUTING.md CONTRIBUTORS.md 2>/dev/null \
-                  | grep -v "(zh-CN)" \
-                  | grep -v "zh-CN repo" \
-                  | grep -v "中文（zh-CN）"; then
+                  | grep -v "(zh-Hans)" \
+                  | grep -v "zh-Hans repo" \
+                  | grep -v "中文（zh-Hans）"; then
               echo "❌ Banned word found: $word"
               FOUND=$((FOUND+1))
             fi
@@ -44,27 +44,27 @@ jobs:
           fi
           echo "✓ No banned words detected."
 
-      - name: Check zh-TW residue in zh-CN files (warning only)
+      - name: Check zh-TW residue in zh-Hans files (warning only)
         run: |
-          # 反向檢查：zh-CN 檔混入 zh-TW 用詞代表翻譯沒翻完。
-          # **僅 warning 模式**——不擋 PR、不要求完美。zh-CN 翻譯是漸進的，
+          # 反向檢查：zh-Hans 檔混入 zh-TW 用詞代表翻譯沒翻完。
+          # **僅 warning 模式**——不擋 PR、不要求完美。zh-Hans 翻譯是漸進的，
           # 殘留是常態；這個 check 只是提示哪幾個詞還可以順手修。
           # 不掃：style-guide / glossary（會引用對照詞當例子）、.ai/、book/。
           BANNED_TW=("使用者" "軟體" "硬體" "資訊" "品質" "資料" "專案" "腳本" "預設" "影片" "演算法" "應用程式" "網路" "連結" "服務" "範例" "範本" "設定" "註解" "終端機" "命令列" "編輯器" "瀏覽器" "客戶端" "伺服器" "倉儲" "必修閱讀" "飛書")
           FOUND=0
           for word in "${BANNED_TW[@]}"; do
-            if grep -rn --include="*.zh-CN.md" \
+            if grep -rn --include="*.zh-Hans.md" \
                   -F "$word" . 2>/dev/null \
-                  | grep -v "^./resources/style-guide.zh-CN.md" \
-                  | grep -v "^./resources/glossary.zh-CN.md" \
+                  | grep -v "^./resources/style-guide.zh-Hans.md" \
+                  | grep -v "^./resources/glossary.zh-Hans.md" \
                   | grep -v "^./.ai/" \
                   | grep -v "^./book/"; then
-              echo "::warning::zh-TW word found in zh-CN file: $word"
+              echo "::warning::zh-TW word found in zh-Hans file: $word"
               FOUND=$((FOUND+1))
             fi
           done
           if [ $FOUND -gt 0 ]; then
-            echo "Note: $FOUND zh-TW residue word(s) detected in .zh-CN.md. See .ai/zh-CN_glossary.md. Not blocking the PR — fix when convenient."
+            echo "Note: $FOUND zh-TW residue word(s) detected in .zh-Hans.md. See .ai/zh-Hans_glossary.md. Not blocking the PR — fix when convenient."
           else
             echo "✓ No zh-TW residue."
           fi

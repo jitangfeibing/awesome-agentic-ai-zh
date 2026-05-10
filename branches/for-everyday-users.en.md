@@ -1,6 +1,6 @@
 # For Everyday Users — Specialized Branch
 
-> [繁體中文](./for-everyday-users.md) | [简体中文](./for-everyday-users.zh-CN.md) | **English**
+> [繁體中文](./for-everyday-users.md) | [简体中文](./for-everyday-users.zh-Hans.md) | **English**
 
 > [← Back to main path README](../README.en.md) · You **don't have to walk the full main path** to start here — this branch is for people who **just want to USE AI, not build agents**.
 

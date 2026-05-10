@@ -1,7 +1,7 @@
 # Outreach: Datawhale (datawhalechina)
 
 > **Status**: not contacted · **Channel**: GitHub issue + (later) WeChat group
-> **Primary lang**: zh-CN
+> **Primary lang**: zh-Hans
 > **Last updated**: 2026-05-09
 > **Decision-maker**: Datawhale 開源教學團隊 (open-source curriculum team)
 
@@ -19,7 +19,7 @@
 >
 > awesome-agentic-ai-zh 把 agentic AI 切成 7 階段（Stage 0 基礎 → Stage 7 production），每階段都標註預估時程跟入門條件。Stage 5/6 直接接到 @datawhalechina 的 Hello-Agents Extra05/08。
 >
-> 三語（zh-TW / zh-CN / en）· 145+ curated projects · MIT
+> 三語（zh-TW / zh-Hans / en）· 145+ curated projects · MIT
 > 👉 https://github.com/WenyuChiou/awesome-agentic-ai-zh
 
 ## Variant 2 — GitHub issue (200-300 字)
@@ -30,7 +30,7 @@
 Hi Datawhale 團隊！
 
 我在維護 [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-——一份中文 agentic AI 的 7 階段三語學習地圖（zh-TW canonical / zh-CN / en，145+
+——一份中文 agentic AI 的 7 階段三語學習地圖（zh-TW canonical / zh-Hans / en，145+
 curated projects，MIT），第一週累積 ★525、3,185 unique visitors、1,099 clones。
 
 我們的 Stage 5 cookbook 已經把 Hello-Agents 的 Extra05（記憶 + RAG 概覽）跟 Extra08

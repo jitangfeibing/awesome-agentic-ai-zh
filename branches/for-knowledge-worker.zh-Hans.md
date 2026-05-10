@@ -2,7 +2,7 @@
 
 > [繁體中文](./for-knowledge-worker.md) | **简体中文** | [English](./for-knowledge-worker.en.md)
 
-> [← 回主路线 README](../README.zh-CN.md) · 走完 **Track A 的 A3** 或 **Track B 的 Stage 7** 后从这里接续。把 agentic AI 应用到办公室 / 知识工作上。
+> [← 回主路线 README](../README.zh-Hans.md) · 走完 **Track A 的 A3** 或 **Track B 的 Stage 7** 后从这里接续。把 agentic AI 应用到办公室 / 知识工作上。
 
 ## 使用场景
 
@@ -14,7 +14,7 @@
 
 ## 精选 Projects
 
-> 💡 **想把 AI agent 接到 Notion / Gmail / Outlook / Slack / Excel / 飞书？** 62 个常用 MCP server / Skill 集成在 [`resources/mcp-skills-catalog.zh-CN.md`](../resources/mcp-skills-catalog.zh-CN.md)（按使用场景分类）。下面这节保留 workflow / 集成平台级
+> 💡 **想把 AI agent 接到 Notion / Gmail / Outlook / Slack / Excel / 飞书？** 62 个常用 MCP server / Skill 集成在 [`resources/mcp-skills-catalog.zh-Hans.md`](../resources/mcp-skills-catalog.zh-Hans.md)（按使用场景分类）。下面这节保留 workflow / 集成平台级
 
 ### 工作流工具
 

@@ -50,7 +50,7 @@ after upstream-target audit caught the awesome-claude-code reorg):
 2. **Day 2**: [#5 awesome-claude-code **issue**](outreach/awesome-claude-code.md)
    — repo mid-reorg, no PR-able sections; open an issue parking the proposal
    for when their new TOC lands.
-3. **Day 3**: [#1 Datawhale](outreach/datawhale.md) — most strategic for zh-CN
+3. **Day 3**: [#1 Datawhale](outreach/datawhale.md) — most strategic for zh-Hans
    reach (we cite Hello-Agents Extra05/08).
 4. **Day 4**: [#2 liyupi](outreach/liyupi.md) — high reach if accepted (★13k
    resource hub).

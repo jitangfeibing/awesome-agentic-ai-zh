@@ -2,7 +2,7 @@
 
 > [繁體中文](./for-developer.md) | **简体中文** | [English](./for-developer.en.md)
 
-> [← 回主路线 README](../README.zh-CN.md) · 走完 **Track A 的 A3** 或 **Track B 的 Stage 7** 后从这里接续。把 agentic AI 应用到开发流程上。
+> [← 回主路线 README](../README.zh-Hans.md) · 走完 **Track A 的 A3** 或 **Track B 的 Stage 7** 后从这里接续。把 agentic AI 应用到开发流程上。
 
 ## 使用场景
 
@@ -14,7 +14,7 @@
 
 ## 精选 Projects
 
-> 6 个主流 CLI agent（Claude Code / Codex / OpenCode / Gemini CLI / goose / Aider）的并列比较见 [`resources/cli-agents-guide.zh-CN.md`](../resources/cli-agents-guide.zh-CN.md)。第一次接触 CLI agent 想要 step-by-step 入门 → [`tracks/cli/A1-cli-intro.zh-CN.md`](../tracks/cli/A1-cli-intro.zh-CN.md)（Track A 第一站）。要把 CLI 接到日常工具（GitHub、Linear、Atlassian、Postgres、Playwright、Figma 等）→ [`resources/mcp-skills-catalog.zh-CN.md`](../resources/mcp-skills-catalog.zh-CN.md)（62 个分类整理）。下面只列开发者该知道的关键 entry。
+> 6 个主流 CLI agent（Claude Code / Codex / OpenCode / Gemini CLI / goose / Aider）的并列比较见 [`resources/cli-agents-guide.zh-Hans.md`](../resources/cli-agents-guide.zh-Hans.md)。第一次接触 CLI agent 想要 step-by-step 入门 → [`tracks/cli/A1-cli-intro.zh-Hans.md`](../tracks/cli/A1-cli-intro.zh-Hans.md)（Track A 第一站）。要把 CLI 接到日常工具（GitHub、Linear、Atlassian、Postgres、Playwright、Figma 等）→ [`resources/mcp-skills-catalog.zh-Hans.md`](../resources/mcp-skills-catalog.zh-Hans.md)（62 个分类整理）。下面只列开发者该知道的关键 entry。
 
 ### Coding Agents
 
@@ -114,7 +114,7 @@ jobs:
 - **Tier 0**：Cursor / Claude Desktop——IDE 内 chat、不写 agent
 - **Tier 1**：Claude Code / Cline / OpenCode——CLI 接 file system、有 CLAUDE.md，但仍 human-in-the-loop
 - **Tier 2**：自写 Skills + MCP server——把你的 dev workflow 包成 skill team 共用
-- **Tier 3**：CI 自动跑 agent + production observability——进到 [Stage 7](../stages/07-multi-agent-production.zh-CN.md) 领域
+- **Tier 3**：CI 自动跑 agent + production observability——进到 [Stage 7](../stages/07-multi-agent-production.zh-Hans.md) 领域
 
 > Tier 0-1 应该满足 90% 开发者。**升级到 Tier 2+ 要先确认 ROI**——团队够大、流程够重复、事故不可逆，才值得 invest。
 
@@ -122,11 +122,11 @@ jobs:
 
 开发者重叠度高的分支：
 
-- **要做 ML 研究 / 写 paper** → [研究员分支](./for-researcher.zh-CN.md)
-- **接 Notion / Linear / Atlassian / Postgres / Figma** 等 dev tool → [`resources/mcp-skills-catalog.zh-CN.md`](../resources/mcp-skills-catalog.zh-CN.md)
-- **要写自己的 Skill / MCP server** → [Stage 5](../stages/05-claude-code-ecosystem.zh-CN.md) + [`resources/cookbook.zh-CN.md`](../resources/cookbook.zh-CN.md)
-- **想看 schema 设计细节** → [`resources/schema-design-cheatsheet.zh-CN.md`](../resources/schema-design-cheatsheet.zh-CN.md)
-- **CLI 从零开始** → [Track A](../tracks/cli/A1-cli-intro.zh-CN.md)（A1 → A2 → A3）
+- **要做 ML 研究 / 写 paper** → [研究员分支](./for-researcher.zh-Hans.md)
+- **接 Notion / Linear / Atlassian / Postgres / Figma** 等 dev tool → [`resources/mcp-skills-catalog.zh-Hans.md`](../resources/mcp-skills-catalog.zh-Hans.md)
+- **要写自己的 Skill / MCP server** → [Stage 5](../stages/05-claude-code-ecosystem.zh-Hans.md) + [`resources/cookbook.zh-Hans.md`](../resources/cookbook.zh-Hans.md)
+- **想看 schema 设计细节** → [`resources/schema-design-cheatsheet.zh-Hans.md`](../resources/schema-design-cheatsheet.zh-Hans.md)
+- **CLI 从零开始** → [Track A](../tracks/cli/A1-cli-intro.zh-Hans.md)（A1 → A2 → A3）
 
 ## 社群备注
 

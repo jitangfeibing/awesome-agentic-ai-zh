@@ -11,7 +11,7 @@
 > PR an entry into. **Don't open a PR.** Open an **issue** instead, parking
 > the proposal for when the new TOC lands.
 
-**Why this target**: We already cite their list in our README's "Related projects" section (and in zh-CN / zh-TW counterparts). Reciprocal listing is natural. They're the canonical Claude Code awesome-list with ★43k.
+**Why this target**: We already cite their list in our README's "Related projects" section (and in zh-Hans / zh-TW counterparts). Reciprocal listing is natural. They're the canonical Claude Code awesome-list with ★43k.
 
 **Pitch angle**: We're a **structured learning roadmap** complement to their flat catalog. Stage 5 of our roadmap is dedicated to the Claude Code ecosystem (MCP, Skills, Plugins).
 
@@ -26,7 +26,7 @@ For folks browsing @hesreallyhim's awesome-claude-code list — just published
 a 7-stage trilingual learning roadmap that walks Stage 0 (foundations) → Stage 5
 (Claude Code: MCP / Skills / Plugins) → Stage 7 (production).
 
-★525 week 1 · 145+ curated projects · zh-TW / zh-CN / en
+★525 week 1 · 145+ curated projects · zh-TW / zh-Hans / en
 🔗 github.com/WenyuChiou/awesome-agentic-ai-zh
 ```
 
@@ -45,7 +45,7 @@ TOC had drifted hard. Holding off on opening a PR until the new TOC lands.
 Wanted to surface a proposal for when you're ready:
 
 I maintain [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-— a trilingual (zh-TW canonical · zh-CN · English) 7-stage learning roadmap
+— a trilingual (zh-TW canonical · zh-Hans · English) 7-stage learning roadmap
 for agentic AI. **Stage 5 is dedicated entirely to the Claude Code ecosystem**
 (MCP, Skills, Plugins, Hello-World walkthroughs, 62-entry integration catalog
 by use case).
@@ -75,7 +75,7 @@ trilingual translation discipline, CI lint on every PR.
 
 ```
 Hey @hesreallyhim — your awesome-claude-code list is already in our README's
-"Related projects". Built a complement: a trilingual (zh-TW / zh-CN / en)
+"Related projects". Built a complement: a trilingual (zh-TW / zh-Hans / en)
 7-stage learning roadmap, with Stage 5 dedicated to Claude Code (MCP, Skills,
 Plugins, walkthroughs, 62 integrations grouped by use case).
 

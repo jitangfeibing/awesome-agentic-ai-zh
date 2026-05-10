@@ -4,9 +4,9 @@
 
 > **预计学习时间**： 5-8 小时
 
-> 👋 **从 [Stage 0](00-foundations.zh-CN.md) 来的**：好，环境已经够用——这 5-8 小时：第一次成功调用 Claude / GPT / Gemini API、搞懂 token / context window / temperature 怎么影响输出、用 per-token 计算实际成本。**直接从这里开始的**：先确认你能跑 Python script、有任一家供应商的 API key——做不到请先回 [Stage 0](00-foundations.zh-CN.md)。
+> 👋 **从 [Stage 0](00-foundations.zh-Hans.md) 来的**：好，环境已经够用——这 5-8 小时：第一次成功调用 Claude / GPT / Gemini API、搞懂 token / context window / temperature 怎么影响输出、用 per-token 计算实际成本。**直接从这里开始的**：先确认你能跑 Python script、有任一家供应商的 API key——做不到请先回 [Stage 0](00-foundations.zh-Hans.md)。
 
-> 掌握 **核心概念**：LLM / token / context window / temperature / RAG / agent，请先阅读 [`resources/glossary.zh-CN.md`](../resources/glossary.zh-CN.md)（约 30 分钟）。
+> 掌握 **核心概念**：LLM / token / context window / temperature / RAG / agent，请先阅读 [`resources/glossary.zh-Hans.md`](../resources/glossary.zh-Hans.md)（约 30 分钟）。
 
 ## 学习目标
 
@@ -165,7 +165,7 @@ jupyter notebook guide.ipynb
 
 | 属性 | 值 |
 |---|---|
-| 语言 | 中文（zh-CN）|
+| 语言 | 中文（zh-Hans）|
 | Stars | 29k+ |
 | License | Custom |
 | 推荐指数 | ★★★★★ |
@@ -180,7 +180,7 @@ jupyter notebook guide.ipynb
 
 | 属性 | 值 |
 |---|---|
-| 语言 | 中文（zh-CN）|
+| 语言 | 中文（zh-Hans）|
 | Stars | 12k+ |
 | License | NOASSERTION |
 | 推荐指数 | ★★★★☆ |
@@ -210,7 +210,7 @@ jupyter notebook guide.ipynb
 
 | 属性 | 值 |
 |---|---|
-| 语言 | 中文（zh-CN）|
+| 语言 | 中文（zh-Hans）|
 | Stars | 23k+ |
 | 最后更新 | 注意，项目已归档，最后更新于 2025 年 6 月 1 日 |
 | License | Custom (CC BY-NC-SA) |
@@ -220,7 +220,7 @@ jupyter notebook guide.ipynb
 
 **适合谁**：如果你没时间看视频，想快速了解 LLM 应用开发的基础。
 
-**怎么用**：浏览一遍 zh-CN（Datawhale 的系列）项目，你会发现大部分内容是重复的，选一个你喜欢的风格，然后深入进去，不要贪多。
+**怎么用**：浏览一遍 zh-Hans（Datawhale 的系列）项目，你会发现大部分内容是重复的，选一个你喜欢的风格，然后深入进去，不要贪多。
 
 ---
 
@@ -384,6 +384,6 @@ ollama serve             # 暴露 API server
 - [ ] 比较 Claude Sonnet vs Opus 的 per-token 价格。
 - [ ] 体验至少 2 个不同的 LLM（Claude / GPT / Gemini / Llama）。
 
-如果都完成了，恭喜，进入 [Stage 2 - Prompt Engineering](./02-prompt-engineering.zh-CN.md)。
+如果都完成了，恭喜，进入 [Stage 2 - Prompt Engineering](./02-prompt-engineering.zh-Hans.md)。
 
 如果卡住了，回到 Anthropic Quickstart + 完成至少 3 个 hello-X 脚本。

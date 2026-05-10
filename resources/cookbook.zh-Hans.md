@@ -2,7 +2,7 @@
 
 > [繁體中文](./cookbook.md) | **简体中文** | [English](./cookbook.en.md)
 
-> Stage 5（Claude Code 生态）跟 [`mcp-skills-catalog.md`](mcp-skills-catalog.zh-CN.md) 讲“概念”跟“有哪些工具”。这份 cookbook 补中间缺的：“**怎么动手做出来**”。每个 recipe 是一份 step-by-step + sample code + 常见 pitfall，~30-50 分钟做完一个。
+> Stage 5（Claude Code 生态）跟 [`mcp-skills-catalog.md`](mcp-skills-catalog.zh-Hans.md) 讲“概念”跟“有哪些工具”。这份 cookbook 补中间缺的：“**怎么动手做出来**”。每个 recipe 是一份 step-by-step + sample code + 常见 pitfall，~30-50 分钟做完一个。
 >
 > 不是 reference 也不是 tutorial——是 recipe，挑你需要的那道煮就好。
 
@@ -137,9 +137,9 @@ from mypackage import foo",
 
 ### 进一步
 
-- 看 [Stage 5.3](../stages/05-claude-code-ecosystem.zh-CN.md#53--skillsclaude-code-的行为层) 的 Skill anatomy 详解
+- 看 [Stage 5.3](../stages/05-claude-code-ecosystem.zh-Hans.md#53--skillsclaude-code-的行为层) 的 Skill anatomy 详解
 - 看 [`anthropics/skills`](https://github.com/anthropics/skills) 官方 skill 模板（docx / xlsx / pptx 等）的写法
-- 多个 skill 打包成 plugin → [Stage 5.4](../stages/05-claude-code-ecosystem.zh-CN.md#54--plugins-与-marketplaces)
+- 多个 skill 打包成 plugin → [Stage 5.4](../stages/05-claude-code-ecosystem.zh-Hans.md#54--plugins-与-marketplaces)
 
 ---
 
@@ -240,15 +240,15 @@ Claude 回（会显示 tool call icon）：Echo: hello world
 | 症状 | 原因 | 解法 |
 |---|---|---|
 | Claude Desktop 没看到 tool | server.py 启动失败 | 终端直接 `python server.py` 跑、看 stderr 哪里爆 |
-| tool 列出但 call 失败 | inputSchema 格式错（required 漏写、type 写错） | 看 [`schema-design-cheatsheet.md`](schema-design-cheatsheet.zh-CN.md) |
+| tool 列出但 call 失败 | inputSchema 格式错（required 漏写、type 写错） | 看 [`schema-design-cheatsheet.md`](schema-design-cheatsheet.zh-Hans.md) |
 | Claude 不主动叫 tool | description 太笼统 | description 改成“When the user asks X, use this tool”式的具体 trigger |
 | stdio 跟 SSE 哪个用？ | local desktop integration 用 stdio；remote / web 用 SSE | 第一个 server 一律用 stdio |
 
 ### 进一步
 
-- 看 [Stage 5.2](../stages/05-claude-code-ecosystem.zh-CN.md#52--mcpmodel-context-protocol-基础) 的 MCP 完整介绍
+- 看 [Stage 5.2](../stages/05-claude-code-ecosystem.zh-Hans.md#52--mcpmodel-context-protocol-基础) 的 MCP 完整介绍
 - 看 [`modelcontextprotocol/servers`](https://github.com/modelcontextprotocol/servers) 官方示例（filesystem、github、sqlite、time 等）
-- 写 production server 看 [Stage 5.2“练习：MCP in production”](../stages/05-claude-code-ecosystem.zh-CN.md#52--mcpmodel-context-protocol-基础) 跟 [`anthropics/claude-code`](https://github.com/anthropics/claude-code) 的 `~/.claude/skills/`
+- 写 production server 看 [Stage 5.2“练习：MCP in production”](../stages/05-claude-code-ecosystem.zh-Hans.md#52--mcpmodel-context-protocol-基础) 跟 [`anthropics/claude-code`](https://github.com/anthropics/claude-code) 的 `~/.claude/skills/`
 
 ---
 
@@ -309,7 +309,7 @@ Claude 会根据 user query 自动加载合适的 skill。
 **改 docx**：
 ```
 读 ./doc/draft.docx，把繁中词汇转成简中（譬如“软体”→“软件”），
-存成 ./doc/draft.zh-CN.docx，保留原本的 track changes。
+存成 ./doc/draft.zh-Hans.docx，保留原本的 track changes。
 ```
 
 **读 PDF 提取信息**：
@@ -329,7 +329,7 @@ Claude 会根据 user query 自动加载合适的 skill。
 
 ### 进一步
 
-- catalog §2 [`mcp-skills-catalog.md` §2 办公文件](mcp-skills-catalog.zh-CN.md#2-办公文件word--excel--powerpoint--pdf)：补强版 office skill / Excel / PPT 专用 MCP
+- catalog §2 [`mcp-skills-catalog.md` §2 办公文件](mcp-skills-catalog.zh-Hans.md#2-办公文件word--excel--powerpoint--pdf)：补强版 office skill / Excel / PPT 专用 MCP
 - 中文圈 office workflow：[`leemysw/feishu-docx`](https://github.com/leemysw/feishu-docx) 飞书 / Lark docs ↔ Markdown
 
 ---
@@ -414,7 +414,7 @@ print(answer.citations)
 
 ### 进一步
 
-- catalog §1 [`mcp-skills-catalog.md` §1 笔记 / 知识库](mcp-skills-catalog.zh-CN.md#1-笔记--知识库)
+- catalog §1 [`mcp-skills-catalog.md` §1 笔记 / 知识库](mcp-skills-catalog.zh-Hans.md#1-笔记--知识库)
 - 完整 research workspace：用 [`WenyuChiou/research-hub`](https://github.com/WenyuChiou/research-hub) 集成 NotebookLM + Zotero + Obsidian
 
 ---
@@ -503,9 +503,9 @@ git clone https://github.com/WenyuChiou/zotero-skills ~/.claude/skills/zotero-sk
 
 ## 找不到你要的 recipe？
 
-- 看 [Stage 5](../stages/05-claude-code-ecosystem.zh-CN.md) 完整概念
-- 看 [`mcp-skills-catalog.md`](mcp-skills-catalog.zh-CN.md) 完整工具清单
-- 看 [`schema-design-cheatsheet.md`](schema-design-cheatsheet.zh-CN.md) 写 tool schema 的细节
-- 看 [`cli-agents-guide.md`](cli-agents-guide.zh-CN.md) 6 个主流 CLI agent 比较
+- 看 [Stage 5](../stages/05-claude-code-ecosystem.zh-Hans.md) 完整概念
+- 看 [`mcp-skills-catalog.md`](mcp-skills-catalog.zh-Hans.md) 完整工具清单
+- 看 [`schema-design-cheatsheet.md`](schema-design-cheatsheet.zh-Hans.md) 写 tool schema 的细节
+- 看 [`cli-agents-guide.md`](cli-agents-guide.zh-Hans.md) 6 个主流 CLI agent 比较
 
 要新 recipe → 开 issue 或直接 PR 一份。recipe 格式：**为什么 + 步骤 + 范本 prompt + 常见 pitfall + 进一步**。

@@ -1,6 +1,6 @@
 # For Teachers — Specialized Branch
 
-> [繁體中文](./for-teacher.md) | [简体中文](./for-teacher.zh-CN.md) | **English**
+> [繁體中文](./for-teacher.md) | [简体中文](./for-teacher.zh-Hans.md) | **English**
 
 
 > [← Back to main path README](../README.en.md) · Continue here after **Track A's A3** or **Track B's Stage 7**. Apply agentic AI to teaching workflows.
@@ -95,7 +95,7 @@ General writing / brainstorming skills. Adaptable for lesson prep.
 
 | Field | Value |
 |---|---|
-| Language | Chinese (zh-CN) |
+| Language | Chinese (zh-Hans) |
 | Stars | ★ 13k+ |
 | License | NOASSERTION |
 

@@ -1,7 +1,7 @@
 # Outreach: Zhipu BigModel community (智譜)
 
 > **Status**: not contacted · **Channel**: 開發者社群（Discord / 知乎 / GitHub Discussions）
-> **Primary lang**: zh-CN
+> **Primary lang**: zh-Hans
 > **Last updated**: 2026-05-09
 > **Their main surface**: https://bigmodel.cn / https://github.com/MetaGLM
 
@@ -35,7 +35,7 @@
 你好智譜社群，
 
 我维护 [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-——一份中文 agentic AI 的 7 阶段三语学习地图（zh-TW canonical / zh-CN / en，145+
+——一份中文 agentic AI 的 7 阶段三语学习地图（zh-TW canonical / zh-Hans / en，145+
 projects，MIT，★525 第一周）。
 
 **§11 中文圈专用** 已经收了：

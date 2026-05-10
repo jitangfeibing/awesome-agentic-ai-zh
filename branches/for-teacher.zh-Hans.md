@@ -2,7 +2,7 @@
 
 > [繁體中文](./for-teacher.md) | **简体中文** | [English](./for-teacher.en.md)
 
-> [← 回主路线 README](../README.zh-CN.md) · 走完 **Track A 的 A3** 或 **Track B 的 Stage 7** 后从这里接续。把 agentic AI 应用到教学流程上。
+> [← 回主路线 README](../README.zh-Hans.md) · 走完 **Track A 的 A3** 或 **Track B 的 Stage 7** 后从这里接续。把 agentic AI 应用到教学流程上。
 
 ## 使用场景
 
@@ -94,7 +94,7 @@ AI 可以帮忙准备和辅助，但不应该直接取代教师判断。近期 A
 
 | 栏位 | 内容 |
 |---|---|
-| 语言 | 中文（zh-CN） |
+| 语言 | 中文（zh-Hans） |
 | Stars | ★ 13k+ |
 | License | NOASSERTION |
 
@@ -198,15 +198,15 @@ AI 可以帮忙准备和辅助，但不应该直接取代教师判断。近期 A
   - 例子：每周固定收 30 份作业 → 自动生成反馈初稿
   - 不熟程序的老师可以**找学校的 IT 同事 / 学生 RA 帮忙**设置，自己只用结果
 
-> 升级到 Tier 2+ 就建议走 [Track A — CLI Power User](../tracks/cli/A1-cli-intro.zh-CN.md)。
+> 升级到 Tier 2+ 就建议走 [Track A — CLI Power User](../tracks/cli/A1-cli-intro.zh-Hans.md)。
 
 ## 也适用其他分支
 
 很多老师同时是研究员 / 知识工作者，这几个分支重叠：
 
-- **也做研究**（找文献、写 paper、整理 references）→ [研究员分支](./for-researcher.zh-CN.md)
-- **要写报告 / 整理会议记录 / 跨工具集成**（Notion、Excel、Email）→ [知识工作者分支](./for-knowledge-worker.zh-CN.md)
-- **要把 AI 接到 Notion / Obsidian / 飞书** 等日常工具 → [`resources/mcp-skills-catalog.zh-CN.md`](../resources/mcp-skills-catalog.zh-CN.md)
+- **也做研究**（找文献、写 paper、整理 references）→ [研究员分支](./for-researcher.zh-Hans.md)
+- **要写报告 / 整理会议记录 / 跨工具集成**（Notion、Excel、Email）→ [知识工作者分支](./for-knowledge-worker.zh-Hans.md)
+- **要把 AI 接到 Notion / Obsidian / 飞书** 等日常工具 → [`resources/mcp-skills-catalog.zh-Hans.md`](../resources/mcp-skills-catalog.zh-Hans.md)
 
 ## 社群备注
 

@@ -35,7 +35,7 @@ catalog browsing.
 
 ```diff
 + - [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-+   — Trilingual (zh-TW · zh-CN · en) 7-stage learning roadmap. Stage 5.2 is
++   — Trilingual (zh-TW · zh-Hans · en) 7-stage learning roadmap. Stage 5.2 is
 +   a dedicated walkthrough of MCP (concept → first install → writing your
 +   own server), with prerequisites and time estimates. Catalog includes 62
 +   integrations grouped by use case.
@@ -57,7 +57,7 @@ Our repo is the **structured learning complement**:
   estimates
 - After Stage 5.2, readers are sent to your catalog to find specific servers
   for their stack
-- Trilingual (zh-TW / zh-CN / en), MIT, ★525 week 1
+- Trilingual (zh-TW / zh-Hans / en), MIT, ★525 week 1
 
 Targeting your `## Tutorials` section (line ~XX in README) since this is a
 "how to learn MCP" resource, not a server. If a different section fits

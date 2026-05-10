@@ -1,7 +1,7 @@
 # Outreach: Moonshot Kimi 開發者頻道
 
 > **Status**: not contacted · **Channel**: 開發者社群（Discord / 知乎 / GitHub）
-> **Primary lang**: zh-CN
+> **Primary lang**: zh-Hans
 > **Last updated**: 2026-05-09
 > **Their main surface**: https://kimi.moonshot.cn · https://github.com/MoonshotAI
 
@@ -35,7 +35,7 @@ Coze——缺 Moonshot 的 entry。
 你好 Moonshot 社群，
 
 我维护 [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh)
-——一份中文 agentic AI 的 7 阶段三语学习地图（zh-TW canonical / zh-CN / en，145+
+——一份中文 agentic AI 的 7 阶段三语学习地图（zh-TW canonical / zh-Hans / en，145+
 projects，MIT，★525 第一周）。
 
 **§11 中文圈专用** 已经收了 Qwen-Agent / Coze / Langchain-Chatchat 等，但缺

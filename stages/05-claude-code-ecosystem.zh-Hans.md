@@ -4,7 +4,7 @@
 
 ⏱ **时间估算**：3-4 周（约 15-25 小时）
 
-> 💡 整个 stage 围绕 4 个关键词（**MCP / Skills / Plugins / Marketplace**）展开 → 不熟先翻 [`resources/glossary.zh-CN.md` §5](../resources/glossary.zh-CN.md#5-claude-code-生态)。
+> 💡 整个 stage 围绕 4 个关键词（**MCP / Skills / Plugins / Marketplace**）展开 → 不熟先翻 [`resources/glossary.zh-Hans.md` §5](../resources/glossary.zh-Hans.md#5-claude-code-生态)。
 
 > 📌 **这个 stage 两条轨都用**：
 > - **Track A（CLI Power User）**：A2 用 [5.1（Claude Code 基础）](#51--claude-code-基础)；A3 用 [5.2（MCP）](#52--mcpmodel-context-protocol-基础) + 选择性用到 [5.3（Skills）](#53--skillsclaude-code-的行为层) 跟 [5.4（Plugins）](#54--plugins-与-marketplaces)（A3 的 动手练习 CLI-12 会教把 CLAUDE.md 跟 commands 打包成 plugin）。读的角度是「**怎么用 Claude Code 把工作做好**」
@@ -14,7 +14,7 @@
 
 由上往下，每一层都建立在底下那一层上：
 
-![Claude Code Ecosystem Stack](../resources/diagrams/stage5-stack.zh-CN.png)
+![Claude Code Ecosystem Stack](../resources/diagrams/stage5-stack.zh-Hans.png)
 
 每一层各自加上一种能力：
 - **API + SDK**：用程序存取 LLM
@@ -75,13 +75,13 @@
 
 ### 动手练习
 - **练习：MCP client** — 安装 `modelcontextprotocol/servers/filesystem`，从 Claude Desktop 连上去。看着 Claude 读你的文件。
-- **练习：MCP server** — 写一个 Python MCP server，提供一个 tool（例如「换算温度」）。从 Claude Code 连过去。**step-by-step 怎么做** → [`resources/cookbook.zh-CN.md` §2](../resources/cookbook.zh-CN.md#2-写你的第一个-mcp-server)
+- **练习：MCP server** — 写一个 Python MCP server，提供一个 tool（例如「换算温度」）。从 Claude Code 连过去。**step-by-step 怎么做** → [`resources/cookbook.zh-Hans.md` §2](../resources/cookbook.zh-Hans.md#2-写你的第一个-mcp-server)
 - **练习：MCP in production** — 在同一个 Claude session 里同时连 2-3 个 MCP server，看它们互相搭配。
 
 ### 精选 Projects
 
 > 💡 **找日常工具的 MCP（Notion / Obsidian / Excel / Postgres / Playwright / Figma 等）？**
-> 看 [`resources/mcp-skills-catalog.zh-CN.md`](../resources/mcp-skills-catalog.zh-CN.md)——按 14 个分类整理 62 个常用 MCP server / Skill，每个都附 stars / license / 适合谁。下面这节保留的是「**写自己 MCP server 时的 reference**」性质的官方 server / SDK。
+> 看 [`resources/mcp-skills-catalog.zh-Hans.md`](../resources/mcp-skills-catalog.zh-Hans.md)——按 14 个分类整理 62 个常用 MCP server / Skill，每个都附 stars / license / 适合谁。下面这节保留的是「**写自己 MCP server 时的 reference**」性质的官方 server / SDK。
 
 
 #### [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) ⭐ 官方
@@ -204,14 +204,14 @@ pip install mcp
 4. [**Hello-Agents — Extra05 Agent Skills 与 MCP 对比解读**](https://github.com/datawhalechina/hello-agents/blob/main/Extra-Chapter/Extra05-AgentSkills解读.md) — Skills vs MCP 概念对比
 
 ### 动手练习
-- **练习：SKILL.md** — 写一份 200 字的 skill，解决你日常工作中的某一件事。**step-by-step 怎么做** → [`resources/cookbook.zh-CN.md` §1](../resources/cookbook.zh-CN.md#1-写你的第一个-skill)
+- **练习：SKILL.md** — 写一份 200 字的 skill，解决你日常工作中的某一件事。**step-by-step 怎么做** → [`resources/cookbook.zh-Hans.md` §1](../resources/cookbook.zh-Hans.md#1-写你的第一个-skill)
 - **练习：SKILL with references** — 加一份 `references/` markdown 让 skill 可以引用
 - **练习：SKILL eval** — 加 `evals/evals.json`，放 3-5 个自我测试
 
 ### 精选 Projects
 
 > 💡 **找日常用 Skill（NotebookLM、Excalidraw、Office docs 等）？**
-> 看 [`resources/mcp-skills-catalog.zh-CN.md`](../resources/mcp-skills-catalog.zh-CN.md)——按使用场景分类，含 Anthropic 官方 + 社区 Skill。下面这节保留的是「**写自己 Skill 时的 reference**」性质的 spec / showcase。
+> 看 [`resources/mcp-skills-catalog.zh-Hans.md`](../resources/mcp-skills-catalog.zh-Hans.md)——按使用场景分类，含 Anthropic 官方 + 社区 Skill。下面这节保留的是「**写自己 Skill 时的 reference**」性质的 spec / showcase。
 
 #### [anthropics/skills](https://github.com/anthropics/skills) ⭐ 官方 spec
 
@@ -341,7 +341,7 @@ pip install mcp
 
 ### 精选 Projects
 
-> 💡 **想看别人的 plugin 怎么包**：[`resources/mcp-skills-catalog.zh-CN.md`](../resources/mcp-skills-catalog.zh-CN.md) 的开发协作 / 设计 / 监控分类底下不少都附 plugin 包装（例如 `timescale/pg-aiguide` 同时是 MCP 跟 plugin）。下面这节保留的是「**marketplace 结构模板**」性质的 reference。
+> 💡 **想看别人的 plugin 怎么包**：[`resources/mcp-skills-catalog.zh-Hans.md`](../resources/mcp-skills-catalog.zh-Hans.md) 的开发协作 / 设计 / 监控分类底下不少都附 plugin 包装（例如 `timescale/pg-aiguide` 同时是 MCP 跟 plugin）。下面这节保留的是「**marketplace 结构模板**」性质的 reference。
 
 #### [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) ⭐ 官方
 
@@ -431,7 +431,7 @@ pip install mcp
 - [ ] 把 skill 打包成 plugin，再用 `marketplace.json` 发布
 - [ ] 从角色分工说出 MCP / Skills / Plugins / SDK 各自的位置
 
-如果都可以 → 前往 [Stage 6 — Memory & RAG](./06-memory-rag.zh-CN.md)。
+如果都可以 → 前往 [Stage 6 — Memory & RAG](./06-memory-rag.zh-Hans.md)。
 
 ## 💡 Bonus：完成这个阶段之后
 

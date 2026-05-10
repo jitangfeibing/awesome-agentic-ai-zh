@@ -1,6 +1,6 @@
 # Cookbook — Turn Concepts into Executable Recipes
 
-> [繁體中文](./cookbook.md) | **English**
+> [繁體中文](./cookbook.md) | [简体中文](./cookbook.zh-Hans.md) | **English**
 
 > Stage 5 (Claude Code Ecosystem) talks about "Concepts" and "Available Tools" with [`mcp-skills-catalog.md`](mcp-skills-catalog.md). This cookbook fills in the gap in between: "**How to build it**". Each recipe is a step-by-step guide + sample code + common pitfalls, designed to be completed in about 30-50 minutes.
 >
@@ -306,8 +306,8 @@ and write it into ./output/q4-summary.md using a markdown table format.
 
 **Edit DOCX**:
 ```
-Read ./doc/draft.docx, change all instances of "使用者" to "用户" (zh-CN translation),
-and save as ./doc/draft.zh-CN.docx, preserving the original track changes.
+Read ./doc/draft.docx, change all instances of "使用者" to "用户" (zh-Hans translation),
+and save as ./doc/draft.zh-Hans.docx, preserving the original track changes.
 ```
 
 **Read PDF and Extract Information**:

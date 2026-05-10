@@ -1,6 +1,6 @@
 # Stage 7 — Multi-Agent · Production
 
-> [繁體中文](./07-multi-agent-production.md) | **English**
+> [繁體中文](./07-multi-agent-production.md) | [简体中文](./07-multi-agent-production.zh-Hans.md) | **English**
 
 
 ⏱ **Time estimate**: 2-4 weeks (~15-30 hours)
@@ -249,7 +249,7 @@ Already cited. Specifically the `prompt_caching.ipynb`, `tool_use/`, and `multim
 
 | Field | Value |
 |---|---|
-| Language | 中文 (zh-CN) |
+| Language | 中文 (zh-Hans) |
 | Stars | ★ 30k+ |
 | License | Apache-2.0 |
 | Recommendation | ⭐⭐⭐⭐ |

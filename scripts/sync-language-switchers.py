@@ -5,7 +5,7 @@ sync-language-switchers.py — 統一三語檔案頂部的 language switcher
 3 語版 repo 結構：
   <file>.md         = zh-TW canonical
   <file>.en.md      = English mirror
-  <file>.zh-CN.md   = zh-CN mirror
+  <file>.zh-Hans.md   = zh-Hans mirror
 
 每個檔案的頂部都需要 3-way switcher，把目前 active 的語言粗體、其他兩個連結。
 
@@ -40,17 +40,17 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 EXCLUDE_PATHS = {
     "branches/DESIGN.md",
     "stages/DESIGN.md",
-    "CONTRIBUTORS.md",  # 名單性質，不一定有 zh-CN 翻譯
+    "CONTRIBUTORS.md",  # 名單性質，不一定有 zh-Hans 翻譯
 }
 EXCLUDE_DIRS = {".github", "scripts", "book", ".ai", ".claude", "node_modules"}
 
 
 def find_paired_files() -> list[tuple[Path, Optional[Path], Optional[Path]]]:
-    """找所有 (zh-TW, en, zh-CN) 三檔組合。"""
+    """找所有 (zh-TW, en, zh-Hans) 三檔組合。"""
     triples = []
     for md_path in sorted(REPO_ROOT.rglob("*.md")):
-        # 跳過 .en.md / .zh-CN.md 自己（它們是 mirror，不是 canonical）
-        if md_path.name.endswith(".en.md") or md_path.name.endswith(".zh-CN.md"):
+        # 跳過 .en.md / .zh-Hans.md 自己（它們是 mirror，不是 canonical）
+        if md_path.name.endswith(".en.md") or md_path.name.endswith(".zh-Hans.md"):
             continue
         # 跳過 EXCLUDE_DIRS
         if any(part in EXCLUDE_DIRS for part in md_path.relative_to(REPO_ROOT).parts):
@@ -61,27 +61,27 @@ def find_paired_files() -> list[tuple[Path, Optional[Path], Optional[Path]]]:
             continue
 
         en_path = md_path.with_suffix(".en.md")
-        zh_cn_path = md_path.with_suffix(".zh-CN.md")
+        zh_hans_path = md_path.with_suffix(".zh-Hans.md")
         if not en_path.exists():
             en_path = None
-        if not zh_cn_path.exists():
-            zh_cn_path = None
+        if not zh_hans_path.exists():
+            zh_hans_path = None
 
         # 至少要有 zh-TW + 一個 mirror 才算需要 switcher
-        if en_path is None and zh_cn_path is None:
+        if en_path is None and zh_hans_path is None:
             continue
 
-        triples.append((md_path, en_path, zh_cn_path))
+        triples.append((md_path, en_path, zh_hans_path))
     return triples
 
 
-def make_readme_switcher(active: str, has_en: bool, has_zh_cn: bool) -> str:
-    """README.md / README.en.md / README.zh-CN.md 用的 div 區塊 switcher。"""
+def make_readme_switcher(active: str, has_en: bool, has_zh_hans: bool) -> str:
+    """README.md / README.en.md / README.zh-Hans.md 用的 div 區塊 switcher。"""
     parts = []
-    label_map = {"zh-TW": "繁體中文", "en": "English", "zh-CN": "简体中文"}
+    label_map = {"zh-TW": "繁體中文", "en": "English", "zh-Hans": "简体中文"}
 
-    for lang in ("zh-TW", "zh-CN", "en"):
-        if lang == "zh-CN" and not has_zh_cn:
+    for lang in ("zh-TW", "zh-Hans", "en"):
+        if lang == "zh-Hans" and not has_zh_hans:
             continue
         if lang == "en" and not has_en:
             continue
@@ -89,19 +89,19 @@ def make_readme_switcher(active: str, has_en: bool, has_zh_cn: bool) -> str:
         if lang == active:
             parts.append(f"<strong>{label}</strong>")
         else:
-            href_map = {"zh-TW": "./README.md", "en": "./README.en.md", "zh-CN": "./README.zh-CN.md"}
+            href_map = {"zh-TW": "./README.md", "en": "./README.en.md", "zh-Hans": "./README.zh-Hans.md"}
             parts.append(f'<a href="{href_map[lang]}">{label}</a>')
 
     return f'<div align="right">\n  {" | ".join(parts)}\n</div>'
 
 
-def make_inline_switcher(active: str, base_name: str, has_en: bool, has_zh_cn: bool) -> str:
+def make_inline_switcher(active: str, base_name: str, has_en: bool, has_zh_hans: bool) -> str:
     """一般檔 blockquote 一行 switcher。"""
     parts = []
-    label_map = {"zh-TW": "繁體中文", "en": "English", "zh-CN": "简体中文"}
+    label_map = {"zh-TW": "繁體中文", "en": "English", "zh-Hans": "简体中文"}
 
-    for lang in ("zh-TW", "zh-CN", "en"):
-        if lang == "zh-CN" and not has_zh_cn:
+    for lang in ("zh-TW", "zh-Hans", "en"):
+        if lang == "zh-Hans" and not has_zh_hans:
             continue
         if lang == "en" and not has_en:
             continue
@@ -112,7 +112,7 @@ def make_inline_switcher(active: str, base_name: str, has_en: bool, has_zh_cn: b
             href_map = {
                 "zh-TW": f"./{base_name}.md",
                 "en": f"./{base_name}.en.md",
-                "zh-CN": f"./{base_name}.zh-CN.md",
+                "zh-Hans": f"./{base_name}.zh-Hans.md",
             }
             parts.append(f"[{label}]({href_map[lang]})")
 
@@ -146,7 +146,7 @@ def detect_switcher_block(content: str) -> tuple[Optional[int], Optional[int], s
     return None, None, ""
 
 
-def update_file(path: Path, lang: str, has_en: bool, has_zh_cn: bool, apply: bool) -> bool:
+def update_file(path: Path, lang: str, has_en: bool, has_zh_hans: bool, apply: bool) -> bool:
     """更新單一檔案的 switcher。回傳 True 表示有改動需要寫入。"""
     content = path.read_text(encoding="utf-8")
     lines = content.split("\n")
@@ -157,17 +157,17 @@ def update_file(path: Path, lang: str, has_en: bool, has_zh_cn: bool, apply: boo
     is_readme = path.name.startswith("README")
 
     if is_readme:
-        new_switcher = make_readme_switcher(lang, has_en, has_zh_cn)
+        new_switcher = make_readme_switcher(lang, has_en, has_zh_hans)
     else:
-        # 從 path 名字算 base_name（去掉 .en / .zh-CN suffix 後再去掉 .md）
+        # 從 path 名字算 base_name（去掉 .en / .zh-Hans suffix 後再去掉 .md）
         name = path.name
         if name.endswith(".en.md"):
             base_name = name[: -len(".en.md")]
-        elif name.endswith(".zh-CN.md"):
-            base_name = name[: -len(".zh-CN.md")]
+        elif name.endswith(".zh-Hans.md"):
+            base_name = name[: -len(".zh-Hans.md")]
         else:
             base_name = name[: -len(".md")]
-        new_switcher = make_inline_switcher(lang, base_name, has_en, has_zh_cn)
+        new_switcher = make_inline_switcher(lang, base_name, has_en, has_zh_hans)
 
     if start is None:
         # 沒有現成 switcher，加在第一行 H1 之後
@@ -206,7 +206,7 @@ def update_file(path: Path, lang: str, has_en: bool, has_zh_cn: bool, apply: boo
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Sync 3-way language switchers across .md / .en.md / .zh-CN.md")
+    parser = argparse.ArgumentParser(description="Sync 3-way language switchers across .md / .en.md / .zh-Hans.md")
     parser.add_argument("--apply", action="store_true", help="actually write changes (default: dry-run)")
     parser.add_argument(
         "--check", action="store_true", help="exit 1 if any switcher is out of sync (CI use)"
@@ -217,15 +217,15 @@ def main():
     print(f"Found {len(triples)} canonical zh-TW files with at least one mirror.\n")
 
     changed = 0
-    for zh_tw, en, zh_cn in triples:
+    for zh_tw, en, zh_hans in triples:
         has_en = en is not None
-        has_zh_cn = zh_cn is not None
+        has_zh_hans = zh_hans is not None
 
-        if update_file(zh_tw, "zh-TW", has_en, has_zh_cn, args.apply):
+        if update_file(zh_tw, "zh-TW", has_en, has_zh_hans, args.apply):
             changed += 1
-        if has_en and update_file(en, "en", has_en, has_zh_cn, args.apply):
+        if has_en and update_file(en, "en", has_en, has_zh_hans, args.apply):
             changed += 1
-        if has_zh_cn and update_file(zh_cn, "zh-CN", has_en, has_zh_cn, args.apply):
+        if has_zh_hans and update_file(zh_hans, "zh-Hans", has_en, has_zh_hans, args.apply):
             changed += 1
 
     print()

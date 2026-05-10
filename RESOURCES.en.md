@@ -1,6 +1,6 @@
 # Related Resources
 
-> [繁體中文](./RESOURCES.md) | [简体中文](./RESOURCES.zh-CN.md) | **English**
+> [繁體中文](./RESOURCES.md) | [简体中文](./RESOURCES.zh-Hans.md) | **English**
 
 > [← Back to main README](README.en.md)
 
@@ -84,8 +84,8 @@ This repo **doesn't replace** flat awesome lists. When you already know which to
 
 ### Chinese-speaking community
 
-- [**datawhalechina/hello-agents**](https://github.com/datawhalechina/hello-agents) — Datawhale systematic agent tutorial (zh-CN)
-- [**WangRongsheng/awesome-LLM-resources**](https://github.com/WangRongsheng/awesome-LLM-resources) — comprehensive zh-CN LLM resources (8k+ stars)
+- [**datawhalechina/hello-agents**](https://github.com/datawhalechina/hello-agents) — Datawhale systematic agent tutorial (zh-Hans)
+- [**WangRongsheng/awesome-LLM-resources**](https://github.com/WangRongsheng/awesome-LLM-resources) — comprehensive zh-Hans LLM resources (8k+ stars)
 - [**AiHubCN/Awesome-Chinese-LLM**](https://github.com/AiHubCN/Awesome-Chinese-LLM) — open-source Chinese LLM catalog
 
 ---

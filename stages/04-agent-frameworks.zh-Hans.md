@@ -4,7 +4,7 @@
 
 ⏱ **时间估算**：2-3 周（约 10-15 小时）
 
-> 💡 用语不熟（framework / supervisor / worker / handoff⋯）→ 翻 [`resources/glossary.zh-CN.md`](../resources/glossary.zh-CN.md)。
+> 💡 用语不熟（framework / supervisor / worker / handoff⋯）→ 翻 [`resources/glossary.zh-Hans.md`](../resources/glossary.zh-Hans.md)。
 
 你已经从零打造过一个 ReAct agent（第 3 阶段）。现在来看 framework 到底帮你做了什么。**挑一个深入学**，其他的浏览过去就好，知道什么时候该换。
 
@@ -23,7 +23,7 @@
 - 从零写过 ReAct（练习 3）
 - 对 async Python 上手（框架大量依赖 async）
 
-⚠️ **内存预备（需要时偷看一下）**：有些框架功能会用到内存的概念 — LangGraph 用 checkpointing（状态持久化），CrewAI 在 agent 之间传递任务结果（轻量内存）。这些东西在 [第 6 阶段 — 内存 & RAG](06-memory-rag.zh-CN.md) 会讲清楚。你不必先读完那篇，只是当某个框架功能让你看不懂的时候，去那边找答案就对了。
+⚠️ **内存预备（需要时偷看一下）**：有些框架功能会用到内存的概念 — LangGraph 用 checkpointing（状态持久化），CrewAI 在 agent 之间传递任务结果（轻量内存）。这些东西在 [第 6 阶段 — 内存 & RAG](06-memory-rag.zh-Hans.md) 会讲清楚。你不必先读完那篇，只是当某个框架功能让你看不懂的时候，去那边找答案就对了。
 
 ## 📚 必修阅读
 
@@ -271,7 +271,7 @@ pip install langgraph langchain-anthropic
 - [ ] 看出什么时候 CodeAct（Smolagents）比 JSON-tool 更好
 - [ ] 判断什么时候该丢掉框架、直接用 raw API
 
-如果可以 → 进 [第 5 阶段 — Claude Code Ecosystem](05-claude-code-ecosystem.zh-CN.md)。
+如果可以 → 进 [第 5 阶段 — Claude Code Ecosystem](05-claude-code-ecosystem.zh-Hans.md)。
 
 ## 💡 策略提示
 
