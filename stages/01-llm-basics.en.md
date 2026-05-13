@@ -35,56 +35,205 @@ If not — go back to Stage 0 first.
 
 ## 🛠 Hands-on Exercises (do them, not just read)
 
-### Exercise: LLM API
+### Exercise 1: LLM API (hello world)
 Five-line Python script that calls Claude API and prints the response.
 
+<details>
+<summary>📋 <b>Starter code</b> (copy to <code>practice_1.py</code> and run <code>python practice_1.py</code>)</summary>
+
 ```python
-from anthropic import Anthropic
-client = Anthropic()
+# Requires: pip install anthropic
+# Env: export ANTHROPIC_API_KEY=sk-ant-...
+import sys
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+import anthropic
+
+client = anthropic.Anthropic()
 msg = client.messages.create(
-    model="claude-sonnet-4-5",
+    model="claude-haiku-4-5",  # haiku = cheapest; switch to sonnet by changing this line
     max_tokens=100,
-    messages=[{"role": "user", "content": "Hello, who are you?"}]
+    messages=[{"role": "user", "content": "Introduce yourself in one sentence."}],
 )
-print(msg.content[0].text)
+
+# === Self-check ===
+text = msg.content[0].text
+print("Response:", text)
+print("usage:", msg.usage)
+
+assert msg.stop_reason in ("end_turn", "max_tokens"), f"unexpected stop_reason: {msg.stop_reason}"
+assert len(text) > 0, "response should not be empty"
+assert msg.usage.input_tokens > 0 and msg.usage.output_tokens > 0, "token counts should be > 0"
+print("✅ Exercise 1 passed — Anthropic API is reachable from your machine")
 ```
 
-### Exercise: Tokens
+**Expected output** (sample):
+```
+Response: I'm Claude, an AI assistant made by Anthropic...
+usage: Usage(input_tokens=14, output_tokens=38, ...)
+✅ Exercise 1 passed — Anthropic API is reachable from your machine
+```
+
+</details>
+
+### Exercise 2: Tokens
 Run the same prompt 100 times and watch token counts vary.
-- Notice: temperature ≠ 0 produces variation
+- Notice: `temperature ≠ 0` produces variation
 - Notice: token count for the SAME English vs Chinese sentence
 
-### Exercise: Pricing
+<details>
+<summary>📋 <b>Starter code</b> (copy to <code>practice_2.py</code>)</summary>
+
+```python
+# Requires: pip install anthropic
+import sys, statistics
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+import anthropic
+
+client = anthropic.Anthropic()
+
+PROMPTS = {
+    "Chinese": "用一句話描述一隻貓在做什麼。",
+    "English": "Describe in one sentence what a cat is doing.",
+}
+
+N = 20  # 100 runs is expensive — start with 20
+for label, prompt in PROMPTS.items():
+    output_tokens = []
+    for _ in range(N):
+        msg = client.messages.create(
+            model="claude-haiku-4-5",
+            max_tokens=80,
+            temperature=1.0,  # high temp to amplify variance
+            messages=[{"role": "user", "content": prompt}],
+        )
+        output_tokens.append(msg.usage.output_tokens)
+    print(f"\n[{label}] prompt: {prompt}")
+    print(f"  input tokens: {msg.usage.input_tokens}")
+    print(f"  output tokens — min={min(output_tokens)} max={max(output_tokens)} mean={statistics.mean(output_tokens):.1f} stdev={statistics.stdev(output_tokens):.1f}")
+
+# === Self-check ===
+print("\n✅ Exercise 2 passed — observed how temperature affects output token variance")
+print("💡 Chinese prompts typically use MORE input tokens (one Chinese character ≈ 2 tokens)")
+```
+
+</details>
+
+### Exercise 3: Pricing
 Calculate the actual dollar cost of running 1000 inferences for your hello-world prompt. Use Anthropic's pricing page + count tokens via the SDK's `usage` field.
 
-### Exercise: Cross-Provider Comparison
+<details>
+<summary>📋 <b>Starter code</b> (copy to <code>practice_3.py</code>)</summary>
+
+```python
+# Requires: pip install anthropic
+import sys
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+import anthropic
+
+# Anthropic public pricing 2026 Q1 (per 1M tokens, USD)
+# Verify at https://www.anthropic.com/pricing before relying on these numbers
+PRICING = {
+    "claude-haiku-4-5":   {"input": 1.00, "output":  5.00},
+    "claude-sonnet-4-5":  {"input": 3.00, "output": 15.00},
+    "claude-opus-4-5":    {"input": 15.0, "output": 75.00},
+}
+
+client = anthropic.Anthropic()
+MODEL = "claude-haiku-4-5"
+
+msg = client.messages.create(
+    model=MODEL,
+    max_tokens=200,
+    messages=[{"role": "user", "content": "Hi! Please introduce yourself."}],
+)
+in_tok = msg.usage.input_tokens
+out_tok = msg.usage.output_tokens
+rates = PRICING[MODEL]
+
+cost_one = (in_tok * rates["input"] + out_tok * rates["output"]) / 1_000_000
+cost_1000 = cost_one * 1000
+
+print(f"model: {MODEL}")
+print(f"single call: input={in_tok} output={out_tok} → ${cost_one:.6f}")
+print(f"1000 calls:   ${cost_1000:.4f}")
+
+print("\nProjected cost across models (same token counts):")
+for name, r in PRICING.items():
+    c = (in_tok * r["input"] + out_tok * r["output"]) / 1_000_000 * 1000
+    print(f"  {name:<22} 1000 calls: ${c:.4f}")
+
+# === Self-check ===
+assert cost_1000 > 0, "cost should be > 0"
+assert cost_1000 < 10, f"1000 haiku hello-worlds should not exceed $10, got ${cost_1000:.4f}"
+print(f"\n✅ Exercise 3 passed — you can now compute real cost from usage + pricing")
+```
+
+</details>
+
+### Exercise 4: Cross-Provider Comparison
 Send the same prompt to Claude, GPT, and Gemini simultaneously, compare their responses. Notice "why does the same input produce different answers" — answer style, length, and judgment all differ. Use the OpenAI, Anthropic, and Google SDKs side-by-side.
 
-### Exercise: Error Handling
+→ **Full runnable version** → [`examples/stage-1/04-cross-provider/`](../examples/stage-1/04-cross-provider/) (parallel calls to all three SDKs + comparison table; missing keys are skipped gracefully)
+
+### Exercise 5: Error Handling
 Trigger error conditions deliberately and write retry logic:
 - Wrong API key → see how it raises
 - Over-long prompt → what happens when the context window is full
 - Network drop → write a retry wrapper with exponential backoff
+
 This is foundational for Stage 3-7's production agent code.
 
-### Exercise: Local LLM
+→ **Full runnable version** → [`examples/stage-1/05-error-handling/`](../examples/stage-1/05-error-handling/) (mock-based tests so you can verify the retry logic without unplugging your ethernet cable)
+
+### Exercise 6: Local LLM
 **No API fees, runs on your machine**: use Ollama to pull a small model (recommend `llama3.2:3b` or `qwen2.5:3b`), call it via OpenAI-compatible API.
+
 ```bash
-# Install Ollama: https://ollama.com
+# 1. Install Ollama: https://ollama.com
 ollama pull qwen2.5:3b
 ollama serve  # default port 11434
 ```
-Then from Python:
+
+<details>
+<summary>📋 <b>Starter code</b> (copy to <code>practice_6.py</code>)</summary>
+
 ```python
+# Requires: pip install openai
+# Pre-req: Ollama is running, qwen2.5:3b is pulled
+import sys
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 from openai import OpenAI
-client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
+
+client = OpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="ollama",  # Ollama doesn't check this — anything works
+)
+
 r = client.chat.completions.create(
     model="qwen2.5:3b",
-    messages=[{"role":"user","content":"Explain ReAct in 3 sentences"}]
+    messages=[{"role": "user", "content": "Explain ReAct in 3 sentences."}],
 )
-print(r.choices[0].message.content)
+
+text = r.choices[0].message.content
+print("Response:", text)
+
+# === Self-check ===
+assert len(text) > 10, "response is too short — Ollama may not be running"
+print(f"✅ Exercise 6 passed — local Ollama reachable through the OpenAI-compatible API")
+print(f"💡 This run cost you $0 (except for electricity)")
 ```
+
 **Why do this**: once you can run local LLMs, Stage 3-6 experiments aren't bottlenecked on API costs; privacy-sensitive work also stays offline.
+
+</details>
 
 ## 🎯 Curated Projects
 

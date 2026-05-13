@@ -34,56 +34,204 @@
 
 ## “动手”小练习（在本地运行这些代码）
 
-### 练习 1：调用 LLM API
-使用 Python 调用 Claude API，体验最基础的交互。
+### 练习 1：LLM API（hello world）
+五行 Python 调用 Claude API 并印出回应。
+
+<details>
+<summary>📋 <b>起手码</b>（复制到 <code>practice_1.py</code>、<code>python practice_1.py</code> 就跑）</summary>
 
 ```python
-from anthropic import Anthropic
-client = Anthropic()
+# 需要：pip install anthropic
+# 环境变量：export ANTHROPIC_API_KEY=sk-ant-...
+import sys
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+import anthropic
+
+client = anthropic.Anthropic()
 msg = client.messages.create(
-    model="claude-3-5-sonnet",
+    model="claude-haiku-4-5",  # haiku 最便宜；换 sonnet 改这行
     max_tokens=100,
-    messages=[{"role": "user", "content": "Hello, who are you?"}]
+    messages=[{"role": "user", "content": "用一句话自我介绍。"}],
 )
-print(msg.content[0].text)
+
+# === 自我验证 ===
+text = msg.content[0].text
+print("回应：", text)
+print("usage:", msg.usage)
+
+assert msg.stop_reason in ("end_turn", "max_tokens"), f"非预期 stop_reason: {msg.stop_reason}"
+assert len(text) > 0, "回应不应为空"
+assert msg.usage.input_tokens > 0 and msg.usage.output_tokens > 0, "token 数应 > 0"
+print("✅ 练习 1 通过 — 你已成功打通 Anthropic API")
 ```
+
+**预期输出**（样本）：
+```
+回应：我是 Claude，一个由 Anthropic 训练的 AI 助理...
+usage: Usage(input_tokens=18, output_tokens=42, ...)
+✅ 练习 1 通过 — 你已成功打通 Anthropic API
+```
+
+</details>
 
 ### 练习 2：Tokens
-用同一个 prompt，设置 `max_tokens=1`，看看会发生什么。
-- 调整 `temperature` 为 0，观察输出的确定性。
-- 比较不同词汇（中文 vs. 英文）的 token 数量。
+同一个 prompt 跑 100 次，观察 token 数的变化。
+- 注意：`temperature ≠ 0` 会产生变动
+- 注意：同一句话的英文 vs 中文 token 数差异
+
+<details>
+<summary>📋 <b>起手码</b>（复制到 <code>practice_2.py</code>）</summary>
+
+```python
+# 需要：pip install anthropic
+import sys, statistics
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+import anthropic
+
+client = anthropic.Anthropic()
+
+PROMPTS = {
+    "中文": "用一句话描述一只猫在做什么。",
+    "English": "Describe in one sentence what a cat is doing.",
+}
+
+N = 20  # 跑 100 太贵、先 20。确认 OK 再加大
+for label, prompt in PROMPTS.items():
+    output_tokens = []
+    for _ in range(N):
+        msg = client.messages.create(
+            model="claude-haiku-4-5",
+            max_tokens=80,
+            temperature=1.0,  # 故意拉高、看 variance
+            messages=[{"role": "user", "content": prompt}],
+        )
+        output_tokens.append(msg.usage.output_tokens)
+    print(f"\n[{label}] prompt: {prompt}")
+    print(f"  input tokens: {msg.usage.input_tokens}")
+    print(f"  output tokens — min={min(output_tokens)} max={max(output_tokens)} mean={statistics.mean(output_tokens):.1f} stdev={statistics.stdev(output_tokens):.1f}")
+
+# === 自我验证 ===
+print("\n✅ 练习 2 通过 — 观察到 temperature 对 output token 的 variance")
+print("💡 中文 prompt 通常 input tokens 比 English 多（中文一个字常 = 2 tokens）")
+```
+
+</details>
 
 ### 练习 3：Pricing
-估算一个 hello-world prompt 运行 1000 次的成本，并与 Anthropic 的 pricing page + SDK 返回的 `usage` 字段进行对比。
+算出你的 hello-world prompt 跑 1000 次的实际美金成本。用 Anthropic 的 pricing page + SDK 的 `usage` 字段来算 token。
+
+<details>
+<summary>📋 <b>起手码</b>（复制到 <code>practice_3.py</code>）</summary>
+
+```python
+# 需要：pip install anthropic
+import sys
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+import anthropic
+
+# Anthropic 2026 Q1 公开计价（每 1M token、USD）— 跑前对照 https://www.anthropic.com/pricing
+PRICING = {
+    "claude-haiku-4-5":   {"input": 1.00, "output":  5.00},
+    "claude-sonnet-4-5":  {"input": 3.00, "output": 15.00},
+    "claude-opus-4-5":    {"input": 15.0, "output": 75.00},
+}
+
+client = anthropic.Anthropic()
+MODEL = "claude-haiku-4-5"
+
+msg = client.messages.create(
+    model=MODEL,
+    max_tokens=200,
+    messages=[{"role": "user", "content": "你好！自我介绍一下。"}],
+)
+in_tok = msg.usage.input_tokens
+out_tok = msg.usage.output_tokens
+rates = PRICING[MODEL]
+
+cost_one = (in_tok * rates["input"] + out_tok * rates["output"]) / 1_000_000
+cost_1000 = cost_one * 1000
+
+print(f"model: {MODEL}")
+print(f"single call: input={in_tok} output={out_tok} → ${cost_one:.6f}")
+print(f"1000 calls:   ${cost_1000:.4f}")
+
+print("\n换算到其他 model 同样 token 量：")
+for name, r in PRICING.items():
+    c = (in_tok * r["input"] + out_tok * r["output"]) / 1_000_000 * 1000
+    print(f"  {name:<22} 1000 calls: ${c:.4f}")
+
+# === 自我验证 ===
+assert cost_1000 > 0, "成本应 > 0"
+assert cost_1000 < 10, f"1000 次 haiku hello world 不应 > $10、实际 ${cost_1000:.4f}"
+print(f"\n✅ 练习 3 通过 — 你已能用 usage + pricing 算实际成本")
+```
+
+</details>
 
 ### 练习 4：Cross-Provider 比较
-用同一个 prompt，分别调用 Claude、GPT、Gemini，观察它们在风格、内容、格式上的差异。这有助于你理解不同模型的“个性”，并为后续的应用场景选择合适的模型。这需要你分别注册 OpenAI、Anthropic、Google 的账号并获取 SDK。
+同一个 prompt 同时送给 Claude、GPT、Gemini，比较三家的回应差异。观察「同一句话为什么产生不同答案」——回答风格、长度、判断取舍都不一样。建议用 OpenAI、Anthropic、Google 三家 SDK 各一段程式呼叫。
+
+→ **完整可跑版** → [`examples/stage-1/04-cross-provider/`](../examples/stage-1/04-cross-provider/)（含三家 SDK 并行呼叫 + table 对照、缺哪家 key 就 skip 哪家）
 
 ### 练习 5：Error Handling
-尝试故意制造一些错误，并编写 retry 逻辑。
-- API key 错误 -> 应该直接 raise。
-- prompt 超过 context window -> 应该直接报错。
-- 偶发性网络错误 -> 应该使用 exponential backoff 的 retry wrapper。
-这个练习将在 Stage 3-7 构建 production agent 时非常有用。
+故意触发错误情境并写 retry：
+- API key 错误 → 看怎么 raise
+- prompt 超长 → context window 满了会发生什么
+- 网络断掉 → 写一个有 exponential backoff 的 retry wrapper
+
+这是后面 Stage 3-7 写 production agent 一定会用到的基础。
+
+→ **完整可跑版** → [`examples/stage-1/05-error-handling/`](../examples/stage-1/05-error-handling/)（含 mock-based test、不用真的断网就能验证 retry 逻辑）
 
 ### 练习 6：Local LLM
-**如果不想依赖 API，或者想在本地进行实验**，可以使用 Ollama 在本地运行一个开源模型，例如 `llama3.2:3b` 或 `qwen2.5:3b`，它们都提供了 OpenAI 兼容的 API 接口。
+**不付 API 费用、跑在自己电脑上**：用 Ollama 下载一个小模型（建议 `llama3.2:3b` 或 `qwen2.5:3b`），用 OpenAI 兼容 API 呼叫它。
+
 ```bash
-# 安装 Ollama: https://ollama.com
+# 1. 装 Ollama: https://ollama.com
 ollama pull qwen2.5:3b
-ollama serve  # 会启动一个 11434 端口
+ollama serve  # 预设 port 11434
 ```
-然后用 Python 调用：
+
+<details>
+<summary>📋 <b>起手码</b>（复制到 <code>practice_6.py</code>）</summary>
+
 ```python
+# 需要：pip install openai
+# 前置：Ollama 已 serve、qwen2.5:3b 已 pull
+import sys
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 from openai import OpenAI
-client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
+
+client = OpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="ollama",  # Ollama 不检查、随便填
+)
+
 r = client.chat.completions.create(
     model="qwen2.5:3b",
-    messages=[{"role":"user","content":"用 3 句话解释什么是 ReAct"}]
+    messages=[{"role": "user", "content": "用 3 句话介绍什么是 ReAct。"}],
 )
-print(r.choices[0].message.content)
+
+text = r.choices[0].message.content
+print("回应：", text)
+
+# === 自我验证 ===
+assert len(text) > 10, "回应太短、Ollama 可能没跑起来"
+print(f"✅ 练习 6 通过 — 你的本机 Ollama 已能透过 OpenAI 兼容 API 呼叫")
+print(f"💡 跑这次完全没花钱（除了你的电力）")
 ```
-**基础概念**：本地 LLM 的选择和使用将在 Stage 3-6 进行更深入的探讨。对于初学者，我们推荐先使用 API，因为它更简单，可以让你专注于应用逻辑，而不是纠结于本地环境的配置（offline）。
+
+**为什么要做**：学会跑本地 LLM 后，后面 Stage 3-6 的实验都不会被 API 费用卡住；隐私敏感场景也能 offline。
+
+</details>
 
 ## 开源项目学习
 
