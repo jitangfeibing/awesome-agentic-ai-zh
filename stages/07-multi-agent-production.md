@@ -6,7 +6,7 @@
 
 > 💡 用語密度高（multi-agent / handoff / eval / observability / guardrails⋯）→ 翻 [`resources/glossary.md` §4 + §6](../resources/glossary.md#4-multi-agent)。
 
-> 📋 **本章組成**：〔Multi-Agent · Production 是什麼（先定位）+ Discipline lineage〕→ 學習目標 → 進入條件 → 必修閱讀 → Harness Engineering（8 個核心元件）→ 動手練習 → 常用工具推薦 → 精選 Projects → 自我檢查  
+> 📋 **本章組成**：〔Multi-Agent · Production 是什麼（先定位）+ Discipline lineage〕→ 學習目標 → 進入條件 → 必修閱讀 → Harness Engineering（**8 個核心元件含 Cost/Latency**）→ 動手練習（含練習 6 Cost Optimization）→ 常用工具推薦 → 精選 Projects → 自我檢查  
 > 🔑 **關鍵名詞**：見 [`resources/glossary.md` §4 + §6](../resources/glossary.md#4-multi-agent)（multi-agent / orchestration / handoff / eval / observability / harness）
 
 最後一個階段。你正從「我會做 agent」走向「我能在 production 跑起來，多個 agent 協作、有 eval、有 observability、會 deploy」。
@@ -80,19 +80,20 @@
 
 → **2025 後段「harness engineering」才正式成為業界共識詞**（Anthropic / Cursor / Cognition 等 AI coding tool 團隊用得最多）——因為前兩層已經被 prompt eng / context eng 解決得差不多了、production agent 的剩餘複雜度都在 runtime 工程。
 
-### Harness 的 7 個核心元件
+### Harness 的 8 個核心元件
 
-**Harness = 把 LLM agent 包成 production 系統的「工具帶」**。一個 production agent runtime 包含這 7 個元件（前 6 個是 runtime 內建、第 7 個 eval 是外掛工具但也算 harness 的一部分）：
+**Harness = 把 LLM agent 包成 production 系統的「工具帶」**。一個 production agent runtime 包含這 8 個元件（前 6 個是 runtime 內建、第 7 個 eval 是外掛工具、第 8 個 cost / latency 是 cross-cutting concern 跨所有層）：
 
 | 元件 | 做什麼 | 對應本 stage 練習 |
 |---|---|---|
 | **Agent loop** | 「LLM → tool → result → LLM」迴圈、穩定處理多輪 | 練習 1 multi-agent 辯論 |
-| **Tool registry** | 動態 tool dispatch、permission gate、sandboxing | （在每個 framework / SDK 都有） |
+| **Tool registry** | 動態 tool dispatch、permission gate、sandboxing | （在每個 framework / SDK 都有）|
 | **Context manager** | message history 管理、context window 控制、auto-compact | Stage 6 + 本 stage 練習 4 SDK |
-| **Safety layer** | permission prompts、sandboxed exec、destructive op 攔截 | （Claude Code 內建、SDK 可自訂） |
+| **Safety layer** | permission prompts、sandboxed exec、destructive op 攔截 | （Claude Code 內建、SDK 可自訂）|
 | **Retry / recovery** | tool fail 怎麼處理（exception vs LLM 自己看 error 反思） | 練習 4 SDK 進階 |
 | **Telemetry / Observability** | metrics、logging、token counting、trace export | **練習 3 Observability** |
 | **Eval harness** | regression test、quality gate、A/B test | **練習 2 Eval** |
+| **Cost / Latency optimization** ⭐ 2024-2026 必修 | prompt caching、model routing、thinking budget、batching、semantic cache | **練習 6 Cost optimization**（新加）|
 
 **Framework vs Harness 關鍵差別**：
 - **Framework**（[Stage 4](04-agent-frameworks.md)）規範 **API** — 你呼叫的介面長什麼樣
@@ -102,10 +103,34 @@
 
 想看 production-grade harness 長什麼樣？兩個 reference：
 
-- **Claude Code 整個 runtime** — 是 reference harness 實作。**讀 source 練習見 [Stage 5.6](05-claude-code-ecosystem.md#56--claude-code-source-解剖reference-harness-implementation-track-b-必看)**（clone `claude-agent-sdk-python` 解剖 main loop + 上表前 6 個 runtime 元件位置；第 7 個 Eval harness 是外掛、見本 stage §練習 2 Eval）
+- **Claude Code 整個 runtime** — 是 reference harness 實作。**讀 source 練習見 [Stage 5.6](05-claude-code-ecosystem.md#56--claude-code-source-解剖reference-harness-implementation-track-b-必看)**（clone `claude-agent-sdk-python` 解剖 main loop + 上表前 6 個 runtime 元件位置；第 7 個 Eval harness 是外掛、第 8 個 Cost / Latency 是 cross-cutting、見下方深入段）
 - **`anthropics/claude-agent-sdk-python`** source — 上面練習用的具體 repo
 
-→ 本 stage 剩下的 5 個練習（multi-agent / eval / observability / SDK / deploy）每個都是 harness 的一個面向。學完整 stage = 拼出完整的 harness engineering mental model。
+→ 本 stage 剩下的 6 個練習（multi-agent / eval / observability / SDK / deploy / cost）每個都是 harness 的一個面向。學完整 stage = 拼出完整的 harness engineering mental model。
+
+### 第 8 個 component 深入 — Cost / Latency Optimization（2024-2026 production 必修）
+
+Production agent 跑久了、**cost / latency 兩條線會吃掉你大半預算與用戶體驗**。2024-2026 frontier model 都把這當 first-class API feature——**會用 = 省 50-90% cost / latency**。
+
+| 技巧 | 怎麼省 | 2026 狀態 |
+|---|---|---|
+| **Prompt caching** | 重複 prefix（system prompt、long context）一次計費、後續 cache hit 折扣 ~90% | Anthropic / OpenAI / Gemini 全支援、自動或手動標記 |
+| **Model routing / cascade** | 簡單 query → 小 model、難 query → frontier model | [RouteLLM](https://github.com/lm-sys/RouteLLM) / [OpenRouter](https://openrouter.ai/) production 內建 |
+| **Thinking budget** | reasoning model 可控 thinking token 上限、trade latency / quality | Claude / Gemini API 參數、o-series 預設高 |
+| **Speculative decoding** | 小 model 預測 N token、大 model 一次驗證、單 model 速度 ×2-3 | vLLM / TGI 內建、推論層自動 |
+| **Batching** | 多 query 並行處理、GPU 利用率高 | vLLM、production inference layer |
+| **Semantic caching** | 相似 query 共用回答（不只 exact match）| [GPTCache](https://github.com/zilliztech/GPTCache) / Helicone 內建 |
+
+**Track A 怎麼用**（用 CLI agent 的人）：
+- 在 Claude Code / Cursor 設定 prompt caching、daily session 省 50-90% cost
+- 用 [RouteLLM](https://github.com/lm-sys/RouteLLM) / [OpenRouter](https://openrouter.ai/) 動態切換 model（簡單問用 Haiku / Flash、難問用 Opus / Pro）
+- Claude API 用 `thinking_budget` 參數控 reasoning model 的 token 上限
+
+**Track B 怎麼 build**（自己寫 agent 的人）：
+- 自架 cascade router、把 query embedding → classifier → model 對應
+- 在 agent loop 內監控 token cost、超 budget 自動降級
+- production deploy 整合 semantic cache 層
+- [Helicone](https://github.com/Helicone/helicone) / [langfuse](https://github.com/langfuse/langfuse) 等 observability 平台都已內建這幾招、不用自己寫
 
 ## 🛠 動手練習（基礎 illustrative 練習）
 
@@ -123,6 +148,9 @@
 
 ### 練習 5：Deploy
 把一個 agent 包進 Docker，deploy 到雲端（任何 provider 都行）。學會把 prototype 變成可以給別人跑的東西。
+
+### 練習 6：Cost Optimization（新加）⭐
+量你前面任一個練習 agent 的 token cost、加上 prompt caching、再量一次。觀察 cache hit rate 跟 cost 下降的對應關係。**Bonus**：接 [RouteLLM](https://github.com/lm-sys/RouteLLM) 或 [OpenRouter](https://openrouter.ai/)、做 cascade routing（簡單 query → Haiku / 難 query → Opus），量平均 cost。
 
 ## 🎯 常用 Multi-Agent / Production 工具推薦（按用途分類）
 
