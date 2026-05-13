@@ -137,7 +137,7 @@ AI (Artificial Intelligence、人工智慧)
 >
 > 🆘 **卡住了？** Tool calling 是整個 curriculum 最陡的學習曲線。裝 [`examples/stage-5/tool-calling-tutor/`](../examples/stage-5/tool-calling-tutor/) skill——當你 prompt Claude Code「為什麼 LLM 不呼叫我的 tool」、「我這 schema 哪裡寫壞」會自動載入、走 4-symptom 診斷流程。
 >
-> 🪜 **本 stage 是 single-agent 起點**：一個 LLM + ReAct loop。**Multi-agent 概念**（多個 agent 協作）入門看 [Stage 4 § 什麼是 multi-agent framework](04-agent-frameworks.md#-什麼是-multi-agent-framework)、**Claude 原生 subagent 機制**（`.claude/agents/` + Task tool、不需 framework）看 [Stage 5.5](05-claude-code-ecosystem.md#55--subagentsclaude-code-原生-multi-agent-機制)。
+> 🪜 **本 stage 是 single-agent 起點**：一個 LLM + ReAct loop。**Multi-agent 概念**（多個 agent 協作）入門看 [Stage 4 § 什麼是 multi-agent framework](04-agent-frameworks.md#-什麼是-multi-agent-framework)、**Claude 原生 subagent 機制**（`.claude/agents/` + Task tool、不需 framework）看 [Stage 5.5](05-claude-code-ecosystem.md#55--subagentsclaude-code-原生-multi-agent-機制-2025-新功能)。
 
 ### 練習 1：Function Calling（一個工具、一次呼叫）
 給 Claude 一個工具（假的天氣 API）跟一個問題（「台北現在有下雨嗎？」）。看 Claude 怎麼呼叫工具、拿到結果、再回答你。
@@ -440,7 +440,7 @@ messages.append({"role": "tool", "tool_call_id": tc.id,
 
 **為什麼這節在 Stage 3 而不是 Stage 6**：反思在學術（Reflexion paper Shinn 2023、Self-Refine Madaan 2023）跟 production（Cursor / Claude Code）上都被歸類在 **planning / reasoning loop** 機制——是 ReAct（練習 3）的 sibling pattern，**不是 memory pattern**。同樣是 LLM 自我引導的多輪迴圈，只是「下一輪要做什麼」從「呼叫 tool」換成「批改自己」。
 
-**進階版（帶 persistent memory 的 Reflexion 完整版）→ [Stage 6 §進階：Reflexion with Memory](06-memory-rag.md#-進階反思帶持久記憶的-reflexion-完整版-track-b-選讀)**——當反思要跨 session、把過去失敗存起來當下一輪 context，這個版本才真的需要 memory 層。
+**進階版（帶 persistent memory 的 Reflexion 完整版）→ [Stage 6 §進階：Reflexion with Memory](06-memory-rag.md#-進階帶持久記憶的-reflexion-完整版--track-b-選讀)**——當反思要跨 session、把過去失敗存起來當下一輪 context，這個版本才真的需要 memory 層。
 
 ### 一張對照圖
 

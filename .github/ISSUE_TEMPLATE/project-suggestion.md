@@ -16,7 +16,7 @@ labels: suggestion
 ## 為什麼這個 project 教這個 stage？/ Why does it teach this stage?
 <!-- 1-2 段。具體說明它教什麼、跟現有 entries 的差異 -->
 
-## 通過 [策展標準](../CONTRIBUTING.md#策展標準) 嗎？
+## 通過 [策展標準](../../CONTRIBUTING.md#策展標準) 嗎？
 - [ ] 最近 6 個月內有 commit（或明確標示 stable）
 - [ ] 有 hello-world 文件，30 分鐘內能跑起來
 - [ ] License 明確（MIT / Apache-2 / BSD / 等）

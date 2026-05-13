@@ -66,7 +66,7 @@ LLM 知道你的私有 / 領域資料、有 3 種主要做法。**本 stage 教 
 - 能跑 Python `pip install` 安裝 SDK（後面練習會用到 `chromadb`、`sentence-transformers` 等）
 - 對 list / dict / generator 等基礎 Python 結構上手
 
-沒到的話 → 回 [Stage 3](03-tool-use-and-hello-agent.md) 或 [Stage 0 §環境設定](00-foundations.md#環境設定)。
+沒到的話 → 回 [Stage 3](03-tool-use-and-hello-agent.md) 或 [Stage 0 §環境設定](00-foundations.md#何時可以跳過這個階段)。
 
 ## 📚 必修閱讀
 
@@ -200,7 +200,7 @@ Chunking 進階思考：
 | **Working memory** | 當前 task 上下文 | LLM context window 本身 |
 | **Episodic memory** | 過去 task 的具體經驗 | Reflexion 反思記錄、past trajectories |
 | **Semantic memory** | 抽象事實 / 知識 | RAG 知識庫、user profile、preference |
-| **Procedural memory** | 怎麼做事的程式 / skill | tool definitions、[Skills（Stage 5.3）](05-claude-code-ecosystem.md#53--skills--可重複使用的-prompt--instruction-包) |
+| **Procedural memory** | 怎麼做事的程式 / skill | tool definitions、[Skills（Stage 5.3）](05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層-claude-code-生態最關鍵的一層) |
 
 → **為什麼有用**：上面 3 種 pattern（buffer / summary / vector）都只在處理 working + episodic。Production agent 4 層都要設計——CoALA 是檢查表，看看你的 agent 哪一層缺了。
 

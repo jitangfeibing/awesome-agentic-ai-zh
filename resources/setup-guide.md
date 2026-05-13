@@ -287,7 +287,7 @@ description: 第一個 hello skill。當使用者說「請打招呼」或「say 
 
 跑 `claude`，輸入「請打招呼」。如果 Claude 回覆三件事，就代表 Skill 被載入了。
 
-> 想看更完整的 Skill 設計：看 [Stage 5.3 — Skills](../stages/05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層)。
+> 想看更完整的 Skill 設計：看 [Stage 5.3 — Skills](../stages/05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層-claude-code-生態最關鍵的一層)。
 > 想看可以照做的範例：看 [Cookbook](cookbook.md)。
 
 ---

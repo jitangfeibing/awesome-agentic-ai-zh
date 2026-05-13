@@ -9,8 +9,8 @@
 ## 怎麼用這份目錄
 
 - **想找特定工具的 MCP**：直接看下面分類目錄
-- **想看 MCP / Skills / Plugins 是什麼**：先看 [README 三個核心用語](../README.md#三個核心用語mcp--skills--plugins)，再看 [Stage 5 — Claude Code 生態系](../stages/05-claude-code-ecosystem.md)
-- **想看 動手練習 怎麼裝、怎麼測**：看 [Stage 5.2 (MCP)](../stages/05-claude-code-ecosystem.md#52--mcpmodel-context-protocol-基礎) 跟 [Stage 5.3 (Skills)](../stages/05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層)
+- **想看 MCP / Skills / Plugins 是什麼**：先看 [README 三個核心用語](../README.md#-快速開始)，再看 [Stage 5 — Claude Code 生態系](../stages/05-claude-code-ecosystem.md)
+- **想看 動手練習 怎麼裝、怎麼測**：看 [Stage 5.2 (MCP)](../stages/05-claude-code-ecosystem.md#52--mcpmodel-context-protocol-基礎) 跟 [Stage 5.3 (Skills)](../stages/05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層-claude-code-生態最關鍵的一層)
 
 ### 收錄方向（不是死規則）
 

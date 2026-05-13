@@ -8,7 +8,7 @@
 > 📚 **想要 chapter-length 深入版？** 本 folder 的 starter 是 illustrative 版、聚焦核心 pattern + 兩條 SDK path，不是 production-grade tutorial。深度教材推薦：
 > - [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents) ⭐ 中文圈最完整、章節式 + 16 種 production 能力。**本練習對應 hello-agents 的 observability / tracing 章節（Extra Chapter）**
 > - [Langfuse](https://github.com/langfuse/langfuse) + [Arize Phoenix](https://github.com/Arize-ai/phoenix)（OpenTelemetry-native）
-> - 完整 references 見 [Stage 7 § 精選 Projects](../../../stages/07-multi-agent-production.md#-精選-projects)
+> - 完整 references 見 [Stage 7 § 精選 Projects](../../../stages/07-multi-agent-production.md#-精選-projects範本--sdk--工具-collection)
 
 
 ## 任務

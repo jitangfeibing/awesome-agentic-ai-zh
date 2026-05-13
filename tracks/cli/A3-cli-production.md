@@ -38,7 +38,7 @@ CLI 跑得順了之後，下一步：**把它接到你的真實工作流程裡**
 ## 🛠 動手練習
 
 ### 動手練習 CLI-9：MCP server 接 CLI
-照 [Stage 5.2 練習：MCP client](../../stages/05-claude-code-ecosystem.md#hello-x) 的步驟，把至少一個有用的 MCP server 接到你的 CLI：
+照 [Stage 5.2 練習：MCP client](../../stages/05-claude-code-ecosystem.md#52--mcpmodel-context-protocol-基礎) 的步驟，把至少一個有用的 MCP server 接到你的 CLI：
 - `filesystem` server → 讓 CLI 在指定目錄外也能讀檔
 - `github` server → 讓 CLI 直接讀 PR / issue
 - 自架 server → 接你的 internal API / DB
@@ -95,7 +95,7 @@ CLI 跑得順了之後，下一步：**把它接到你的真實工作流程裡**
 - [ ] 把你的 CLAUDE.md / commands 打包過至少一次（即使只有自己用）
 - [ ] 知道什麼任務值得加 observability、什麼不值得
 
-如果都可以 → **Track A 完整通關**。挑一個 [specialized branch](../../README.md#️-學習地圖兩條軌道) 繼續走（researcher / developer / teacher / knowledge-worker / everyday-users）。
+如果都可以 → **Track A 完整通關**。挑一個 [specialized branch](../../README.md#️-學習地圖兩條學習路徑) 繼續走（researcher / developer / teacher / knowledge-worker / everyday-users）。
 
 如果想再深入「**怎麼寫自己的 CLI agent**」（不是用現有的）→ 跳到 [Track B Stage 3](../../stages/03-tool-use-and-hello-agent.md) 開始。Track A 跟 Track B 互補。
 

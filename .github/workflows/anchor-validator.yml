@@ -28,10 +28,9 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Validate anchors (warn-only)
-        # 目前 warn-only 模式——repo 有 ~38 個 legacy broken anchor（Stage 5 sub-heading
-        # 改過 ⭐ extras 後、cross-ref 連結沒全部跟到）。先用 warn 模式提示、不擋 PR。
-        #
-        # TODO：跑 anchor cleanup PR 把 legacy 38 個修完之後、把這行改成 `--strict`
-        # 讓 future PR 引入新 broken anchor 自動 fail。
-        run: python scripts/check-anchors.py
+      - name: Validate anchors (strict mode)
+        # 2026-05 升級到 strict mode（commit 含 anchor cleanup batch、把 legacy 37 個
+        # broken anchor 全修完）。剩下 1 個 .github/ISSUE_TEMPLATE/project-suggestion.md
+        # 找不到 CONTRIBUTING.md 是 separate issue（missing file、非 anchor 問題）、
+        # script 已不算 broken anchor。
+        run: python scripts/check-anchors.py --strict

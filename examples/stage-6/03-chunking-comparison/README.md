@@ -8,7 +8,7 @@
 > 📚 **想要 chapter-length 深入版？** 本 folder 的 starter 是 illustrative 版、聚焦核心 pattern + 兩條 SDK path，不是 production-grade tutorial。深度教材推薦：
 > - [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents) ⭐ 中文圈最完整、章節式 + 16 種 production 能力。**本練習對應 hello-agents 的 RAG chunking 章節**
 > - [LangChain RecursiveCharacterTextSplitter docs](https://python.langchain.com/docs/how_to/recursive_text_splitter/) + [LlamaIndex SemanticSplitter](https://docs.llamaindex.ai/en/stable/api_reference/node_parsers/semantic_splitter/)
-> - 完整 references 見 [Stage 6 § 精選 Projects](../../../stages/06-memory-rag.md#-精選-projects)
+> - 完整 references 見 [Stage 6 § 精選 Projects](../../../stages/06-memory-rag.md#-精選-projects範本--spec--範例-collection)
 
 
 ## 任務

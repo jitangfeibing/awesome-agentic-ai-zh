@@ -69,7 +69,7 @@ description: Review staged changes for security + style
 - 學到：CLI 跟你一樣，太大的任務要拆；給太小的任務又會 over-orchestrate
 
 > ⭐ **進階：Claude Code 3 種原生 multi-agent 機制**（Track A 用 CLI 高頻時值得學）：CLI-7 教的「手動拆 sub-task」其實 Claude Code 有 3 個原生工具可以自動化：
-> 1. **Subagent** — 寫 `.claude/agents/<name>.md`、Claude 自動 delegate 大 context 任務（讀整個 codebase / 並行 research）到隔離 session、回主 session 摘要、省 context window。**完整講解 + 動手練習見 [Stage 5.5](../../stages/05-claude-code-ecosystem.md#55--subagentsclaude-code-原生-multi-agent-機制)**
+> 1. **Subagent** — 寫 `.claude/agents/<name>.md`、Claude 自動 delegate 大 context 任務（讀整個 codebase / 並行 research）到隔離 session、回主 session 摘要、省 context window。**完整講解 + 動手練習見 [Stage 5.5](../../stages/05-claude-code-ecosystem.md#55--subagentsclaude-code-原生-multi-agent-機制-2025-新功能)**
 > 2. **Agent team** — 多 sessions 之間互相溝通（譬如 reviewer agent ↔ implementer agent 來回交流）。詳見 [Anthropic 官方 — agent teams](https://docs.claude.com/en/docs/claude-code/agent-teams)
 > 3. **Background agent** — 多 session 背景跑、單一介面監控（一次 spawn 3 個 PR review 同時跑）。詳見 [Anthropic 官方 — agent view](https://docs.claude.com/en/docs/claude-code/agent-view)
 >
@@ -91,7 +91,7 @@ description: Review staged changes for security + style
 |---|---|---|---|---|
 | **CLAUDE.md 範例庫** | [Anthropic 官方範例](https://github.com/anthropics/claude-code/blob/main/CLAUDE.md) | ⭐⭐⭐⭐⭐ | 第一份 CLAUDE.md 從這抄結構 | Claude Code repo 自己的 CLAUDE.md、官方寫法 |
 | | [obra/superpowers](https://github.com/obra/superpowers) | ⭐⭐⭐⭐ | 看 production-grade `.claude/` 完整目錄結構 | 不只是 skill collection、也是 CLAUDE.md 範本（★ 178k+） |
-| | [mattpocock/skills](https://github.com/mattpocock/skills) | ⭐⭐⭐⭐ | 想看工程師日常用的 skill 庫 | `.claude/` 結構是好參考（★ 59k+）。**更多 skill 範例見 [Stage 5.3](../../stages/05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層)** |
+| | [mattpocock/skills](https://github.com/mattpocock/skills) | ⭐⭐⭐⭐ | 想看工程師日常用的 skill 庫 | `.claude/` 結構是好參考（★ 59k+）。**更多 skill 範例見 [Stage 5.3](../../stages/05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層-claude-code-生態最關鍵的一層)** |
 | **Slash Commands / Custom Prompts** | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | ⭐⭐⭐⭐⭐ | 找官方 plugin 範本 | 官方 plugin marketplace、每個 plugin 內的 commands / skills 是 slash command 範例（★ 18k+） |
 | | [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | ⭐⭐⭐ | 想逛社群 slash command 範例 | 社群整理的 Claude Code 資源清單 |
 | **Prompt 設計參考** | [f/awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts) | ⭐⭐⭐⭐ | 卡關時找 CLI 通用的 prompt 模式 | ChatGPT 起家、prompt 寫法 90% 在 CLI 上也通（★ 161k+、CC0）。完整 prompt engineering 進階見 [Stage 2 §精選 Projects](../../stages/02-prompt-engineering.md#-精選-projects)（DSPy、dair-ai 等） |

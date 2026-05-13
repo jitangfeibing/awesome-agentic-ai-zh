@@ -17,7 +17,7 @@
 主 README 跟各 stage 會頻繁提到這三個 Claude Code 生態的關鍵詞，先快速說明：
 
 - **MCP（Model Context Protocol）** — Anthropic 推的開放協定，讓任何 LLM host（Claude Code、其他 IDE、自寫 agent）都能用同一套介面去呼叫外部 tool server（檔案、DB、API、自家服務）。把它想成「LLM 的 USB 接口」。詳見 [Stage 5.2](stages/05-claude-code-ecosystem.md#52--mcpmodel-context-protocol-基礎)。
-- **Skills** — Claude Code 的「行為包」。一個 Skill 就是一份 `SKILL.md`，描述「在什麼情境要做什麼、可以呼叫哪些 MCP tool」。寫好之後 Claude Code 會自動 discover。詳見 [Stage 5.3](stages/05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層)。
+- **Skills** — Claude Code 的「行為包」。一個 Skill 就是一份 `SKILL.md`，描述「在什麼情境要做什麼、可以呼叫哪些 MCP tool」。寫好之後 Claude Code 會自動 discover。詳見 [Stage 5.3](stages/05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層-claude-code-生態最關鍵的一層)。
 - **Plugins / Marketplaces** — 把 Skills、slash commands、hooks、MCP 設定打包成一個發佈單位給 team 或社群安裝。Marketplace 就是 plugin 的 catalog。詳見 [Stage 5.4](stages/05-claude-code-ecosystem.md#54--plugins-與-marketplaces)。
 
 對應的 動手練習都在 [Stage 5](stages/05-claude-code-ecosystem.md)，Track A 的 [A3](tracks/cli/A3-cli-production.md) 也會用到。

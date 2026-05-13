@@ -136,7 +136,7 @@ When the user wants Python imports cleaned up:
 
 ### 進一步
 
-- 看 [Stage 5.3](../stages/05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層) 的 Skill anatomy 詳解
+- 看 [Stage 5.3](../stages/05-claude-code-ecosystem.md#53--skillsclaude-code-的行為層-claude-code-生態最關鍵的一層) 的 Skill anatomy 詳解
 - 看 [`anthropics/skills`](https://github.com/anthropics/skills) 官方 skill 範本（docx / xlsx / pptx 等）的寫法
 - 多個 skill 打包成 plugin → [Stage 5.4](../stages/05-claude-code-ecosystem.md#54--plugins-與-marketplaces)
 
@@ -604,7 +604,7 @@ Claude Code 目前需要 Anthropic OAuth / API key，沒有官方設定可以把
 
 ### 進一步
 
-- Stage 1 [Local LLM 練習](../stages/01-llm-basics.md#練習local-llm)：Ollama / llama.cpp / vLLM 的差異
+- Stage 1 [Local LLM 練習](../stages/01-llm-basics.md#練習-6local-llm)：Ollama / llama.cpp / vLLM 的差異
 - [`cli-agents-guide.md`](cli-agents-guide.md)：7 個 CLI agent 怎麼選
 - Hermes Agent README：多平台 gateway（Telegram / Discord / Slack）與 provider 設定
 

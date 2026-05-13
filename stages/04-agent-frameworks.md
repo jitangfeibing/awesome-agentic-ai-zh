@@ -98,7 +98,7 @@
 
 > **這節跟上面的 5 個 pattern 不同層**：上面 5 個 pattern 是 framework / 自己 code 都能實作的設計選擇；本節介紹的 **Claude Code subagent 是另一個 execution model**（runtime 內建的 orchestration、不寫 framework code）。讀完 5 個 pattern 後、本節讓你知道「multi-agent 還有第二條路」。
 
-**Multi-agent 不只有 framework 這條路**。Anthropic 自家的 Claude Code 提供另一個 abstraction 層：[subagent](05-claude-code-ecosystem.md#55--subagentsclaude-code-原生-multi-agent-機制) — 寫一個 `.claude/agents/<name>.md` 檔就是一個 subagent，**不需要 framework**。
+**Multi-agent 不只有 framework 這條路**。Anthropic 自家的 Claude Code 提供另一個 abstraction 層：[subagent](05-claude-code-ecosystem.md#55--subagentsclaude-code-原生-multi-agent-機制-2025-新功能) — 寫一個 `.claude/agents/<name>.md` 檔就是一個 subagent，**不需要 framework**。
 
 跟 framework 路線的根本差異：
 
@@ -115,7 +115,7 @@
 - 多 subagent 平行（research / write / critic）省 wall-clock 時間
 - 不需要跨 provider migration
 
-詳細寫法 + 動手練習見 [Stage 5.5](05-claude-code-ecosystem.md#55--subagentsclaude-code-原生-multi-agent-機制)（**建議先完成 Stage 5.1 Claude Code 基礎再回來看 5.5**——subagent 是 Claude Code 生態的進階功能、需要先熟悉基礎用法）。
+詳細寫法 + 動手練習見 [Stage 5.5](05-claude-code-ecosystem.md#55--subagentsclaude-code-原生-multi-agent-機制-2025-新功能)（**建議先完成 Stage 5.1 Claude Code 基礎再回來看 5.5**——subagent 是 Claude Code 生態的進階功能、需要先熟悉基礎用法）。
 
 ### Framework 的工作
 
@@ -144,7 +144,7 @@ Framework 把上面這 5 個 pattern 的 orchestration boilerplate（roles、han
 > 2. **跑 1 個 framework quickstart**（2-3 hr）— LangGraph 或 CrewAI 二選一、跑官方多 agent 教學
 > 3. **對照 Anthropic Cookbook `customer_service_agent`**（1 hr）— production-style routing + handoff 範例
 > 4. *(可選)* **深入學術側**：挑 paper 1-2 篇看（AutoGen / CAMEL / ChatDev / Generative Agents）
-> 5. *(Claude 用戶可選)* **寫一個 subagent 對照**：見 [Stage 5.5](05-claude-code-ecosystem.md#55--subagentsclaude-code-原生-multi-agent-機制)、跟 framework 路線比較
+> 5. *(Claude 用戶可選)* **寫一個 subagent 對照**：見 [Stage 5.5](05-claude-code-ecosystem.md#55--subagentsclaude-code-原生-multi-agent-機制-2025-新功能)、跟 framework 路線比較
 >
 > **不必把 5 個 paper 全讀完**、挑跟你場景最近的 1-2 個。
 
