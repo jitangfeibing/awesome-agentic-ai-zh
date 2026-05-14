@@ -49,6 +49,10 @@ Editor-integrated AI pair programmer. Industry standard for AI-assisted coding.
 #### [obra/superpowers](https://github.com/obra/superpowers) ⭐⭐⭐⭐
 20+ battle-tested skills including TDD patterns, debugging, collaboration patterns. Good source for code-review skill design.
 
+### Recommended Tools
+
+- [**yamadashy/repomix**](https://github.com/yamadashy/repomix) ⭐⭐⭐⭐⭐ ★ 24k+ — Packs your entire codebase into a single AI-friendly file (XML / Markdown / JSON) for Claude Code / Codex to do code review / refactoring. Includes MCP server mode + tree-sitter compression (~70% token savings) + secretlint for secret filtering. **A must-have, daily-driver-grade tool for Track A.**
+
 ## Workflows To Master
 
 - **AI pair programming**: pick one of Claude Code / Cursor / Cline for daily work

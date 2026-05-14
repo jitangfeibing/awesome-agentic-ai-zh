@@ -39,9 +39,10 @@ If not — go back to Stage 0 first.
 ## 📚 Required Reading
 
 1. [**Anthropic — Claude Model Overview**](https://docs.claude.com/en/about-claude/models/overview) — official model family overview, including 2026's latest Opus 4.7 / Sonnet 4.6 / Haiku 4.5
-2. [**OpenAI Quickstart**](https://platform.openai.com/docs/quickstart) — first API call walkthrough
-3. [**A Visual Guide to LLM Tokenizers**](https://huggingface.co/learn/llm-course/chapter6/1) — Hugging Face's intro
-4. [**Anthropic API Pricing**](https://www.anthropic.com/pricing#anthropic-api) — read the pricing table, calculate cost for 1k input + 1k output
+2. [**anthropics/courses — Anthropic API Fundamentals**](https://github.com/anthropics/courses) ⭐⭐⭐⭐⭐ ★ 21k+ — Anthropic's official 5-course umbrella; **module 1 "Anthropic API Fundamentals" maps to this stage**. Jupyter notebooks, runs on Claude 3 Haiku (cheapest), hands-on walkthrough of API essentials.
+3. [**OpenAI Quickstart**](https://platform.openai.com/docs/quickstart) — first API call walkthrough
+4. [**A Visual Guide to LLM Tokenizers**](https://huggingface.co/learn/llm-course/chapter6/1) — Hugging Face's intro
+5. [**Anthropic API Pricing**](https://www.anthropic.com/pricing#anthropic-api) — read the pricing table, calculate cost for 1k input + 1k output
 
 ## 🛠 Hands-on Exercises (foundational, illustrative)
 

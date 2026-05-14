@@ -106,6 +106,10 @@ official — Claude Code memory / CLAUDE.md 编写的官方说明，含 best pra
 #### [`resources/cli-agents-guide.zh-Hans.md`](../../resources/cli-agents-guide.zh-Hans.md) “3 个常见搭配”
 看 Setup A / B / C，挑一个合的试。
 
+### 推荐工具
+
+- [**yamadashy/repomix**](https://github.com/yamadashy/repomix) ⭐⭐⭐⭐⭐ ★ 24k+ — 把整个 codebase packed 成单个 AI-friendly 文件（XML / Markdown / JSON），方便 Claude Code / Codex 做 code review / refactoring。带 MCP server mode + tree-sitter 压缩（约 70% token 节省）+ secretlint 过滤敏感信息。**Track A 的必备 daily-driver 工具。**
+
 ## ✅ 进 A3 前的自我检查
 
 你能不能：

@@ -49,6 +49,10 @@
 #### [obra/superpowers](https://github.com/obra/superpowers) ⭐⭐⭐⭐
 20+ 個經過實戰驗證的 skill，包括 TDD 模式、debug、協作模式。設計 code-review skill 時的好參考。
 
+### 推薦工具
+
+- [**yamadashy/repomix**](https://github.com/yamadashy/repomix) ⭐⭐⭐⭐⭐ ★ 24k+ — 把整個 codebase packed 成單一 AI-friendly 檔案（XML / Markdown / JSON），方便 Claude Code / Codex 做 code review / refactoring。內建 MCP server mode + tree-sitter 壓縮（約 70% token 節省）+ secretlint 過濾敏感資訊。**Track A 很值得當 daily driver 的工具。**
+
 ## 必練流程
 
 - **AI 結對程式設計**：日常工作用 Claude Code、Cursor、或 Cline 任一個

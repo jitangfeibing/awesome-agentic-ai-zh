@@ -192,6 +192,7 @@ For a complete list, see the official [Slash Commands documentation](https://doc
 | [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | ⭐⭐⭐⭐ | Cross-referencing with wong2's list | Another MCP server catalog, organized differently and often updated more frequently. |
 | [github/github-mcp-server](https://github.com/github/github-mcp-server) | ⭐⭐⭐⭐ | Seeing production-grade MCP server source | Maintained by GitHub, a real example running in production. |
 | [21st-dev/magic-mcp](https://github.com/21st-dev/magic-mcp) | ⭐⭐⭐ | Finding inspiration after Exercise 2 | A non-trivial MCP server that generates UI components, ★ 4.8k+, NOASSERTION. **Shows that MCP can do more than just data fetching.** |
+| [yamadashy/repomix](https://github.com/yamadashy/repomix) | ⭐⭐⭐⭐⭐ | Feeding an entire codebase to an LLM | ★ 24k+, MIT. Packs a repo into a single AI-friendly file, with MCP server mode + tree-sitter compression (~70% token savings) + secretlint to filter secrets. **Daily-driver tool to pair with Claude Code / Codex.** |
 
 ---
 
@@ -365,6 +366,7 @@ Plugin
 | [trailofbits/skills-curated](https://github.com/trailofbits/skills-curated) | ⭐⭐⭐ | Reviewers / teams concerned about supply chain security | A **security-vetted** marketplace maintained by Trail of Bits. Every skill is reviewed, and the README clearly states the criteria. **Demonstrates that a marketplace is not just a list, but also a trust mechanism** (★ 388, CC-BY-SA-4.0). |
 | [rohitg00/awesome-claude-code-toolkit](https://github.com/rohitg00/awesome-claude-code-toolkit) | ⭐⭐⭐ | Those who want to browse what the community has to offer | The largest community catalog of Claude Code agents / skills / hooks / templates. Covers a wide range of use cases. |
 | [anthropics/life-sciences](https://github.com/anthropics/life-sciences) | ⭐⭐⭐ | Those creating a domain-specific marketplace (medical, financial, legal, educational, etc.) | Anthropic's own **domain-specific marketplace** example (for biology / health sciences), demonstrating how to tailor `marketplace.json` for a single vertical. **The payload is bio-sci MCP servers, but the structure of marketplace.json is the main lesson** (★ 331). |
+| [anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal) | ⭐⭐⭐⭐ | Want to see a full vertical plugin suite (skills + agents + MCP + scheduled agents) | **Anthropic's official legal vertical reference** (★ 3.2k+, Apache-2.0) — 10 legal plugins (commercial / corporate / litigation / privacy / employment / IP / law-student) + 100+ skills + 20+ MCP connectors + scheduled agents + subagent delegation. **You don't need to know law** — this is the best teaching material for "**how to design a vertical plugin suite**": system prompt patterns, accountability surfaces, and the `orchestrate.py` event loop. |
 
 > 💡 **A walkthrough on "how to publish your own marketplace"**: Currently, the most reliable resource is the [official Anthropic plugin documentation](https://docs.claude.com/en/docs/claude-code/plugins). If you know of a good blog post / repo, feel free to open a PR to add it.
 

@@ -99,6 +99,10 @@ description: Review staged changes for security + style
 
 > 💡 **建議入手路徑**：先抄 Anthropic 官方 CLAUDE.md 結構 → 加自己的 repo context → 看 obra/superpowers 看「完整 `.claude/` 長什麼樣」→ 然後寫 1-2 個 slash command（從 hesreallyhim awesome 列表撈靈感）。
 
+### 推薦工具
+
+- [**yamadashy/repomix**](https://github.com/yamadashy/repomix) ⭐⭐⭐⭐⭐ ★ 24k+ — 把整個 codebase packed 成單一 AI-friendly 檔案（XML / Markdown / JSON），方便 Claude Code / Codex 做 code review / refactoring。內建 MCP server mode + tree-sitter 壓縮（約 70% token 節省）+ secretlint 過濾敏感資訊。**Track A 很值得當 daily driver 的工具。**
+
 ## ✅ 進 A3 前的自我檢查
 
 你能不能：

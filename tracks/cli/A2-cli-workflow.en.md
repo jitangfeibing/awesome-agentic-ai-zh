@@ -106,6 +106,10 @@ Community-curated Claude Code resources. Browse the slash command examples.
 #### [`resources/cli-agents-guide.en.md`](../../resources/cli-agents-guide.en.md) "Three common combinations"
 Look at Setup A / B / C and try one that fits.
 
+### Recommended Tools
+
+- [**yamadashy/repomix**](https://github.com/yamadashy/repomix) ⭐⭐⭐⭐⭐ ★ 24k+ — Packs your entire codebase into a single AI-friendly file (XML / Markdown / JSON) for Claude Code / Codex to do code review / refactoring. Includes MCP server mode + tree-sitter compression (~70% token savings) + secretlint for secret filtering. **A must-have, daily-driver-grade tool for Track A.**
+
 ## ✅ Self-Check Before A3
 
 Can you:

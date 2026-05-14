@@ -123,9 +123,10 @@ AI (Artificial Intelligence、人工智能)
 ## 📚 必修阅读
 
 1. [**Anthropic — Tool Use**](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview) — 官方指南
-2. [**ReAct: Synergizing Reasoning and Acting in Language Models**](https://arxiv.org/abs/2210.03629) — Yao et al. 2022，奠基论文。至少读 abstract 跟 Section 3。
-3. [**OpenAI — Function Calling**](https://platform.openai.com/docs/guides/function-calling) — function calling 格式参考
-4. [**Build an agent from scratch**](https://shafiqulai.github.io/blogs/blog_3.html) — 从零打造 agent 的故事式导览
+2. [**anthropics/courses — Tool Use**](https://github.com/anthropics/courses) ⭐⭐⭐⭐⭐ ★ 21k+ — Anthropic 官方 5 course umbrella、**module 5「Tool Use」对应本 stage**。Jupyter notebook 互动式练习、含 multimodal prompts / streaming / tool 实作 walk-through。
+3. [**ReAct: Synergizing Reasoning and Acting in Language Models**](https://arxiv.org/abs/2210.03629) — Yao et al. 2022，奠基论文。至少读 abstract 跟 Section 3。
+4. [**OpenAI — Function Calling**](https://platform.openai.com/docs/guides/function-calling) — function calling 格式参考
+5. [**Build an agent from scratch**](https://shafiqulai.github.io/blogs/blog_3.html) — 从零打造 agent 的故事式导览
 
 ## 🛠 动手练习（基础 illustrative 练习）
 

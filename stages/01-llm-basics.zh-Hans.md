@@ -38,9 +38,10 @@
 ## 推荐阅读
 
 1. [**Anthropic - Claude 模型概览**](https://docs.claude.com/en/about-claude/models/overview) - 官方模型总览，包含 2026 最新 Opus 4.7 / Sonnet 4.6 / Haiku 4.5。
-2. [**OpenAI Quickstart**](https://platform.openai.com/docs/quickstart) - 学习发送你的第一个 API call。
-3. [**A Visual Guide to LLM Tokenizers**](https://huggingface.co/learn/llm-course/chapter6/1) - Hugging Face 的图文并茂指南。
-4. [**Anthropic API Pricing**](https://www.anthropic.com/pricing#anthropic-api) - 了解并比较模型成本（例如，1k input + 1k output 的价格）。
+2. [**anthropics/courses — Anthropic API Fundamentals**](https://github.com/anthropics/courses) ⭐⭐⭐⭐⭐ ★ 21k+ — Anthropic 官方 5 course umbrella、**module 1「Anthropic API Fundamentals」对应本 stage**。Jupyter notebook、用 Claude 3 Haiku（最便宜）跑、跟着做就能拿到 API 基本功。
+3. [**OpenAI Quickstart**](https://platform.openai.com/docs/quickstart) - 学习发送你的第一个 API call。
+4. [**A Visual Guide to LLM Tokenizers**](https://huggingface.co/learn/llm-course/chapter6/1) - Hugging Face 的图文并茂指南。
+5. [**Anthropic API Pricing**](https://www.anthropic.com/pricing#anthropic-api) - 了解并比较模型成本（例如，1k input + 1k output 的价格）。
 
 ## “动手”小练习（在本地运行这些代码）
 

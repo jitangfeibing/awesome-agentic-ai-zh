@@ -192,6 +192,7 @@
 | [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | ⭐⭐⭐⭐ | 跟 wong2 交叉比对 | 另一份 MCP server 目录、组织方式不同、通常更新更实时 |
 | [github/github-mcp-server](https://github.com/github/github-mcp-server) | ⭐⭐⭐⭐ | 想看 production-grade MCP server source | GitHub 官方维护、真正 production 在跑的范例 |
 | [21st-dev/magic-mcp](https://github.com/21st-dev/magic-mcp) | ⭐⭐⭐ | 做完练习 2 找灵感 | 会生成 UI 组件的非平凡 MCP server、★ 4.8k+、NOASSERTION。**看 MCP 不只能做数据抓取** |
+| [yamadashy/repomix](https://github.com/yamadashy/repomix) | ⭐⭐⭐⭐⭐ | 喂整个 codebase 给 LLM | ★ 24k+、MIT。把 repo 打包成单个 AI-friendly 文件，带 MCP server mode + tree-sitter 压缩（约 70% token 节省）+ secretlint 过滤敏感信息。**Claude Code / Codex 的 daily-driver 工具。** |
 
 ---
 
@@ -365,6 +366,7 @@ Plugin
 | [trailofbits/skills-curated](https://github.com/trailofbits/skills-curated) | ⭐⭐⭐ | 在意供应链安全的 reviewer / 团队 | Trail of Bits 维护的 **security-vetted** marketplace、每个 skill 都经审查、README 写清楚标准。**示范 marketplace 不只是清单、也是信任机制**（★ 388、CC-BY-SA-4.0）|
 | [rohitg00/awesome-claude-code-toolkit](https://github.com/rohitg00/awesome-claude-code-toolkit) | ⭐⭐⭐ | 想逛社区有什么 | 社区最大 Claude Code agents / skills / hooks / templates 目录。涵盖 use case 广 |
 | [anthropics/life-sciences](https://github.com/anthropics/life-sciences) | ⭐⭐⭐ | 要做特定领域 marketplace（医疗、金融、法律、教育等） | Anthropic 自家**领域特化 marketplace** 范例（生物 / 健康科学）、展示 `marketplace.json` 为单一 vertical 量身设计。**payload 偏生科 MCP server、marketplace.json 结构才是学习重点**（★ 331）|
+| [anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal) | ⭐⭐⭐⭐ | 想看完整 vertical plugin suite（skills + agents + MCP + scheduled agents） | **Anthropic 官方法律 vertical 参考**（★ 3.2k+、Apache-2.0）——10 个法律 plugin（commercial / corporate / litigation / privacy / employment / IP / law-student）+ 100+ skills + 20+ MCP connectors + scheduled agents + subagent delegation。**你不需要懂法律**——这是学“**怎样设计 vertical plugin suite**”最好的教材：system prompt pattern、accountability surface，以及 `orchestrate.py` event loop。 |
 
 > 💡 **“如何发布自己的 marketplace”walkthrough**：目前最可靠的是 [Anthropic 官方 plugin 文档](https://docs.claude.com/en/docs/claude-code/plugins)。社区有好的博客 / repo？欢迎开 PR 补上。
 

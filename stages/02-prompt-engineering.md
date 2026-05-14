@@ -28,10 +28,12 @@
 
 ## 📚 必修閱讀
 
-1. [**Anthropic Prompt Engineering Guide**](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) — 官方，整理得不錯
-2. [**OpenAI Prompt Engineering**](https://platform.openai.com/docs/guides/prompt-engineering) — OpenAI 觀點
-3. [**dair-ai Prompt Engineering Guide**](https://www.promptingguide.ai/) — 學術風，深入
-4. [**Anthropic — Prompting Best Practices**](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/be-clear-and-direct) — 直接清楚
+1. [**anthropics/prompt-eng-interactive-tutorial**](https://github.com/anthropics/prompt-eng-interactive-tutorial) ⭐⭐⭐⭐⭐ ★ 35k+ — **Anthropic 官方互動教程**、9 章 Jupyter notebook（basic / intermediate / advanced + appendix），含 playground 跟 answer key。用 Claude 3 Haiku（最便宜）跑得起來、**Stage 2 的 canonical 動手教材**。也是 [**anthropics/courses**](https://github.com/anthropics/courses) 5 course umbrella 的 module 2，想看更廣（含 API Fundamentals / Real World Prompting / Eval / Tool Use）直接看 umbrella
+2. [**anthropics/courses — Real World Prompting**](https://github.com/anthropics/courses) ⭐⭐⭐⭐ ★ 21k+ — 同 umbrella 的 module 3，**「真實情境下怎麼用 prompting」**：chatbot / legal / financial / coding 案例 walk-through。看完 #1 再來看 #2
+3. [**Anthropic Prompt Engineering Guide**](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) — 官方 docs、配合上面 #1 一起讀
+3. [**OpenAI Prompt Engineering**](https://platform.openai.com/docs/guides/prompt-engineering) — OpenAI 觀點
+4. [**dair-ai Prompt Engineering Guide**](https://www.promptingguide.ai/) — 學術風，深入
+5. [**Anthropic — Prompting Best Practices**](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/be-clear-and-direct) — 直接清楚
 
 **🎥 中文影片補充（強烈推薦）**：
 - [**李宏毅 — 生成式 AI 導論（2024 春台大課程）**](https://speech.ee.ntu.edu.tw/~hylee/genai/2024-spring.php) ⭐⭐⭐ — 中後段集數講 prompt engineering（few-shot、CoT、in-context learning）+ 對應 lab。中文圈最完整的 prompting 學術級教學。最新整合版見 [**GenAI-ML 2025 秋**](https://speech.ee.ntu.edu.tw/~hylee/GenAI-ML/2025-fall.php)

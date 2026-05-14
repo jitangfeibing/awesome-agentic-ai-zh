@@ -41,9 +41,10 @@
 ## 📚 必修閱讀
 
 1. [**Anthropic — Claude 模型總覽**](https://docs.claude.com/en/about-claude/models/overview) — 官方模型 family、含 2026 最新 Opus 4.7 / Sonnet 4.6 / Haiku 4.5
-2. [**OpenAI Quickstart**](https://platform.openai.com/docs/quickstart) — 第一次 API call 的步驟
-3. [**A Visual Guide to LLM Tokenizers**](https://huggingface.co/learn/llm-course/chapter6/1) — Hugging Face 的入門
-4. [**Anthropic API Pricing**](https://www.anthropic.com/pricing#anthropic-api) — 把計價表看完，算一下 1k input + 1k output 的成本
+2. [**anthropics/courses — Anthropic API Fundamentals**](https://github.com/anthropics/courses) ⭐⭐⭐⭐⭐ ★ 21k+ — Anthropic 官方 5 course umbrella、**module 1「Anthropic API Fundamentals」對應本 stage**。Jupyter notebook、用 Claude 3 Haiku（最便宜）跑、跟著做就能拿到 API 基本功
+3. [**OpenAI Quickstart**](https://platform.openai.com/docs/quickstart) — 第一次 API call 的步驟
+4. [**A Visual Guide to LLM Tokenizers**](https://huggingface.co/learn/llm-course/chapter6/1) — Hugging Face 的入門
+5. [**Anthropic API Pricing**](https://www.anthropic.com/pricing#anthropic-api) — 把計價表看完，算一下 1k input + 1k output 的成本
 
 **🎥 中文影片補充（強烈推薦）**：
 - [**李宏毅 — 生成式 AI 導論（2024 春台大課程）**](https://speech.ee.ntu.edu.tw/~hylee/genai/2024-spring.php) ⭐⭐⭐ — 第 1-5 集講 LLM 是什麼、怎麼運作、token / context window / temperature 怎麼影響輸出。中文圈最高品質的 LLM 學術級導論、台大授課、官方頁含投影片 + YouTube。最新整合版見 [**GenAI-ML 2025 秋**](https://speech.ee.ntu.edu.tw/~hylee/GenAI-ML/2025-fall.php)

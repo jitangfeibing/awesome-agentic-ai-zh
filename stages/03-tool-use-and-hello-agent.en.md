@@ -123,9 +123,10 @@ You should already have:
 ## 📚 Required Reading
 
 1. [**Anthropic — Tool Use**](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview) — The official guide.
-2. [**ReAct: Synergizing Reasoning and Acting in Language Models**](https://arxiv.org/abs/2210.03629) — Yao et al. 2022, the foundational paper. Read at least the abstract and Section 3.
-3. [**OpenAI — Function Calling**](https://platform.openai.com/docs/guides/function-calling) — For reference on the function calling format.
-4. [**Build an agent from scratch**](https://shafiqulai.github.io/blogs/blog_3.html) — A narrative-style guide to building an agent from scratch.
+2. [**anthropics/courses — Tool Use**](https://github.com/anthropics/courses) ⭐⭐⭐⭐⭐ ★ 21k+ — Anthropic's official 5-course umbrella; **module 5 "Tool Use" maps to this stage**. Jupyter notebook exercises covering multimodal prompts / streaming / tool implementation walkthrough.
+3. [**ReAct: Synergizing Reasoning and Acting in Language Models**](https://arxiv.org/abs/2210.03629) — Yao et al. 2022, the foundational paper. Read at least the abstract and Section 3.
+4. [**OpenAI — Function Calling**](https://platform.openai.com/docs/guides/function-calling) — For reference on the function calling format.
+5. [**Build an agent from scratch**](https://shafiqulai.github.io/blogs/blog_3.html) — A narrative-style guide to building an agent from scratch.
 
 ## 🛠 Hands-on Exercises (Basic Illustrative Exercises)
 
