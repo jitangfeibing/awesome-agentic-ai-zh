@@ -45,6 +45,79 @@
 
 ---
 
+## 🗺️ 7-Layer Architecture Map（先看这张图、再读 5.1-5.6）
+
+> 📋 **这节是什么**：把 Claude Code 的 7 个 primitive（MCP / Skills / Plugins / Subagents / Hooks / Slash commands / CLI）对应到 **7 个架构层 + 3 个工程学 discipline**——进 5.1-5.6 之前先看一次，知道接下来在学什么层；学完回头看，就是 synthesis。**分层是教学选择，不是 absolute 真理**。
+
+> 📊 PNG 版（PNG 待 user 生成，目前先用下面 ASCII）：`resources/diagrams/claude-architecture-map.zh-Hans.png`
+
+### ASCII 版（accessible、git diff friendly）
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Layer 7 — Interface       │ CLI / GUI                      │
+│            （界面层）        │ → Claude: claude-code CLI      │
+├─────────────────────────────────────────────────────────────┤
+│  Layer 6 — Workflow        │ ◄── Skills 主要住这             │
+│            （固定流程）      │     Slash commands             │
+├─────────────────────────────────────────────────────────────┤
+│  Layer 5 — Coordination    │ Subagents / Multi-agent        │
+│            （协调层）        │                                │
+├─────────────────────────────────────────────────────────────┤
+│  Layer 4 — Memory / Context│ History / Compaction / /compact │
+│            （记忆 / 上下文） │                                │
+├─────────────────────────────────────────────────────────────┤
+│  Layer 3 — Control Plane   │ Hooks（PreToolUse / PostToolUse）│
+│            （控制层）        │                                │
+├─────────────────────────────────────────────────────────────┤
+│  Layer 2 — Tool Use        │ Anthropic Tool Use protocol     │
+│            （工具调用）      │                                 │
+│  Layer 2.5 — Tool Provider │ ◄── MCP servers 在这(protocol层)│
+├─────────────────────────────────────────────────────────────┤
+│  Layer 1 — Foundation      │ Anthropic API（Sonnet/Opus/...) │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 每层 1 句白话 + Claude 的版本
+
+| Layer | 是什么 | Claude 的版本 | 谁管 | 学在 |
+|---|---|---|---|---|
+| **L7 Interface** | 用户和 agent 交谈入口 | claude-code CLI / Desktop | Harness Engineering | [Stage 5.1](#51--claude-code-基础) |
+| **L6 Workflow** | 固定可复用流程模板 | **Skills**（SKILL.md）+ Slash commands + **Plugins**（打包 Skills / hooks / commands、属 packaging）| Prompt Engineering | [Stage 5.3](#53--skillsclaude-code-的行为层-claude-code-生态最关键的一层) / [5.4](#54--plugins-与-marketplaces) |
+| **L5 Coordination** | 多 agent 分工合作 | **Subagents** + Agent team + Background | Harness Engineering | [Stage 5.5](#55--subagentsclaude-code-原生-multi-agent-机制-2025-新功能) |
+| **L4 Memory / Context** | 跨对话 / 跨 session 记事情 | History / `/compact` / Memory hooks | Context Engineering | [Stage 6](06-memory-rag.zh-Hans.md) |
+| **L3 Control Plane** | tool 执行前 / 后拦截 / validation / 阻挡 | **Hooks**（PreToolUse / PostToolUse 等）| Harness Engineering | [Stage 5.1 hooks 段](#51--claude-code-基础) |
+| **L2 Tool Use** | LLM 调用外部 function 的 protocol | Anthropic Tool Use（`input_schema`）| Tool design | [Stage 3](03-tool-use-and-hello-agent.zh-Hans.md) |
+| **L2.5 Tool Provider** | 把外部 API 包成 tool 给 Layer 2 用 | **MCP servers**（Notion / Gmail / Slack）| Context Engineering + Tool | [Stage 5.2](#52--mcpmodel-context-protocol-基础) |
+| **L1 Foundation** | LLM 本体（system prompt 直接送达这一层）| Anthropic API | Prompt Engineering | [Stage 1](01-llm-basics.zh-Hans.md) + [Stage 2](02-prompt-engineering.zh-Hans.md) |
+
+### 3 工程学 Discipline overlay（核心 insight）
+
+Prompt / Context / Harness 是**不同层的 discipline**——学会其中一个，不会自动会另一个：
+
+| Discipline | 负责哪些 layer | 1 句话 | 学在 |
+|---|---|---|---|
+| **Prompt Engineering** | L1 + L6 | "送进 LLM 的字符串怎么设计" | [Stage 2](02-prompt-engineering.zh-Hans.md) |
+| **Context Engineering** | L4 + L2.5 | "context window 装什么信息" | [Stage 6](06-memory-rag.zh-Hans.md) |
+| **Harness Engineering** | L3 + L5 + L7 | "LLM 外面的 runtime scaffolding" | [Stage 7 §Harness Engineering](07-multi-agent-production.zh-Hans.md#-harness-engineering--production-agent-runtime-的工程设计--本-stage-核心概念) |
+
+> 💡 **MCP 的特殊位置**：MCP 严格说是 **Context Engineering**（feed context source）+ **Tool design**（协议规范）跨层东西，不纯归任一 discipline——所以图里用 Layer 2.5 标明。
+
+### 跨 CLI vendor mini-comparison（2026-05 snapshot）
+
+只有 Claude Code 有**完整 7-layer stack**；其他 CLI 大多停在 single-agent + 简化版：
+
+| 层 | Claude Code | OpenAI Codex | Gemini CLI |
+|---|---|---|---|
+| L5 Coordination（multi-agent）| ✅ Subagents | ❌ single-agent | ❌ |
+| L3 Control Plane（Hooks）| ✅ Hooks | ❌ | ❌ |
+| L2.5 Tool Provider（MCP）| ✅ | ✅（已支持 MCP）| ✅（需手动装 MCP server）|
+| L6 Workflow（Skills）| ✅ SKILL.md | AGENTS.md（context only）| GEMINI.md（context only）|
+
+→ 细看 [`resources/cli-agents-guide.zh-Hans.md`](../resources/cli-agents-guide.zh-Hans.md)
+
+---
+
 ## 5.1 — Claude Code 基础
 
 ### Claude Code 是什么（先定位）
