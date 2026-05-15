@@ -547,6 +547,56 @@ For the 7 built-in Claude Code subagents above, this table maps “**when you ne
 
 > 📋 **Full 15 recipes** (each includes **scenario + subagent + copy-paste prompt template + when not to use it**) → [`resources/subagent-cookbook.en.md`](../resources/subagent-cookbook.en.md)
 
+### Clarifying Commonly Confused Concepts (read if the tables above still feel hazy)
+
+The **3 concept pairs** students confuse most often, plus **5 gotchas veterans learn the hard way**. Skim the parts you need:
+
+#### Subagent vs Skill — 5 Key Differences
+
+Many people treat Subagents and Skills as the same thing. They are actually **completely different layers**:
+
+| Dimension | Subagent | Skill |
+|---|---|---|
+| **Execution environment** | A new independent context window (under the hood, a new subprocess) | Inside the main session, same context |
+| **Tool permissions** | Its own `tools:` list (can restrict it to Read / Grep only) | Main session tools (open by default; a skill can narrow this with `allowed-tools:`) |
+| **Return value** | One final message summarized back to the main session | No return value; it changes behavior (rules / persona) |
+| **Best for** | Long tasks / parallel work / context isolation | Knowledge injection / rules / changing Claude behavior |
+| **Examples** | `code-reviewer` / `Explore` / `Plan` | `codex-delegate` / `pdf` (anthropics/skills) |
+
+**Quick test**: do you **need a new context window**? Yes → subagent; no → skill.
+
+#### Subagent vs Slash Command — One is a Task, the Other is a Command
+
+| Thing | How it triggers | Example |
+|---|---|---|
+| **Subagent** | Type ordinary conversation text; Claude reads the description and dispatches automatically | You type "Review my staged changes" → Claude dispatches `code-reviewer` |
+| **Slash command** | Type a command starting with `/` | `/agents` (list subagents) / `/compact` (compress context) / `/help` |
+
+⚠️ **Common misconception**: `/agents` **does not invoke a subagent**. It is the command for "listing currently available subagents." **Dispatch happens through ordinary prompt text**, and Claude chooses the subagent.
+
+#### Description is the Routing Key (How You Write It Decides Whether Claude Selects It)
+
+How does the main session know which subagent to dispatch? It reads the **`description` field** in `.claude/agents/<name>.md`. **How you write it affects trigger behavior**:
+
+| How Description is written | Trigger mode | Example |
+|---|---|---|
+| `...use **PROACTIVELY** when X...` | **Proactive trigger**: when X appears, Claude dispatches it on its own | "use PROACTIVELY when reviewing diffs ≥ 50 lines" |
+| `...use when user asks Y...` | **Passive trigger**: the user has to ask clearly | "use when user asks for code review" |
+| Empty description | **Invisible**: it will not be selected autonomously | (can only be forced from code with `Agent(subagent_type=...)`) |
+
+> 💡 **Write the description like ad copy**: make "what problem I solve" **specific**, and Claude is more likely to choose it at the right time. `PROACTIVELY` is a **strong signal word**: when it appears, Claude is much more likely to infer "this is suitable for proactive dispatch"; without it, dispatch more often happens only when the user clearly asks. (It influences Claude's judgment; **it is not a code-level if-then switch**.)
+
+#### 5 Gotchas Veterans Learn the Hard Way
+
+| # | Gotcha | Why it matters |
+|---|---|---|
+| 1 | **A focused Description is enough** | There is no official character limit, but an overly long description uses context budget; write the "trigger condition + applicable scenario" concretely and avoid repetition |
+| 2 | **Empty `tools:` = inherit all main-session tools** | If you want to limit a subagent, you must **write the tool list explicitly**; an empty field ≠ no tools |
+| 3 | **No `model:` = same model as the main session** | If the main session is Opus and the subagent does not specify a model, it is Opus too (expensive). To save cost, set `model: sonnet` or `model: haiku`|
+| 4 | **A subagent has no "I said X earlier" memory** | Every dispatch starts with a **fresh context** and cannot see the main session conversation. The prompt must be self-contained; do not reference "the Y we just discussed" |
+| 5 | **Subagents also consume hooks** | PreToolUse / PostToolUse (intercept scripts before / after tool execution) also **fire** inside subagents. Account for this when setting hooks |
+
+
 <details>
 <summary>👉 Concrete subagent file example (the easiest to start with)</summary>
 
