@@ -207,6 +207,12 @@ Anthropic 2024 method — embed each chunk together with a summary of the docume
 
 📍 Detail: [Stage 6](../stages/06-memory-rag.en.md)
 
+### Fine-tuning
+
+Re-train the model on your own data, baking knowledge or behavior into the weights (unlike RAG — RAG injects data into the context at inference time and never changes the weights). Good for making the model reliably learn a **format / style / domain vocabulary**; **not** for stuffing in "the latest facts" (that is RAG's job — facts fine-tuned in go stale and are hard to update). In most agent scenarios, **try prompt + RAG first**, and only consider fine-tuning if that genuinely is not enough.
+
+📍 Detail: [Stage 6](../stages/06-memory-rag.en.md)
+
 ---
 
 ## 4. Multi-Agent
