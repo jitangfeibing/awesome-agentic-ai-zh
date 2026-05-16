@@ -53,34 +53,7 @@
 
 ![Claude Code 7-Layer Architecture Map](../resources/diagrams/claude-architecture-map.png)
 
-> 📊 **上圖**：Claude Code 7 個架構層 + 3 個工程學 discipline 整合視圖（accessible ASCII 版見下）。
-
-### ASCII 版（accessible、git diff friendly）
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  Layer 7 — Interface       │ CLI / GUI                      │
-│            （介面層）        │ → Claude: claude-code CLI      │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 6 — Workflow        │ ◄── Skills 主要住這             │
-│            （固定流程）      │     Slash commands             │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 5 — Coordination    │ Subagents / Multi-agent        │
-│            （協調層）        │                                │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 4 — Memory / Context│ History / Compaction / /compact │
-│            （記憶 / 上下文） │                                │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 3 — Control Plane   │ Hooks（PreToolUse / PostToolUse）│
-│            （控制層）        │                                │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 2 — Tool Use        │ Anthropic Tool Use protocol     │
-│            （工具呼叫）      │                                 │
-│  Layer 2.5 — Tool Provider │ ◄── MCP servers 在這(protocol層)│
-├─────────────────────────────────────────────────────────────┤
-│  Layer 1 — Foundation      │ Anthropic API（Sonnet/Opus/...) │
-└─────────────────────────────────────────────────────────────┘
-```
+> 📊 **上圖**：Claude Code 7 個架構層 + 3 個工程學 discipline 整合視圖。
 
 ### 每層 1 句白話 + Claude 的版本
 

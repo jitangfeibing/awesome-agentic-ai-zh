@@ -53,34 +53,7 @@ After completing this stage, you will be able to extend Claude Code, write your 
 
 ![Claude Code 7-Layer Architecture Map](../resources/diagrams/claude-architecture-map.en.png)
 
-> 📊 **Above**: Claude Code 7 architecture layers + 3 engineering disciplines integrated view (accessible ASCII version below).
-
-### ASCII version (accessible / git diff friendly)
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  Layer 7 — Interface       │ CLI / GUI                      │
-│            (interface)      │ → Claude: claude-code CLI      │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 6 — Workflow        │ ◄── Skills live here           │
-│            (fixed workflow) │     Slash commands             │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 5 — Coordination    │ Subagents / Multi-agent        │
-│            (coordination)   │                                │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 4 — Memory / Context│ History / Compaction / /compact │
-│            (memory/context) │                                │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 3 — Control Plane   │ Hooks (PreToolUse / PostToolUse)│
-│            (control plane)  │                                │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 2 — Tool Use        │ Anthropic Tool Use protocol     │
-│            (tool calls)     │                                 │
-│  Layer 2.5 — Tool Provider │ ◄── MCP servers here(protocol) │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 1 — Foundation      │ Anthropic API (Sonnet/Opus/...) │
-└─────────────────────────────────────────────────────────────┘
-```
+> 📊 **Above**: Claude Code 7 architecture layers + 3 engineering disciplines integrated view.
 
 ### One sentence per layer + Claude's primitive
 
