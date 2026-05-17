@@ -62,11 +62,20 @@ This is a checklist **for your own use**. You do not need to submit it, open a P
 
 ---
 
+## Capstone
+
+After finishing a track, build something you can show + self-assess. The brief, requirements, and 4-level rubric all live in [`CAPSTONE.en.md`](CAPSTONE.en.md) — this list is just the checkbox entry point; the standard is not duplicated.
+
+- [ ] **Track A Capstone** — assemble a reusable CLI-agent workflow · [`CAPSTONE.en.md`](CAPSTONE.en.md)
+- [ ] **Track B Capstone** — build + **evaluate** a multi-agent / RAG system · [`CAPSTONE.en.md`](CAPSTONE.en.md)
+
+---
+
 ## Shortest viable path (if you only want one recommendation)
 
 Do not want to plan it yourself? Follow this path to reach "able to do hands-on work" with roughly the fewest detours:
 
-`Stage 0 → Stage 1 → Stage 2 →` choose a track `→`(Track A: `A1 → A2 → Stage 5 → A3`;Track B: `Stage 3 → Stage 4 → Stage 5 → Stage 6`)`→` your branch `→`(advanced, applies to Track B: `Stage 7 → 7.5 → 8`;Track A's Stage 8 is already in the main path above)
+`Stage 0 → Stage 1 → Stage 2 →` choose a track `→`(Track A: `A1 → A2 → Stage 5 → A3`;Track B: `Stage 3 → Stage 4 → Stage 5 → Stage 6`)`→` your branch `→`(advanced, applies to Track B: `Stage 7 → 7.5 → 8`;Track A's Stage 8 is already in the main path above)`→` your track's **Capstone** (see [`CAPSTONE.en.md`](CAPSTONE.en.md))
 
 ---
 

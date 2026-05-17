@@ -62,11 +62,20 @@
 
 ---
 
+## 结业专题 / Capstone
+
+走完一条轨道后,做一个能展示的作品 + 自评。题目、必要条件、四级评分 rubric 全在 [`CAPSTONE.zh-Hans.md`](CAPSTONE.zh-Hans.md)——这份清单只放打勾入口,标准不重复。
+
+- [ ] **Track A Capstone** — 组一条会重复用的 CLI-agent 工作流 · [`CAPSTONE.zh-Hans.md`](CAPSTONE.zh-Hans.md)
+- [ ] **Track B Capstone** — build + **评测** 一个 multi-agent / RAG 系统 · [`CAPSTONE.zh-Hans.md`](CAPSTONE.zh-Hans.md)
+
+---
+
 ## 一条最短可行路线（如果你只想要一个建议）
 
 不想自己排？照这个走，大约能在最少绕路下到“能动手做事”：
 
-`Stage 0 → Stage 1 → Stage 2 →` 选轨道 `→`（Track A: `A1 → A2 → Stage 5 → A3`;Track B: `Stage 3 → Stage 4 → Stage 5 → Stage 6`）`→` 你的 branch `→`（进阶，Track B 适用：`Stage 7 → 7.5 → 8`;Track A 的 Stage 8 已在上方主线）
+`Stage 0 → Stage 1 → Stage 2 →` 选轨道 `→`（Track A: `A1 → A2 → Stage 5 → A3`;Track B: `Stage 3 → Stage 4 → Stage 5 → Stage 6`）`→` 你的 branch `→`（进阶，Track B 适用：`Stage 7 → 7.5 → 8`;Track A 的 Stage 8 已在上方主线）`→` 你那轨的 **Capstone**（见 [`CAPSTONE.zh-Hans.md`](CAPSTONE.zh-Hans.md)）
 
 ---
 
