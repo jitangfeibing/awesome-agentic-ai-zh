@@ -1,0 +1,120 @@
+site_name: awesome-agentic-ai-zh
+site_description: 中文 Agentic AI 學習路線圖 / A trilingual learning roadmap for Agentic AI
+site_url: https://wenyuchiou.github.io/awesome-agentic-ai-zh/
+repo_url: https://github.com/WenyuChiou/awesome-agentic-ai-zh
+repo_name: WenyuChiou/awesome-agentic-ai-zh
+edit_uri: edit/main/
+
+# Content lives at the REPO ROOT (stages/ tracks/ branches/ resources/
+# + root *.md), not a docs/ subfolder. mkdocs forbids docs_dir being
+# the parent of mkdocs.yml, so `scripts/build-docs-tree.py` stages the
+# whitelisted content into _build/docs/ first (run it before `mkdocs
+# build` — the GitHub Actions workflow does this automatically).
+docs_dir: _build/docs
+site_dir: _build/site
+
+exclude_docs: |
+  *.py
+  *.sh
+
+theme:
+  name: material
+  language: zh-TW
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切換深色 / Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切換淺色 / Light mode
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: zh-TW
+          default: true
+          name: 繁體中文
+          build: true
+        - locale: en
+          name: English
+          build: true
+        - locale: zh-Hans
+          name: 简体中文
+          build: true
+          # Material ships no `zh-Hans.html` UI partial (it predates strict
+          # BCP-47 — uses `zh` for Simplified). Map this locale's chrome to
+          # Material's `zh`. Applied via apply_user_overrides (runs AFTER
+          # the plugin's forced language=locale, so this wins).
+          theme:
+            language: zh
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji
+
+nav:
+  - 首頁 / Home: README.md
+  - 怎麼用 / How to use: docs/HOW_TO_USE.md
+  - 進度追蹤 / Progress: PROGRESS.md
+  - 路線圖 / Roadmap: ROADMAP.md
+  - 共用基礎 / Foundations:
+      - Stage 0 — Foundations: stages/00-foundations.md
+      - Stage 1 — LLM Basics: stages/01-llm-basics.md
+      - Stage 2 — Prompt Engineering: stages/02-prompt-engineering.md
+  - Track A — CLI Power User:
+      - A1 — CLI Intro: tracks/cli/A1-cli-intro.md
+      - A2 — CLI Workflow: tracks/cli/A2-cli-workflow.md
+      - A3 — CLI Production: tracks/cli/A3-cli-production.md
+  - Track B — Agent Builder:
+      - Stage 3 — Tool Use & Hello Agent: stages/03-tool-use-and-hello-agent.md
+      - Stage 4 — Agent Frameworks: stages/04-agent-frameworks.md
+      - Stage 5 — Claude Code Ecosystem: stages/05-claude-code-ecosystem.md
+      - Stage 6 — Memory & RAG: stages/06-memory-rag.md
+      - Stage 7 — Multi-Agent: stages/07-multi-agent-production.md
+      - Stage 7.5 — Advanced Agentic: stages/07.5-advanced-agentic-concepts.md
+      - Stage 8 — Agent Interfaces: stages/08-agent-interfaces.md
+  - Audience branches:
+      - Branch design: branches/DESIGN.md
+      - 🔬 for-researcher: branches/for-researcher.md
+      - 💻 for-developer: branches/for-developer.md
+      - 🎓 for-teacher: branches/for-teacher.md
+      - 📊 for-knowledge-worker: branches/for-knowledge-worker.md
+      - 👥 for-everyday-users: branches/for-everyday-users.md
+  - Walkthroughs:
+      - Build your first agent in 7 steps: walkthroughs/build-first-agent-in-7-steps.md
+  - Resources: RESOURCES.md
+  - Contributing:
+      - Contributing guide: CONTRIBUTING.md
+      - Code of Conduct: CODE_OF_CONDUCT.md
+      - Security policy: SECURITY.md
+      - Contributors: CONTRIBUTORS.md
+      - Changelog: CHANGELOG.md

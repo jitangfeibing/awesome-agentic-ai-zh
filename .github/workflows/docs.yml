@@ -1,0 +1,77 @@
+name: Docs site (mkdocs → GitHub Pages)
+
+# Builds the trilingual mkdocs-material site and deploys it to GitHub
+# Pages. Content lives at the repo root, so scripts/build-docs-tree.py
+# stages it into _build/docs/ first (mkdocs forbids docs_dir == repo
+# root). Deploy uses the modern Actions-based Pages flow (no gh-pages
+# branch). Pages source must be set to "GitHub Actions" in repo
+# settings (Settings → Pages → Source: GitHub Actions).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'stages/**'
+      - 'tracks/**'
+      - 'branches/**'
+      - 'resources/**'
+      - 'walkthroughs/**'
+      - 'docs/**'
+      - 'examples/**'
+      - '*.md'
+      - 'mkdocs.yml'
+      - 'requirements-docs.txt'
+      - 'scripts/build-docs-tree.py'
+      - '.github/workflows/docs.yml'
+  workflow_dispatch:
+
+# Allow one concurrent deployment; don't cancel an in-progress one
+# (cancelling mid-deploy can leave Pages in a half-published state).
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build mkdocs site
+    runs-on: ubuntu-latest
+    # Build only reads the repo — no Pages/OIDC scope needed here.
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install docs dependencies
+        run: pip install -r requirements-docs.txt
+
+      - name: Stage content tree
+        run: python scripts/build-docs-tree.py
+
+      - name: Build site
+        run: python -m mkdocs build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _build/site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    # Only the deploy job needs the Pages + OIDC write scope.
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
