@@ -141,3 +141,4 @@ Slack / Gmail / Discord 等。Anthropic 原本維護的 reference server 已於 
 ## 閱讀
 
 - [How I Turned Claude Code Into My Personal AI Agent OS](https://aimaker.substack.com/p/how-i-turned-claude-code-into-personal-ai-agent-operating-system-for-writing-research-complete-guide) — 知識工作者個案研究
+- [**Anthropic — The Founder's Playbook**](https://claude.com/blog/the-founders-playbook) — Anthropic 2026-05-14 發布的 35 頁 startup 指南;Idea / MVP / Launch / Scale 四階段對應到 2026 AI capability

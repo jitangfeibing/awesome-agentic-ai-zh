@@ -141,3 +141,4 @@ Recommended progression:
 ## Reading
 
 - [How I Turned Claude Code Into My Personal AI Agent OS](https://aimaker.substack.com/p/how-i-turned-claude-code-into-personal-ai-agent-operating-system-for-writing-research-complete-guide) — knowledge worker case study
+- [**Anthropic — The Founder's Playbook**](https://claude.com/blog/the-founders-playbook) — Anthropic's 35-page startup playbook (2026-05-14); maps Idea / MVP / Launch / Scale onto 2026 AI capability
