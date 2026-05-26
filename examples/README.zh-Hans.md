@@ -184,7 +184,7 @@ r = client.chat.completions.create(model="meta/llama-3.3-70b-instruct", messages
 | **全本机 Ollama** | ~30 hr (CPU) / ~10 hr (GPU) | **$0** | 预算敏感、隐私需求、中国大陆无 cloud 访问 |
 | **混合：本机练 + haiku 终验** ⭐ | ~30 hr | **$2-5** | **推荐默认**：练习 local 跑、最后 1-2 次用 haiku 看 cloud 质量 |
 | **全 haiku** | ~10 hr | $5-15 | 想快、预算允许、想看完整 cloud 体验 |
-| **全 sonnet** | ~8 hr | $20-50 | production-grade 练习、想看高质量答案 |
+| **全 sonnet** | ~8 hr | $20-50 | 深度练习、追求高质量答案 |
 | **混合：sonnet 为主 + opus 难题** | ~8 hr | $30-80 | 已是 production agent 开发者 |
 
 > 🎯 **新手默认**：先全本机跑、预算上限 $5。**Stage 7 production tier 才考虑 sonnet 升级**。

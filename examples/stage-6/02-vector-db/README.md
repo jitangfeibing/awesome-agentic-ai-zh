@@ -7,7 +7,7 @@
 對應 [Stage 6 — Memory & RAG](../../../stages/06-memory-rag.md) 練習 2。
 > 🎓 **學習模式**：這份 `starter.py` 是**完整解答**、不是 TODO skeleton。建議用**主動模式**——`mv starter.py starter_reference.py`、看 signature 不看 body、自己重寫一份 `starter.py`、跑 `python test.py` 驗證；卡 20 分鐘再回去對照 reference。完整方法論看 [`docs/HOW_TO_USE.md`](../../../docs/HOW_TO_USE.md)。
 
-> 📚 **想要 chapter-length 深入版？** 本 folder 的 starter 是 illustrative 版、聚焦核心 pattern + 兩條 SDK path，不是 production-grade tutorial。深度教材推薦：
+> 📚 **想要 chapter-length 深入版？** 本 folder 的 starter 是 illustrative 版、聚焦核心 pattern + 兩條 SDK path，不是進階深度教材。深度教材推薦：
 > - [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents) ⭐ 中文圈最完整、章節式 + 16 種 production 能力。**本練習對應 hello-agents 的 vector store 章節**
 > - [ChromaDB official tutorial](https://docs.trychroma.com/) + [Qdrant / Weaviate / Pinecone 對照](https://github.com/zilliztech/VectorDBBench)（production scale benchmark）
 > - 完整 references 見 [Stage 6 精選 Projects](../../../stages/06-memory-rag.md#-精選-projects範本--spec--範例-collection)
@@ -37,7 +37,7 @@ python test_anthropic.py # Path B concept demo（同 starter）
 |---|---|---|
 | < 100 doc | ✅ 簡單夠用 | overkill |
 | 100-10K doc | 慢（每次 query 都 re-embed all） | ✅ 持久 + index |
-| 10K+ doc | 不行 | ✅（或考慮 production-grade Qdrant / Weaviate） |
+| 10K+ doc | 不行 | ✅（或考慮 production 用的 Qdrant / Weaviate） |
 | Persistence | ❌ 每次重 embed | ✅ SQLite 後端 |
 | Filter / metadata | 自己寫 | ✅ where clause |
 | Hybrid search | 自己寫 | ✅ 有 BM25 + vector |
@@ -96,7 +96,7 @@ collection.delete(ids=[...])
 - **Filter 用錯**：`where={"category": "tech"}` 是 metadata filter、`where_document={"$contains": "..."}` 是 doc 內容 filter
 - **embedding function 一致性**：index 時用 model A、query 時用 model B、retrieval 會錯。Chroma 把 embedding_function 綁在 collection 上避免
 
-## 想看 production-grade？
+## 想看實際在 production 跑的選擇？
 
 ```bash
 # Persistent mode

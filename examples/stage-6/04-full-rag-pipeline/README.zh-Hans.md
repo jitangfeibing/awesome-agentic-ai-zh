@@ -105,7 +105,7 @@ Answer:"""
 - **prompt 把 context 放后面**：LLM 较重视 prompt 开头、context 应该在 question 之前
 - **没验证“答错就 say I don't know”**：production 加 5-10 个“答不出来该说 unknown”的 eval case
 
-## 想看 production-grade RAG？
+## 想看实际在 production 跑的 RAG？
 
 - **Persistent ChromaDB**：`chromadb.PersistentClient(path=...)` 不重新 index
 - **Reranker**：retrieve top-20、cross-encoder rerank、留 top-3

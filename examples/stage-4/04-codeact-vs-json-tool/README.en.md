@@ -90,7 +90,7 @@ The framework provides a sandboxed Python interpreter; the agent imports tools, 
 | Total steps | 1-2 | 3-5 (iterating fixes) |
 | Cost | $0.005-0.02 | $0 |
 
-**Punchline**: CodeAct is **model-quality-sensitive** — the LLM has to write production-grade Python. **Small models favor JSON-tool over CodeAct** (Exercise 6 of Stage 3 confirms a similar pattern at the schema layer).
+**Punchline**: CodeAct is **model-quality-sensitive** — the LLM has to write Python that's solid enough for production. **Small models favor JSON-tool over CodeAct** (Exercise 6 of Stage 3 confirms a similar pattern at the schema layer).
 
 ## Common pitfalls
 

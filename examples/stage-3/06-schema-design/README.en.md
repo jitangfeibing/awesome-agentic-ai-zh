@@ -71,7 +71,7 @@ Each test suite also asserts on the schema structure directly (`good` has `requi
 | Good schema picks correctly | Stable | Stable |
 | Gap between bad and good | Small | Large |
 
-In other words: **time spent writing good schemas saves you the cost of upgrading the model**. Want to run a cheap model (qwen / mistral) in production? Your schemas need to be production-grade.
+In other words: **time spent writing good schemas saves you the cost of upgrading the model**. Want to run a cheap model (qwen / mistral) in production? Your schemas need to be solid enough to run in production.
 
 ## Further reading
 
@@ -81,4 +81,4 @@ More schema design rules in [`resources/schema-design-cheatsheet.md`](../../../r
 
 - **Deliberately break the good schema** — remove one `enum` constraint and watch qwen start to miss
 - **Add a third tool** — one with usage similar to but boundary-blurry with `convert_temperature`, and observe the LLM's choice
-- **Combine with the structured-error pattern** from [`../05-error-handling/`](../05-error-handling/) — schema design + error handling is the production-grade combo
+- **Combine with the structured-error pattern** from [`../05-error-handling/`](../05-error-handling/) — schema design + error handling is the combo for shipping to production

@@ -71,7 +71,7 @@ python test_anthropic.py  # 验 Path B (Anthropic) starter_*_anthropic
 | Good schema 选对 | 稳定 | 稳定 |
 | 差距 | 小 | 大 |
 
-换句话说：**写 schema 的功夫、在小 model 上能省下换大 model 的成本**。Production 想用便宜 model（qwen / mistral）？schema 必须写到 production-grade。
+换句话说：**写 schema 的功夫、在小 model 上能省下换大 model 的成本**。Production 想用便宜 model（qwen / mistral）？schema 必须写到能上线跑的程度。
 
 ## 延伸阅读
 

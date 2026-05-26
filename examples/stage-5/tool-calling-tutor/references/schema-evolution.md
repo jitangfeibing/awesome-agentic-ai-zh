@@ -145,7 +145,7 @@ qwen2.5:3b    0%           95%           +95%
 gemma4:e4b    0%           80%           +80%
 ```
 
-**結論**：寫好 schema 的功夫**省下換大 model 的 $$**。Production 想用便宜 model？schema 必須 production-grade。
+**結論**：寫好 schema 的功夫**省下換大 model 的 $$**。Production 想用便宜 model？schema 必須能上線跑。
 
 ## 看完整對照範例
 

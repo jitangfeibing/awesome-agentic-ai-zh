@@ -13,7 +13,7 @@ After installing a CLI and running first tasks, the next question: **how do I ma
 
 ## 📌 Learning Goals
 
-- Write a production-grade `CLAUDE.md` / `AGENTS.md` — the minimum production-grade shape is **(1) role** + **(2) project context** + **(3) forbidden actions** + **(4) test commands** + **(5) delivery format**. In practice, 30-50 lines can usually cover those 5 things; beyond 50 lines, split the file
+- Write a practical `CLAUDE.md` / `AGENTS.md` — the minimum practical shape is **(1) role** + **(2) project context** + **(3) forbidden actions** + **(4) test commands** + **(5) delivery format**. In practice, 30-50 lines can usually cover those 5 things; beyond 50 lines, split the file
 - Design repeatable slash commands / custom prompts
 - Decompose multi-step tasks into ones the CLI can execute end-to-end
 - Design prompts portable across CLIs

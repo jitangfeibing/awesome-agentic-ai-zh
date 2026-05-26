@@ -98,7 +98,7 @@ def run_eval(cases, agent_fn, eval_fn):
 - **[Anthropic Workbench eval](https://console.anthropic.com/workbench/evals)**：官方 eval UI、prompts as code
 - **[LangSmith](https://smith.langchain.com/)**：LangChain ecosystem 的 eval + observability 一条龙
 - **[Weights & Biases Weave](https://wandb.ai/site/weave)**：generic LLM eval framework
-- **[Braintrust](https://www.braintrust.dev/)**：跨 model / version A/B、production-grade dashboards
+- **[Braintrust](https://www.braintrust.dev/)**：跨 model / version A/B、上线部署用的 dashboards
 
 ## 两个 path 观察重点
 

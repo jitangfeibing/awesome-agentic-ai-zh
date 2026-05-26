@@ -145,7 +145,7 @@ qwen2.5:3b    0%           95%           +95%
 gemma4:e4b    0%           80%           +80%
 ```
 
-**Takeaway**: time spent writing good schemas **saves you the cost of upgrading the model**. Want a cheap production model? Your schemas must be production-grade.
+**Takeaway**: time spent writing good schemas **saves you the cost of upgrading the model**. Want a cheap production model? Your schemas must be solid enough to run in production.
 
 ## See the full comparison example
 

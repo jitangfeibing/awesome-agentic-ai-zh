@@ -7,7 +7,7 @@
 對應 [Stage 6 — Memory & RAG](../../../stages/06-memory-rag.md) 練習 4。
 > 🎓 **學習模式**：這份 `starter.py` 是**完整解答**、不是 TODO skeleton。建議用**主動模式**——`mv starter.py starter_reference.py`、看 signature 不看 body、自己重寫一份 `starter.py`、跑 `python test.py` 驗證；卡 20 分鐘再回去對照 reference。完整方法論看 [`docs/HOW_TO_USE.md`](../../../docs/HOW_TO_USE.md)。
 
-> 📚 **想要 chapter-length 深入版？** 本 folder 的 starter 是 illustrative 版、聚焦核心 pattern + 兩條 SDK path，不是 production-grade tutorial。深度教材推薦：
+> 📚 **想要 chapter-length 深入版？** 本 folder 的 starter 是 illustrative 版、聚焦核心 pattern + 兩條 SDK path，不是進階深度教材。深度教材推薦：
 > - [`datawhalechina/hello-agents`](https://github.com/datawhalechina/hello-agents) ⭐ 中文圈最完整、章節式 + 16 種 production 能力。**本練習對應 hello-agents 的 完整 RAG 流水線章節**
 > - [LlamaIndex RAG tutorial](https://docs.llamaindex.ai/en/stable/understanding/rag/) + [LangChain RAG cookbook](https://python.langchain.com/docs/tutorials/rag/)
 > - 完整 references 見 [Stage 6 精選 Projects](../../../stages/06-memory-rag.md#-精選-projects範本--spec--範例-collection)
@@ -114,7 +114,7 @@ Answer:"""
 - **prompt 把 context 放後面**：LLM 較重視 prompt 開頭、context 應該在 question 之前
 - **沒驗證「答錯就 say I don't know」**：production 加 5-10 個「答不出來該說 unknown」的 eval case
 
-## 想看 production-grade RAG？
+## 想看實際在 production 跑的 RAG？
 
 - **Persistent ChromaDB**：`chromadb.PersistentClient(path=...)` 不重新 index
 - **Reranker**：retrieve top-20、cross-encoder rerank、留 top-3

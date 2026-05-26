@@ -30,7 +30,7 @@ python test_anthropic.py   # Path B concept demo（同 starter）
 |---|---|---|
 | < 100 doc | ✅ 简单够用 | overkill |
 | 100-10K doc | 慢（每次 query 都 re-embed all） | ✅ 持久 + index |
-| 10K+ doc | 不行 | ✅（或考虑 production-grade Qdrant / Weaviate） |
+| 10K+ doc | 不行 | ✅（或考虑 production 用的 Qdrant / Weaviate） |
 | Persistence | ❌ 每次重 embed | ✅ SQLite 后端 |
 | Filter / metadata | 自己写 | ✅ where clause |
 | Hybrid search | 自己写 | ✅ 有 BM25 + vector |
@@ -83,7 +83,7 @@ collection.delete(ids=[...])
 - **Filter 用错**：`where={"category": "tech"}` 是 metadata filter、`where_document={"$contains": "..."}` 是 doc 内容 filter
 - **embedding function 一致性**：index 时用 model A、query 时用 model B、retrieval 会错。Chroma 把 embedding_function 绑在 collection 上避免
 
-## 想看 production-grade？
+## 想看实际在 production 跑的选择？
 
 ```bash
 collection = build_collection(path="./chroma_db")   # 持久化
