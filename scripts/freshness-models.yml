@@ -12,7 +12,7 @@
 current_frontier_models:
   # 2026-05 frontier list (review quarterly)
   anthropic:
-    - "Opus 4.7"
+    - "Opus 4.8"
     - "Sonnet 4.6"
     - "Haiku 4.5"
   openai:
@@ -63,6 +63,10 @@ stale_patterns:
   - pattern: 'o1-preview|o1-mini'
     qualifier_terms: ['前身', '歷史', 'lineage', '原始', 'baseline']
     note: 'Early OpenAI reasoning preview (Sep 2024)'
+
+  - pattern: 'Opus 4\.7'
+    qualifier_terms: ['前身', '歷史', 'lineage', '舊版', '原始', 'baseline', 'predecessor', 'history']
+    note: 'Opus 4.8 (May 2026) supersedes 4.7'
 
 # Stale date-bound framing — 時間性過時用詞
 # 注意：用 \s* 而不是字面 space、因為中文常寫 "2025年" 沒空格

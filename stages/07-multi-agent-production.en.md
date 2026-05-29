@@ -192,7 +192,7 @@ Before choosing a model or building an agent, you'll want to look at benchmark n
 
 | Benchmark | Domain | 2026-05 SOTA | Leading Model |
 |---|---|---|---|
-| [**SWE-bench Verified**](https://www.swebench.com/) | Software Engineering / code agent | **87.6%** | Claude Opus 4.7 |
+| [**SWE-bench Verified**](https://www.swebench.com/) | Software Engineering / code agent | **88.6%** | Claude Opus 4.8 |
 | [**Terminal-Bench**](https://github.com/laude-institute/terminal-bench) | terminal tasks | Leading | Claude Opus 4.5 / 4.7 |
 | **GAIA** | general assistant | **74.6%** | Claude Sonnet 4.5 (Princeton HAL) |
 | [**WebArena**](https://github.com/web-arena-x/webarena) | web navigation | **68.7%** | Claude Mythos Preview |

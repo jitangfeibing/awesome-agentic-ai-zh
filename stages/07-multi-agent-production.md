@@ -192,7 +192,7 @@ Production agent 跑久了、**cost / latency 兩條線會吃掉你大半預算�
 
 | Benchmark | 領域 | 2026-05 SOTA | 領先 Model |
 |---|---|---|---|
-| [**SWE-bench Verified**](https://www.swebench.com/) | 軟工 / code agent | **87.6%** | Claude Opus 4.7 |
+| [**SWE-bench Verified**](https://www.swebench.com/) | 軟工 / code agent | **88.6%** | Claude Opus 4.8 |
 | [**Terminal-Bench**](https://github.com/laude-institute/terminal-bench) | terminal 任務 | 領先 | Claude Opus 4.5 / 4.7 |
 | **GAIA** | general assistant | **74.6%** | Claude Sonnet 4.5（Princeton HAL）|
 | [**WebArena**](https://github.com/web-arena-x/webarena) | web 導航 | **68.7%** | Claude Mythos Preview |

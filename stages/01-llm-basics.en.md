@@ -42,7 +42,7 @@ These 3 are SaaS APIs: you pay per token and cannot self-host them.
 
 | Model family | Flagship (2026-05) | Context | Strengths | Best for | Official docs |
 |---|---|---|---|---|---|
-| **Claude** (Anthropic) | Opus 4.7 / Sonnet 4.6 / Haiku 4.5 | 1M (Haiku 4.5 is 200k) | long-form / coding / agent / safety alignment | writing papers / code review / agent runtime | [platform.claude.com/docs](https://platform.claude.com/docs/en/about-claude/models/overview) |
+| **Claude** (Anthropic) | Opus 4.8 / Sonnet 4.6 / Haiku 4.5 | 1M (Haiku 4.5 is 200k) | long-form / coding / agent / safety alignment | writing papers / code review / agent runtime | [platform.claude.com/docs](https://platform.claude.com/docs/en/about-claude/models/overview) |
 | **GPT** (OpenAI) | GPT-5.5 / GPT-5 / o-series | ~400k | general-purpose / function calling / broadest ecosystem | broad queries / function-call frameworks / GPTs ecosystem | [platform.openai.com/docs/models](https://platform.openai.com/docs/models) |
 | **Gemini** (Google) | 3.1 Pro / Flash | **2M** (Pro series; Flash is 1M) | long context / native multimodal / Google integration | PDF / video and audio / large document sets / Google Workspace | [ai.google.dev](https://ai.google.dev/gemini-api/docs/models/gemini) |
 
@@ -117,7 +117,7 @@ If not — go back to Stage 0 first.
 
 ## 📚 Required Reading
 
-1. [**Anthropic — Claude Model Overview**](https://docs.claude.com/en/about-claude/models/overview) — official model family overview, including 2026's latest Opus 4.7 / Sonnet 4.6 / Haiku 4.5
+1. [**Anthropic — Claude Model Overview**](https://docs.claude.com/en/about-claude/models/overview) — official model family overview, including 2026's latest Opus 4.8 / Sonnet 4.6 / Haiku 4.5
 2. [**anthropics/courses — Anthropic API Fundamentals**](https://github.com/anthropics/courses) ⭐⭐⭐⭐⭐ ★ 21k+ — Anthropic's official 5-course umbrella; **module 1 "Anthropic API Fundamentals" maps to this stage**. Jupyter notebooks, runs on Claude 3 Haiku (cheapest), hands-on walkthrough of API essentials.
 3. [**OpenAI Quickstart**](https://platform.openai.com/docs/quickstart) — first API call walkthrough
 4. [**A Visual Guide to LLM Tokenizers**](https://huggingface.co/learn/llm-course/chapter6/1) — Hugging Face's intro
@@ -339,7 +339,7 @@ import anthropic
 PRICING = {
     "claude-haiku-4-5":   {"input": 1.00, "output":  5.00},
     "claude-sonnet-4-6":  {"input": 3.00, "output": 15.00},
-    "claude-opus-4-7":    {"input": 5.00, "output": 25.00},  # Opus 4.7 (April 2026) price reduced to 5/25
+    "claude-opus-4-8":    {"input": 5.00, "output": 25.00},  # Opus 4.8 (May 2026, Dynamic Workflows) — same 5/25 pricing
 }
 
 client = anthropic.Anthropic()
@@ -358,7 +358,7 @@ for name, r in PRICING.items():
     print(f"  {name:<22} ${c:.4f}")
 
 assert cost_one > 0, "Cloud LLM always has a cost"
-print(f"\n✅ Exercise 3 passed (Anthropic) — 1000 runs: haiku ≈ $0.25, sonnet 4.6 ≈ $0.76, opus 4.7 ≈ $1.27")
+print(f"\n✅ Exercise 3 passed (Anthropic) — 1000 runs: haiku ≈ $0.25, sonnet 4.6 ≈ $0.76, opus 4.8 ≈ $1.27")
 ```
 
 **Expected output**:
@@ -368,7 +368,7 @@ single: input=14 output=48 → $0.000254
 1000 calls cost across model tiers:
   claude-haiku-4-5       $0.2540
   claude-sonnet-4-6      $0.7620
-  claude-opus-4-7        $1.2700
+  claude-opus-4-8        $1.2700
 ```
 
 **Trade-off**: local Ollama is $0 for 1000 runs but takes ~2 hr; Anthropic haiku is ~10 min for $0.25; sonnet ~10 min for $0.76. **Use cloud only for production; learning / experiments / debug stay local.**
