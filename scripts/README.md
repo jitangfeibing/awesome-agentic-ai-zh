@@ -39,7 +39,7 @@ python scripts/refresh-stars.py --check
 ## 建議的維護節奏
 
 - **每月**：跑一次 `check-links.py --fast` 看 GitHub repo 連結有沒有 404
-- **每季**：跑一次 `refresh-stars.py` 看大幅成長 / 衰退的 repo
+- **星數刷新**：`weekly-catalog-refresh` CI 每週自動跑 `refresh-stars.py`（手動補跑可看大幅成長 / 衰退的 repo）
 - **每半年**：跑一次完整 `check-links.py`（包含非 GitHub 連結）
 
 可以接到 GitHub Actions 自動跑（見未來 Phase 6 的 CI 設定）。

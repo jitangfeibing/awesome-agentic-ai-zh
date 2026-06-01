@@ -143,6 +143,6 @@ Different audiences have different CLI needs:
 
 ## Maintenance Notes
 
-- 7 CLI tools' stars / license / pushed_at refreshed quarterly via `bash scripts/refresh-stars.py`
+- 7 CLI tools' stars / license / pushed_at auto-refreshed weekly by the `weekly-catalog-refresh` CI (manual run: `python scripts/refresh-stars.py`)
 - The CLI market moves fast — new tools require evaluation before inclusion (bar: 30k+ stars, actively maintained, true CLI not IDE)
 - The comparison table deliberately leaves out "strengths / weaknesses" columns — avoiding subjective bias and letting the use-case section + readers' own judgment do that work
