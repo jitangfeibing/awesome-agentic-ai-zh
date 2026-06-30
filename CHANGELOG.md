@@ -9,6 +9,7 @@ Format: `YYYY-MM-DD · category · 1-line summary (commit-sha)`.
 ## 2026-06-30
 
 - **content** · Staleness audit Batch 1 (from the 2026-06-29 multi-agent repo audit): removed the phantom "Claude Mythos Preview" attribution on the Stage 7 WebArena benchmark row (→ "領先 model 未公布" — Mythos/Fable benchmarks were never published and access is suspended, so the cell contradicted the table's own caption); glossary Context-Window entry gains Grok 4.3 1M + Mistral Medium 3.5 256k for parity with the Frontier Model entry; cookbook "Claude 4.5+" → "Claude 4.8+"; A2A glossary entry refreshed to v1.0 (Linux Foundation governance, 150+ orgs, signed Agent Cards). All first-party verified. Tri-locale; gates pass.
+- **content** · Staleness audit Batch 2 (model-ID / recommendation refresh, all first-party verified): Stage 6 Path-2 reasoning list + observation line, Stage 8 example comment, and setup-guide updated Gemini 3.1 Pro → 3.5 Flash and added xAI Grok 4.3 (GA) to the strongest-reasoning options; GPT-5.5 deliberately kept in runnable example code since GPT-5.6 is still limited preview (not GA); setup-guide free-tier corrected to "GPT-5.5 Instant (rate-limited)"; Stage 4 OpenAI Agents SDK "April 2026 update" reframed to past-tense (the built-in-sandbox / 7-provider claim verified accurate), AG2 v0.2-vs-v0.4 note softened. Tri-locale; gates pass.
 
 ## 2026-06-29
 
