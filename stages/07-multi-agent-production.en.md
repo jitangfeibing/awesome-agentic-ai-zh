@@ -133,6 +133,23 @@ To turn an LLM into a usable agent, you usually run into three layers of enginee
 - **Framework** ([Stage 4](04-agent-frameworks.md)) defines the **API** — what the interface you call looks like
 - **Harness** (this section) defines the **runtime** — how it runs, how it recovers, and how it is observed
 
+### Feedback loops: agents improve from feedback, not a more perfect prompt
+
+The 8 components above are the harness "skeleton." But what actually makes the skeleton work is something more basic than any single component: **an agent gets better by feeding feedback back into the loop, not by wording the opening prompt more perfectly.**
+
+An analogy: a student doesn't get better because the assignment was phrased more elegantly; they improve by getting feedback at the right moments — handing in a draft, a teacher's mid-task nudge, having the finished work graded, redoing it next time. Agents are the same, and feedback can enter at four moments:
+
+| Moment | In plain words | What it looks like in engineering |
+|---|---|---|
+| **1. Tool return values** | The text a tool returns is itself feedback written for the agent | Write the error message, hints, and next-step suggestions *clearly* — don't just dump a stack trace |
+| **2. Mid-run steering** | Slip a message in between the agent's two thinking steps to redirect it | Inject a message mid-run (steering); no need to wait a whole turn to course-correct |
+| **3. End-of-turn acceptance** | When a turn finishes, have *someone else* check it against the goal | Use a separate evaluator to compare against the goal, instead of letting the agent grade itself |
+| **4. Outer loop** | Re-invoke the agent against the same goal until it's done | Goal-driven re-runs (like OpenAI Codex's `/goal`, or a cron re-run) |
+
+**Why #3 (an independent check) matters most**: Anthropic's own experiments found that when you ask an agent to check its own work, it almost always praises it — even when the quality is obviously mediocre. So they split the "maker" agent from the "checker" agent: one builds, the other uses tools (like Playwright) to actually click and test, then reports bugs back. Tuning an external checker to be more skeptical is far easier than making one agent harder on itself.
+
+> 📚 Real example: Anthropic's [Harness design for long-running apps](https://www.anthropic.com/engineering/harness-design-long-running-apps) (2026-03) uses planner → generator → evaluator, letting an agent run for hours to build a full music-production app, correcting on every round from the evaluator's feedback.
+
 ### Reference Implementations
 
 Want to see what a harness running in production looks like? Two references:

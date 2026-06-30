@@ -290,6 +290,12 @@ Scripts that run before or after specific Claude Code events. **The official sys
 
 Configuration: add a `"hooks"` block in `.claude/settings.json` and point it at your script path.
 
+### Deep Agent
+
+An agent design that comes "fully equipped" — beyond just calling tools, it has built-in planning (a todo list), long-term memory (a filesystem), division of labor via subagents, and loadable skills. Contrast: a plain agent is just an LLM plus a few tools. Reference implementation: LangChain's [deepagents](https://github.com/langchain-ai/deepagents).
+
+---
+
 ### Subagent
 
 A spawned agent from the main Claude Code session, with its own context window, dedicated to a specific task. E.g. "spin up a code-reviewer subagent for this diff."

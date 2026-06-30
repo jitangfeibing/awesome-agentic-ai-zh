@@ -133,6 +133,23 @@
 - **Framework**（[Stage 4](04-agent-frameworks.md)）規範 **API** — 你呼叫的介面長什麼樣
 - **Harness**（本節）規範 **runtime** — 怎麼跑、怎麼 recovery、怎麼觀測
 
+### 回饋迴路：agent 進步靠的是回饋，不是更完美的提示
+
+上面 8 個元件是 harness 的「骨架」。但讓骨架真正運作的，是一件更基礎的事：**agent 變強，靠的是「把回饋送回迴圈」，不是把開頭那段提示寫得更完美。**
+
+打個比方：一個學生不會因為作業題目寫得更漂亮就變強，他變強是因為在對的時機收到回饋——交草稿、寫到一半被老師提醒、完成後被批改、下次重做。agent 也一樣，而回饋可以在四個時機進來：
+
+| 時機 | 白話 | 工程上長什麼樣 |
+|---|---|---|
+| **1. 工具回傳值** | 工具吐回來的那段話，本身就是寫給 agent 看的回饋 | 把錯誤訊息、提示、下一步建議「寫清楚」，別只丟一個 stack trace |
+| **2. 執行中插話** | 在 agent 兩次思考之間塞一句話調整方向 | 中途注入訊息（steering），不用等它整輪跑完才修正 |
+| **3. 單輪結束的驗收** | 一輪做完，由「另一個人」對著目標檢查 | 用獨立的驗收者（evaluator）比對目標，而不是讓 agent 自己打分 |
+| **4. 外層 loop** | 對著同一個目標反覆叫 agent，直到完成 | 目標導向的重跑（像 OpenAI Codex 的 `/goal`、或 cron 定時重跑）|
+
+**為什麼第 3 個（獨立驗收）特別重要**：Anthropic 自己的實驗發現，叫 agent 檢查自己的成品，它幾乎都會「自我稱讚」——就算品質明顯普通。所以他們把「做東西的 agent」和「驗收的 agent」拆開：一個負責做，一個用工具（像 Playwright）實際去點、去測，再把 bug 回報回去。把外部驗收者「調得更挑剔」，比讓同一個 agent「對自己更嚴格」容易得多。
+
+> 📚 實際案例：Anthropic [Harness design for long-running apps](https://www.anthropic.com/engineering/harness-design-long-running-apps)（2026-03）用 planner → generator → evaluator 三段，讓 agent 連續跑好幾小時做出一個完整的音樂製作 app，每輪都靠 evaluator 回饋修正。
+
 ### 參考實作
 
 想看實際在 production 跑的 harness 長什麼樣？兩個 reference：
