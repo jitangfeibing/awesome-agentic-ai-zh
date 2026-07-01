@@ -72,10 +72,13 @@ The text you feed an LLM. **Prompt engineering** = designing that text to get go
 
 📍 Detail: [Stage 2](../stages/02-prompt-engineering.en.md)
 
-### Few-shot / Zero-shot
+### Zero-shot / One-shot / Few-shot
 
-- **Zero-shot**: ask directly without examples.
-- **Few-shot**: give 2–5 input → output examples first. **Few-shot usually improves accuracy a lot**, especially for strict formatting.
+Put "a few worked examples" in the prompt for the LLM to copy — the only difference between the three terms is **how many examples you give**:
+
+- **Zero-shot** (0 examples): just ask, no examples at all.
+- **One-shot** (1 example): give **1** input → output example first, then ask.
+- **Few-shot** (a handful): give **2–5** input → output examples first. **Few-shot usually improves accuracy a lot**, especially for strict formatting.
 
 ### Chain-of-Thought (CoT)
 

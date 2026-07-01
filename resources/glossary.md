@@ -72,10 +72,13 @@ LLM 一次能「看」多少 token。**2026 frontier**：Claude Sonnet 5 / Opus 
 
 📍 詳細：[Stage 2](../stages/02-prompt-engineering.md)
 
-### Few-shot / Zero-shot
+### Zero-shot / One-shot / Few-shot
 
-- **Zero-shot**：直接問問題不給範例。
-- **Few-shot**：給 2-5 個 input → output 的範例後再問。**Few-shot 通常顯著提升準確度**，特別是格式要求嚴的任務。
+在 prompt 裡放「幾個示範例子」讓 LLM 照著做——這三個詞的差別只在**你給幾個範例**：
+
+- **Zero-shot**（0 個範例）：直接問、不給任何範例。
+- **One-shot**（1 個範例）：先給 **1 個** input → output 範例再問。
+- **Few-shot**（少數幾個）：給 **2-5 個** input → output 範例後再問。**Few-shot 通常顯著提升準確度**，特別是格式要求嚴的任務。
 
 ### Chain-of-Thought（CoT，思維鏈）
 
